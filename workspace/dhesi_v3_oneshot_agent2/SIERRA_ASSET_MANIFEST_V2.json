@@ -1,0 +1,49 @@
+{
+ "manifest": "SIERRA_ASSET_MANIFEST_V2",
+ "status": "PLAN (metadata only; nothing harvested yet)",
+ "as_of": "2026-09-24",
+ "symbol_availability": "UNVERIFIED until Sierra is running: on-disk naming is ROOT+month+YY-EXCHANGE (e.g. NQZ26-CME, GCZ26-COMEX, CLZ26-NYMEX); confirm CME FX roots in the Sierra symbol search.",
+ "record_fields_filled_after_harvest": [
+  "exact start/end",
+  "row count",
+  "disk size",
+  "SHA-256"
+ ],
+ "assets": [
+  {
+   "priority": 1,
+   "instrument": "NQ continuous (volume roll, no back-adjust)",
+   "resolution": "1 minute",
+   "range": "2011-09-01 (protocol V1 2.3) -> 2024-10-31",
+   "est_disk": "0.3-0.7 GB",
+   "purpose": "Dhesi v3 one-shot (RESERVED: metadata only before authorization)",
+   "checklist": "SIERRA_OWNER_CHECKLIST.md"
+  },
+  {
+   "priority": 2,
+   "instrument": "CME FX futures 6E, 6B, 6J, 6C, 6N (continuous, volume roll, no back-adjust)",
+   "resolution": "1 minute",
+   "range": "2022-01-01 -> harvest date",
+   "est_disk": "~0.25 GB each",
+   "purpose": "futures translation of a VALIDATED Trident/MMXM result only; overlaps the SEALED FX window 2025-01..2026-08 -> no inspection"
+  },
+  {
+   "priority": 3,
+   "instrument": "GC continuous (volume roll, no back-adjust)",
+   "resolution": "1 minute",
+   "range": "2022-01-01 -> harvest date",
+   "est_disk": "~0.3 GB",
+   "purpose": "gold translation (Trident XAU); same sealed-overlap rule"
+  },
+  {
+   "priority": 4,
+   "instrument": "CL contracts (tick storage)",
+   "resolution": "1 tick",
+   "range": "last 24 months",
+   "est_disk": "3-8 GB (estimate, UNVERIFIED)",
+   "purpose": "frozen CL/EIA tick event study (fallback lane, addendum Q); needs storage unit = 1 Tick"
+  }
+ ],
+ "no_paid_upgrade": true,
+ "license_note": "Sierra/CME data for internal research use; keep in private repo release assets only"
+}

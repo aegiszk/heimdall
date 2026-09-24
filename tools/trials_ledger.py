@@ -170,6 +170,45 @@ def empirical_sr_trials_var(window, dataset_group: str, ledger: dict | None = No
     return float(np.var(srs, ddof=1)) if len(srs) >= 2 else None
 
 
+INVALIDATED_SUFFIX = "-INVALIDATED"
+
+
+def voided_ids(ledger: dict | None = None) -> set:
+    """Ids whose VERDICT is void because a later correction marker exists. A marker is an entry whose id is
+    '<original id>-INVALIDATED' or that names the original in a 'voids' field. The original stays a LOOK (its
+    outcome was observed): it still counts in nb_trials / SR variance. The marker itself is never a model: it is
+    registered as a null control, so nb_trials already excludes it. Nothing in the chain is edited."""
+    led = ledger if ledger is not None else load_ledger()
+    ids = {e["id"] for e in led["entries"]}
+    out = set()
+    for e in led["entries"]:
+        tgt = e.get("voids") or (e["id"][: -len(INVALIDATED_SUFFIX)] if e["id"].endswith(INVALIDATED_SUFFIX) else None)
+        if tgt and tgt in ids:
+            out.add(tgt)
+    return out
+
+
+def effective_verdict(entry: dict, ledger: dict | None = None, _voided: set | None = None) -> str:
+    """Verdict for downstream aggregation: VOID_INVALIDATED if a correction marker voids the entry; markers
+    themselves report CORRECTION_MARKER; otherwise the registered verdict."""
+    v = _voided if _voided is not None else voided_ids(ledger)
+    if entry.get("voids") or entry["id"].endswith(INVALIDATED_SUFFIX):
+        return "CORRECTION_MARKER"
+    return "VOID_INVALIDATED" if entry["id"] in v else str(entry.get("verdict"))
+
+
+def verdict_counts(ledger: dict | None = None, id_prefix: str = "") -> dict:
+    """Counts of EFFECTIVE verdicts (markers honoured). Use this, never the raw 'verdict' field, to aggregate."""
+    led = ledger if ledger is not None else load_ledger()
+    v = voided_ids(led)
+    out: dict = {}
+    for e in led["entries"]:
+        if e["id"].startswith(id_prefix):
+            k = effective_verdict(e, led, v)
+            out[k] = out.get(k, 0) + 1
+    return out
+
+
 def window_is_fresh(window, dataset_group: str, ledger: dict | None = None, exclude_ids=()) -> bool:
     """True iff no ledger trial (null controls included: they are looks) read an overlapping window in
     this dataset_group. Pass the candidate's own id in exclude_ids once it is registered."""
@@ -327,6 +366,7 @@ def summary(ledger: dict | None = None) -> dict:
                      "nb_trials_families": nb_trials(w, g, led, "families"),
                      "sr_trials_var": empirical_sr_trials_var(w, g, led),
                      "is_fresh": window_is_fresh(w, g, led)}
+    out["effective_verdicts"] = verdict_counts(led)
     return out
 
 
