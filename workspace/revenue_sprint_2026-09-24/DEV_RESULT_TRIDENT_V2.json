@@ -1,0 +1,109 @@
+{
+ "model": "TRIDENT_V2",
+ "window": "dev",
+ "prereg_aggregate": "37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+ "metrics": {
+  "n": 91,
+  "trades_per_year": 30.465398716773603,
+  "win_rate": 0.23076923076923078,
+  "mean_R": 1.9666257286662256,
+  "median_R": -1.230470588235015,
+  "mean_gross_R": 2.8667469871026228,
+  "payoff": 7.3912231320295945,
+  "profit_factor": 2.2173669396088784,
+  "sharpe_per_trade": 0.07882344970148687,
+  "nw_t": 0.7622907144242819,
+  "p_one_sided": 0.22294325731099918,
+  "boot95_lo": -1.22494930072065,
+  "boot95_hi": 7.847011300191658,
+  "mean_mfe_R": 7.08063319417839,
+  "mean_mae_R": -2.360996295559322,
+  "max_dd_R": -76.55408333142198,
+  "worst_R": -17.0000000002428,
+  "best_R": 234.45454545427316,
+  "top1_share": 1.3100731567098565,
+  "top5_share": 1.5132468936620056,
+  "top10_share": 1.690671133363428,
+  "sum_R": 178.96294130862654,
+  "mean_net_usd_1lot": 95.79555092110441,
+  "median_net_usd_1lot": -57.364963503639224,
+  "long_n": 91,
+  "long_mean_R": 1.9666257286662256,
+  "short_n": 0,
+  "short_mean_R": NaN,
+  "pos_years": 1,
+  "n_years": 3,
+  "pos_months_frac": 0.2857142857142857,
+  "by_year": [
+   {
+    "year": 2022,
+    "count": 24,
+    "mean": -0.846,
+    "sum": -20.293
+   },
+   {
+    "year": 2023,
+    "count": 34,
+    "mean": 6.294,
+    "sum": 213.992
+   },
+   {
+    "year": 2024,
+    "count": 33,
+    "mean": -0.447,
+    "sum": -14.737
+   }
+  ],
+  "exit_reasons": {
+   "stop": 56,
+   "close_exit": 35
+  },
+  "trimmed_mean_10pct": -0.7429415627444946,
+  "boot_share_means_pos": 0.64975,
+  "drop_top5_mean_R": -1.068048531479865,
+  "max_single_trade_share": 1.3100731567098565,
+  "cost_x1.5_mean_R": 1.508912979992659,
+  "cost_x2_mean_R": 1.0502797996667417,
+  "one_bar_delay_mean_R": 1.886085504774985,
+  "stop_slip_x3_mean_R": 1.514491005063608,
+  "by_pair": {
+   "EURUSD": {
+    "count": 10,
+    "mean": -2.357
+   },
+   "GBPUSD": {
+    "count": 14,
+    "mean": -1.8931
+   },
+   "NZDUSD": {
+    "count": 11,
+    "mean": -1.2179
+   },
+   "USDCAD": {
+    "count": 12,
+    "mean": -1.3428
+   },
+   "USDJPY": {
+    "count": 24,
+    "mean": 0.4449
+   },
+   "XAUUSD": {
+    "count": 20,
+    "mean": 12.3934
+   }
+  }
+ },
+ "checks": {
+  "n_ge_30": true,
+  "mean_R_gt_0": true,
+  "median_not_catastrophic": false,
+  "drop_top5_gt_0": false,
+  "nw_t_gt_1_5": false,
+  "bootstrap_central_positive": false,
+  "cost_x1_5_gt_0": true,
+  "years_2_3_positive": false
+ },
+ "eligible_years": 3,
+ "year_pos_share": 0.3333333333333333,
+ "dev_gate": "FAIL"
+}
