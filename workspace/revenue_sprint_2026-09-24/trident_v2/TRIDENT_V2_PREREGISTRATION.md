@@ -1,12 +1,12 @@
 # TRIDENT_V2_PREREGISTRATION
 
-Hypothesis ID: TRIDENT_V2. Frozen 2026-09-24 BEFORE any V2 PnL. BASE_SHA a1486c4738bb96babaed396fe9163a86a679506b.
+Hypothesis ID: TRIDENT_V2. Frozen 2026-09-24 BEFORE any V2 PnL (re-freeze 1 after Agent 2 audit: C7 gap-failure abort removed). BASE_SHA a1486c4738bb96babaed396fe9163a86a679506b.
 Mechanism (source claim): London kill-zone bullish FVG retested to its 50% by a rejection doji, confirmed by the next
 candle, in an EMA-stacked uptrend, ridden until trend exhaustion.
 Spec: `TRIDENT_V2_SOURCE_SPEC.md` (rules C1-C9, context, omissions). Code: `trident_v2/strategy.py`, `Cfg()` defaults ONLY:
 stack_gate=True, doji_body=0.25, max_hold_days=10, kill zone 03:00-06:30 ET.
 Instruments EURUSD GBPUSD USDJPY USDCAD NZDUSD XAUUSD; 30m signal / 1m fill; long only.
-Entry: market at confirmation close. Stop: doji low - 1 pip (FX); XAU close below doji low (+ catastrophic 3x doji range).
+No gap-failure abort (C7 removed). Entry: market at confirmation close. Stop: doji low - 1 pip (FX); XAU close below doji low (+ catastrophic 3x doji range).
 Exit: 30m close with EMA5 < EMA21; max hold 10 days. Re-entry: one setup per FVG, one position per instrument.
 Alternatives: exactly 1 interpretation (no lattice). Fidelity: PASS_WITH_DECLARED_OMISSION (indicator colour) — requires
 owner + Agent 2 acceptance before the sealed run.

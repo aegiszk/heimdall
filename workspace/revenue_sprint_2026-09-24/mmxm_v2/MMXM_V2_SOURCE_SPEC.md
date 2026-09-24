@@ -18,6 +18,10 @@ Adjudications: Agent 1 decision with Agent 2 review (outside-KZ veto, lookback, 
 | M9 | Entry / stop / target | 0:55:52 "at the 62 level with a 90% stop loss and the zero TP is like 2.2R"; 0:56:43 "705 90% stop-loss shave" | STATED (two plans; 0.62 chosen: it is the first OTE level reached, so every 0.705 fill also passes 0.62) | limit at 0.62, stop 0.9, TP at 0 |
 | M10 | Break-even | 0:45:20–0:46:15 "go break even 0.2, and you're closing there. Not wicking there" | STATED | 15m CLOSE beyond the 0.2 level → stop to entry |
 
+## Declared untested alternative (Agent 2 audit)
+- M3 absolute-proximity reading (day open within a fixed distance of the level) — not tested; M3 uses the parameter-free
+  relative reading (open closer to the level than to its opposite).
+
 ## Context (recorded, never gates)
 - Kill zones NY 02–05 / 07–10 / 10–12 (0:29:52) → `ctx_disp_in_kz`. The source describes when the framework tends to
   appear, not a mandatory gate (Agent 2 review: a gate needs verbatim basis; none).

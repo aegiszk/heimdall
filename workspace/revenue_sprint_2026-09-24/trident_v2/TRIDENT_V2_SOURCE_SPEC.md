@@ -17,7 +17,7 @@ but not reproducible; disclosed).
 | C4 | Doji whose wick passes through the FVG 50% | 0:07:19 "If I get a doji candle here, especially a wick that wicks through it" (CE / 50%) | STATED | low < (FVG bottom + FVG top)/2 |
 | C5 | Doji body not inside the FVG | 0:09:06–0:10:01 "Say this wasn't a doji and the body of this candle was in here … this would be an invalidation" | STATED | min(open, close) ≥ FVG top |
 | C6 | Doji threshold | not given | ASSUMPTION | \|close − open\| ≤ 0.25 × (high − low) |
-| C7 | FVG must not fail | "wicks through [the 50%]" | INTERPRETED | abort if any candle after the gap trades below the FVG bottom before a valid doji |
+| C7 | (removed) | Agent 2 audit 2026-09-24: no fill / close-below-gap invalidation anywhere in the transcript; V1 carried it as a generic ICT import | — | no gap-failure rule; the doji search window is bounded only by the kill zone (≤ 7 bars after the gap) |
 | C8 | Next candle closes below the doji high | 0:07:19 "the next candle after this doji candle closes below this high … If it closes above the high, I'll invalidate" | STATED | confirmation close < doji high, else the setup is dead |
 | C9 | EMA 5/9/13/21 stacked bullishly | 0:05:31 "they're all stacking … strong bullish structure … If they were intertwining … I wouldn't be interested in any price action" | STATED (exclusion) | at the confirmation close EMA5 > EMA9 > EMA13 > EMA21 (30m, EMA 13 per 0:05:31; "13 or 15" at 0:32:57 unresolved → 13) |
 
@@ -46,9 +46,14 @@ but not reproducible; disclosed).
 | Instruments | 0:08:11 USDCAD, NZDUSD, EURUSD, GBPUSD, USDJPY (not AUDUSD) + gold | STATED | the six |
 | Re-entry | not given | ASSUMPTION | one setup per FVG; one open position per instrument |
 
+## Declared untested alternatives
+- C3 with the gap's THIRD candle at 02:30 (i.e. whole FVG before 03:00) eligible — not tested.
+- C7 abort-on-gap-failure (V1 behaviour) — not tested; pre-PnL counts with and without it in `FIDELITY_V2_DEV_COUNTS.json`.
+
 ## Frequency vs source claim (pre-PnL counts, DEV 2022–2024, `FIDELITY_V2_DEV_COUNTS.json`)
-EURUSD 2.3/yr, GBPUSD 1.3, USDJPY 3.0, USDCAD 1.7, NZDUSD 2.0, XAUUSD 1.7 (36 setups pooled) vs the creator's 6–8/yr/pair
-(gold 10–15). Gap declared; not closed by loosening any stated rule.
+EURUSD 4.7/yr, GBPUSD 5.4, USDJPY 8.7, USDCAD 4.7, NZDUSD 4.0, XAUUSD 7.0 (103 setups pooled) vs the creator's 6–8/yr/pair
+(gold 10–15). With the removed, unsourced C7 abort the draft had 36 setups (1.3–3.0/yr): that import, not source
+discretion, was the main frequency choke. No stated rule was loosened.
 
 ## Line against V1
 V1 (E1–E4) applied EMA200 as a hard gate and used a middle-candle FVG window; E1/E3 used a fixed 20R exit. Those runs read

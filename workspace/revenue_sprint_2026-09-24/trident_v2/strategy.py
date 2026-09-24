@@ -7,6 +7,7 @@ Changes vs V1 (E1-E4), each tied to a source quote in the spec:
                                                              "printed outside of our kill zone -> ignore"]
 - exit = ride until a 30m close with EMA5 < EMA21              [0:19:39 "ride the trend until like the EMAs cross over"]
 - one model only (no E1-E4 lattice); long only.
+Removed (Agent 2 audit, no verbatim basis): V1's abort when price trades below the FVG bottom before a doji.
 Unchanged from V1: doji geometry, next-candle-below-doji-high confirmation, entry at confirmation close, stop below the doji
 low (1 pip), XAU close-based stop (+ catastrophic 3x doji-range stop), max hold 10 days, harness cost model.
 """
@@ -62,8 +63,6 @@ def generate(m1: pd.DataFrame, cfg: Cfg, pair: str, pip: float) -> list[Order]:
         ce = (bot + top) / 2.0
         for d in range(i + 1, min(n - 1, i + 8)):
             if not in_kz[d] or not in_kz[d + 1]:
-                break
-            if L[d] < bot:                                        # gap fully traded through -> FVG failed
                 break
             rng = H[d] - L[d]
             if rng <= 0:
