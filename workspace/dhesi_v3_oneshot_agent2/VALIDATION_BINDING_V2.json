@@ -1,0 +1,83 @@
+{
+ "binding": "VALIDATION_BINDING_V2",
+ "hypothesis": "Dhesi v3 (canonical spec V1), one-shot primary on untouched NQ",
+ "files": {
+  "canonical_spec": {
+   "path": "workspace/dhesi_adjudication_agent1_2026-09-23/DHESI_V3_CANONICAL_SPEC_V1.md",
+   "sha256": "8f330ae21a7537586cf769b20b4727fddc4f4eee7aea9d94e36bd29aeb9c6059"
+  },
+  "protocol_v1": {
+   "path": "workspace/dhesi_adjudication_agent1_2026-09-23/DHESI_V3_VALIDATION_PROTOCOL_V1.md",
+   "sha256": "49d8d8b98e139e4d7d88809e36bd8cb9376f7b0b40f5419bb41edd5c3d148793"
+  },
+  "protocol_amendment_1": {
+   "path": "workspace/dhesi_adjudication_agent1_2026-09-23/PROTOCOL_AMENDMENT_1.md",
+   "sha256": "74f3340f24d8147f74b08d35eb8cf2a246fd798a9a59a28c998977ba8910400e"
+  },
+  "validator_and_reference_engine": {
+   "path": "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_validator.py",
+   "sha256": "940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985"
+  },
+  "harvest_integrity": {
+   "path": "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_harvest_integrity.py",
+   "sha256": "2c223a41ac4c029348f042d0e81e255b7d13be2a856651530a25c26e216d90fc"
+  },
+  "converter": {
+   "path": "workspace/dhesi_v3_oneshot_agent2/dhesi_v3_sierra_convert.py",
+   "sha256": "8be2ae4de2a55fcd7e0335d0fc08e10f42d90a57900adba40de91bc7a272f5bd"
+  },
+  "report_tool": {
+   "path": "workspace/dhesi_v3_oneshot_agent2/dhesi_v3_report.py",
+   "sha256": "9216c08caff48e6dac22d27c8598102452c0db7060305452e1f43f603dafcd8d"
+  },
+  "binding_tool": {
+   "path": "workspace/dhesi_v3_oneshot_agent2/dhesi_v3_binding.py",
+   "sha256": "bf6a9f1d7f9105a7fdfe4b33695c9f6254a23cdcdc8dc7b4005b2d5b2f73cf26"
+  },
+  "strategy_v2_base": {
+   "path": "core/alpha/inversion_model.py",
+   "sha256": "e32e88f1a309c8e259274fd181929c3aa19935e667bcf568ff31eb9fbbdd0037"
+  },
+  "strategy_v3": {
+   "path": "core/alpha/inversion_model_v3.py",
+   "sha256": "0ab7a5156e506c629110efe5253a6b93315072cd3f544490d80c2a746922bf85"
+  },
+  "risk_engine": {
+   "path": "core/risk/prop_engine.py",
+   "sha256": "5750672eea42047ae294415a14c795c783aef4348cd4af7bfc9eead0cae7a265"
+  },
+  "alpha_base": {
+   "path": "core/alpha/base.py",
+   "sha256": "2d8c40e53bfdd0ab5f26ca90165b1cf7a38475e0429edd5f304c83eef1d78737"
+  },
+  "prop_montecarlo": {
+   "path": "tools/prop_montecarlo.py",
+   "sha256": "c5aaee3311289e11f92d0abc42ab5738861f477a81e40d0fcaf7dfbdd7b88e23"
+  },
+  "daily_counts": {
+   "path": "tools/validate_inversion_model.py",
+   "sha256": "5dffdb7c4a7f7166d8e28c0d8df13bcc2ab2314f7e5fd720a828e27f79c59165"
+  },
+  "trials_ledger_tool": {
+   "path": "tools/trials_ledger.py",
+   "sha256": "f5f88941143c5525f3ba5449cfafa9b7aa36efdb5f2ce88982ea38b61b33f5c8"
+  },
+  "equivalence_reference_dev_MNQ": {
+   "path": "data/MNQ_1m.parquet",
+   "sha256": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774"
+  }
+ },
+ "trials_ledger": {
+  "trial_id": "NQ-dhesi-inversion-v3-untouched",
+  "index": 154,
+  "entry_hash": "be622db0410d0c7714a5c662aabae9f7e304baee21f876d8a1f4ab41d0aed209",
+  "ledger_file_sha256_at_binding": "282a833c1b71b7527c73dbf6b81805dde80e2b63349a4aae2478804a0c943307",
+  "rule": "append-only: preflight requires the same entry_hash at the same index and a valid chain; later appends allowed"
+ },
+ "frozen_parameters": {
+  "gate3_roll_exclusion_dates": "2024-09-12,2024-09-13,2024-09-16,2024-09-17,2024-09-18",
+  "untouched_hard_cut_et": "2024-06-29 00:00 (validator UNTOUCHED_END_ET)",
+  "sierra_convention": "NQ continuous, Volume Based Rollover, back-adjust None, 1 minute, chart TZ UTC, bar-start"
+ },
+ "dataset": "bound indirectly: DHESI_V3_HARVEST_INTEGRITY.json (produced by the bound harvest_integrity tool) records the dataset SHA-256; the owner authorization quotes that JSON's SHA-256."
+}
