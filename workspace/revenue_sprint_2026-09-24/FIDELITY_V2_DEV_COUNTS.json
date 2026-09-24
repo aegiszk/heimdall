@@ -1,0 +1,72 @@
+{
+ "TRIDENT_V2": {
+  "EURUSD": {
+   "setups": 7,
+   "per_year": 2.34,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 4
+  },
+  "GBPUSD": {
+   "setups": 4,
+   "per_year": 1.34,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 3
+  },
+  "USDJPY": {
+   "setups": 9,
+   "per_year": 3.01,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 8
+  },
+  "USDCAD": {
+   "setups": 5,
+   "per_year": 1.67,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 3
+  },
+  "NZDUSD": {
+   "setups": 6,
+   "per_year": 2.01,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 4
+  },
+  "XAUUSD": {
+   "setups": 5,
+   "per_year": 1.67,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 4
+  }
+ },
+ "MMXM_V2": {
+  "EURUSD": {
+   "setups": 204,
+   "per_year": 68.17,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_disp_in_kz": 87,
+   "short": 111
+  },
+  "GBPUSD": {
+   "setups": 209,
+   "per_year": 69.84,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_disp_in_kz": 71,
+   "short": 102
+  },
+  "USDJPY": {
+   "setups": 209,
+   "per_year": 69.84,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_disp_in_kz": 67,
+   "short": 87
+  }
+ }
+}

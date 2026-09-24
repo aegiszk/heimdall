@@ -1,0 +1,27 @@
+{
+ "frozen_utc": "2026-09-24T06:28:01.071364+00:00",
+ "base_sha": "a1486c4738bb96babaed396fe9163a86a679506b",
+ "note": "frozen before any V2 PnL",
+ "files": {
+  "workspace/revenue_sprint_2026-09-24/trident_v2/strategy.py": "e607b34171a84b814a744018d4932ba93549495df517edb6f95301f50294ab1e",
+  "workspace/revenue_sprint_2026-09-24/trident_v2/TRIDENT_V2_SOURCE_SPEC.md": "039bea64241dc13b9b86d50968d78b519b4ef0f392de9c1a40c0e043d2803a81",
+  "workspace/revenue_sprint_2026-09-24/trident_v2/TRIDENT_V2_PREREGISTRATION.md": "f3d2de92bc04511fb615601cf78eff0fee0e601bf227cd19c10651fce4ec4f4e",
+  "workspace/revenue_sprint_2026-09-24/mmxm_v2/strategy.py": "4a899501e1f438a62e1c5a3838668026a05a2bcf8b64d5852bbbd1f17b870251",
+  "workspace/revenue_sprint_2026-09-24/mmxm_v2/MMXM_V2_SOURCE_SPEC.md": "87c89e125dceba08086694405cc67bcc46b42c1689caef820e6e04eaff710e61",
+  "workspace/revenue_sprint_2026-09-24/mmxm_v2/MMXM_V2_PREREGISTRATION.md": "6928ebdd19ff589fba885abc9c127f28b7e516a832ca5851cac4636e999e6e10",
+  "workspace/revenue_sprint_2026-09-24/evaluate_v2.py": "e5a8903151a12ede4da663f704016dafb3f4874f6b7018093ada273087777ea2",
+  "workspace/revenue_sprint_2026-09-24/fidelity_v2.py": "ee5c386c0428176998a4f58856c75cd3cbed7d6bcb6d1977ba5adade586d468b",
+  "workspace/external_strategies/common/harness.py": "b716f51b095bd9398009f2a2ca772a665bdfdc368e1d9c9476a63e8a31a8c291",
+  "workspace/external_strategies/common/stats.py": "15ba12cc975cf9f3c6eeaa27b4beeb5c6abbff3f1635a29f4df1539eed42daec",
+  "workspace/external_strategies/common/registry.py": "94dddbcdad4e46747c3505773dff48baee7e4ac6f0365ecc82e73630f4cb87d3"
+ },
+ "datasets": {
+  "data/fx_histdata/EURUSD_1m_bid.parquet": "f01e43f1d2cb4a277164c57fddfbb56fa1abbf5e779615aa9a7290824e8e0842",
+  "data/fx_histdata/GBPUSD_1m_bid.parquet": "3776736851407d2a4ea726d12be3a61c35bec47fba4aefa3f5e6e161942ec53e",
+  "data/fx_histdata/USDJPY_1m_bid.parquet": "7a8ae0e3ab5d4eedda5eefc3e17304dec3fc8ac3d2b42b9125a0244411d823b7",
+  "data/fx_histdata/USDCAD_1m_bid.parquet": "2822d47ce28daa21ce27315c8ab9d9c92a1d57838be6a3d0f2e0e95da6c48c88",
+  "data/fx_histdata/NZDUSD_1m_bid.parquet": "61d02c23f9fd01070f1411c806e5595c2a7af15d89db1b47abe361fc4302b1b6",
+  "data/fx_histdata/XAUUSD_1m_bid.parquet": "6c973debdd47ea069bddbf86687f730b0c2d5d67931864e44b2b63fa53d0f819"
+ },
+ "aggregate_sha256": "00763a9620f98f8e191904311deba37a24661476a2c996de2e1d7ec1b5241a98"
+}
