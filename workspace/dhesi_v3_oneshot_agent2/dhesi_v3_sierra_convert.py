@@ -9,7 +9,8 @@ minutes 2026-06-23..06-30): with the chart in UTC, `Time` labels the bar START (
 lag -1 = 19.7%, lag +1 = 19.5%). Spec M4 requires bar-start UTC stamps: no shift is applied.
 
 Output: parquet, index `ts` (UTC, bar start), columns open, high, low, close(=Last), volume (float64).
-Nothing is filled, dropped, rounded or imputed. Rows are sorted only if the export is out of order (reported).
+Nothing is filled, dropped, rounded, imputed or REORDERED: out-of-order or duplicate rows are written as exported so
+integrity gate 1 (non_monotonic_steps / duplicate_timestamps) sees them and BLOCKS the run (Agent 1 review, PR #2).
 
 Prints METADATA ONLY (protocol V1 section 2.4 "Allowed"): hashes, row count, first/last stamp, duplicate count,
 non-parsable rows, out-of-order rows. It never prints or summarises a price, return, range or volume.
@@ -49,9 +50,7 @@ def convert(src: Path, dst: Path) -> dict:
     out = pd.DataFrame({v: pd.to_numeric(df[k], errors="coerce").astype("float64") for k, v in OUT_COLS.items()})
     out.index = pd.DatetimeIndex(ts).tz_localize("UTC")
     out.index.name = "ts"
-    out_of_order = int((out.index[1:] < out.index[:-1]).sum()) if len(out) > 1 else 0
-    if out_of_order:
-        out = out.sort_index(kind="mergesort")
+    out_of_order = int((out.index[1:] <= out.index[:-1]).sum()) if len(out) > 1 else 0   # reported, never repaired
     dst.parent.mkdir(parents=True, exist_ok=True)
     out.to_parquet(dst)
     meta = {
@@ -59,7 +58,7 @@ def convert(src: Path, dst: Path) -> dict:
         "output": str(dst), "output_sha256": sha(dst), "rows": int(len(out)),
         "first_utc": str(out.index.min()), "last_utc": str(out.index.max()),
         "unparsable_timestamps": bad_ts, "duplicate_timestamps": int(out.index.duplicated().sum()),
-        "out_of_order_rows_sorted": out_of_order,
+        "non_increasing_steps_left_for_gate1": out_of_order,
         "nonnumeric_cells": {c: int(out[c].isna().sum()) for c in out.columns},
         "convention": "UTC chart, bar-start stamps, Last->close, no fill/shift",
     }

@@ -3210,9 +3210,9 @@
    "window_status": "DEV",
    "n_configs": 1,
    "verdict": "DEV_POSITIVE_NOT_EVIDENCE",
-   "registered_at": "2026-09-24T06:25:26.784721+00:00",
+   "registered_at": "2026-09-24T06:36:50.957428+00:00",
    "prev_hash": "7a3ec976d9ae8a74428b2b22aa0f5736a9a5af45a06f530bc6a15e2f10a31c15",
-   "entry_hash": "d34dbd7370dea0d6c5d2f19b1ad2527b1257b4b73b1cccc49f7ef61e2f0ae451"
+   "entry_hash": "cee2ad95aad431004fc494c23fe0eea94f94ac13170442323f96c53deba6018f"
   },
   {
    "sr_per_trade": 0.2712,
@@ -3231,30 +3231,30 @@
    "window_status": "REUSED_HOLDOUT",
    "n_configs": 1,
    "verdict": "REUSED_NOT_EVIDENCE",
-   "registered_at": "2026-09-24T06:25:26.794796+00:00",
-   "prev_hash": "d34dbd7370dea0d6c5d2f19b1ad2527b1257b4b73b1cccc49f7ef61e2f0ae451",
-   "entry_hash": "8b4b273f92820c502132b654394122b88e3e76ac8d2cecffa834afc47281955d"
+   "registered_at": "2026-09-24T06:36:50.973306+00:00",
+   "prev_hash": "cee2ad95aad431004fc494c23fe0eea94f94ac13170442323f96c53deba6018f",
+   "entry_hash": "df14761eec6b83dd8a6646654c9d459adb0e9b1695e7e33b33a4caf5c9a4adaf"
   },
   {
    "sr_per_trade": null,
    "n_trades": null,
    "is_null_control": false,
-   "source": "workspace/dhesi_adjudication_agent1_2026-09-23/DHESI_V3_CANONICAL_SPEC_V1.md (8f330ae2\u20269c6059); registered by Agent 2; protocol V1 (49d8d8b9\u2026148793) + amendment 1 (74f3340f\u2026400e)",
-   "notes": "One-shot primary validation registered BEFORE harvest/run (protocol section 4.3). Start = earliest possible Sierra 1m date (conservative); actual first row set by the harvest. Becomes REUSED_HOLDOUT after the run.",
+   "source": "workspace/dhesi_adjudication_agent1_2026-09-23/DHESI_V3_CANONICAL_SPEC_V1.md (8f330ae2\u20269c6059); registered by Agent 2; protocol V1 (49d8d8b9\u2026148793) sections 2.3 / 4.3 + amendment 1 (74f3340f\u2026400e)",
+   "notes": "One-shot primary validation registered BEFORE harvest/run (protocol 4.3: window 2011-09 -> 2024-06-28; 2008-06 -> 2011-09 EXCLUDED by 2.3). Harvest requests from 2011-09-01; actual first row set by Sierra's 15-y limit. Becomes REUSED_HOLDOUT after the run.",
    "id": "NQ-dhesi-inversion-v3-untouched",
    "family": "dhesi_inversion",
-   "dataset": "Sierra NQ continuous 1m, volume-based roll, no back-adjust, UTC (to be harvested; sealed; hash bound in VALIDATION_BINDING_V2)",
+   "dataset": "Sierra NQ continuous 1m, volume-based roll, no back-adjust, UTC (to be harvested; sealed; hash bound via integrity JSON)",
    "dataset_group": "CME_EQUITY_INDEX",
    "data_window": {
-    "start": "2008-06-01",
+    "start": "2011-09-01",
     "end": "2024-06-28"
    },
    "window_status": "FRESH",
    "n_configs": 1,
    "verdict": "PENDING",
-   "registered_at": "2026-09-24T06:25:26.804238+00:00",
-   "prev_hash": "8b4b273f92820c502132b654394122b88e3e76ac8d2cecffa834afc47281955d",
-   "entry_hash": "be622db0410d0c7714a5c662aabae9f7e304baee21f876d8a1f4ab41d0aed209"
+   "registered_at": "2026-09-24T06:36:50.983857+00:00",
+   "prev_hash": "df14761eec6b83dd8a6646654c9d459adb0e9b1695e7e33b33a4caf5c9a4adaf",
+   "entry_hash": "216ebfdc047eba5ef757366e0a802f115f1ad5a1681a4494e95d968ccae06c4c"
   }
  ]
 }

@@ -47,7 +47,7 @@
    ],
    "state": "PREREGISTERED",
    "last_state_transition": "2026-09-24",
-   "reason": "Canonical spec + protocol V1 + amendment 1 frozen; PR #1 merged a1486c4; binding V2 36ae3bc1...; awaiting owner Sierra harvest, then integrity -> VALIDATION_READY",
+   "reason": "Canonical spec + protocol V1 + amendment 1 frozen; PR #1 merged a1486c4; binding V2 (see VALIDATION_BINDING_V2.json); awaiting owner Sierra harvest, then integrity -> VALIDATION_READY",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent2",
    "live_enabled": false
@@ -55,13 +55,13 @@
   {
    "strategy_id": "TRIDENT_V2",
    "family": "ext8_trident",
-   "spec_hash": "V2_PREREG_MANIFEST aggregate 00763a9620f98f8e191904311deba37a24661476a2c996de2e1d7ec1b5241a98",
-   "code_hash": null,
+   "spec_hash": "V2_PREREG_MANIFEST aggregate 37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+   "code_hash": "b765cae07a4e27236205aedfe9a4b891727ae6073bc29748b9c063296c2ee3c2",
    "dataset_hashes": {},
    "trial_ids": [],
-   "state": "DEVELOPMENT",
+   "state": "PREREGISTERED",
    "last_state_transition": "2026-09-24",
-   "reason": "V2 source spec frozen (manifest 00763a96...) but Agent 2 audit FAIL: unsupported C7 gate; must fix + re-freeze before DEV PnL",
+   "reason": "Re-frozen after Agent 2 audit (C7 unsourced gate removed); source audit PASS (64cc3fa) bound to manifest 37fcf7a3; DEV run pending; sealed FX/XAU 2025-01..2026-08 unread",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent1",
    "live_enabled": false
@@ -69,13 +69,13 @@
   {
    "strategy_id": "MMXM_V2",
    "family": "ext8_mmxm_ote",
-   "spec_hash": "V2_PREREG_MANIFEST aggregate 00763a9620f98f8e191904311deba37a24661476a2c996de2e1d7ec1b5241a98",
-   "code_hash": null,
+   "spec_hash": "V2_PREREG_MANIFEST aggregate 37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+   "code_hash": "4a899501e1f438a62e1c5a3838668026a05a2bcf8b64d5852bbbd1f17b870251",
    "dataset_hashes": {},
    "trial_ids": [],
    "state": "PREREGISTERED",
    "last_state_transition": "2026-09-24",
-   "reason": "V2 source spec audit PASS (Agent 2, 1c9228b); DEV run pending; sealed FX/XAU 2025-01..2026-08 unread",
+   "reason": "V2 source audit PASS (Agent 2, 64cc3fa) bound to manifest 37fcf7a3; DEV run pending; sealed FX/XAU 2025-01..2026-08 unread",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent1",
    "live_enabled": false
@@ -89,7 +89,7 @@
    "trial_ids": [],
    "state": "VALIDATING",
    "last_state_transition": "2026-09-24",
-   "reason": "Prospective recorder; evaluate once at >=3,500 eligible trades and >=14 days, or 45 days (FOMO_PROSPECTIVE_PREREGISTRATION.md 902263424c170fb7...)",
+   "reason": "Prospective recorder; evaluate once at >=3,500 eligible trades and >=14 days, or 45 days (FOMO_PROSPECTIVE_PREREGISTRATION.md 902263424c170fb7...). Recorder DOWN 24.1 h (last event 2026-09-23 10:25 local, not reboot-persistent); restarted unchanged code (sha db2f0f36...) as run 4 at epoch 1790231366 (Agent 1); outage = feed gap per run-1/2/3 precedent; eligible so far 2",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent1",
    "live_enabled": false

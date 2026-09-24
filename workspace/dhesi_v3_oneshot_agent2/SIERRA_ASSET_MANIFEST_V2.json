@@ -14,7 +14,7 @@
    "priority": 1,
    "instrument": "NQ continuous (volume roll, no back-adjust)",
    "resolution": "1 minute",
-   "range": "earliest available (~2009-11, 15-y intraday limit) -> 2024-10-31",
+   "range": "2011-09-01 (protocol V1 2.3) -> 2024-10-31",
    "est_disk": "0.3-0.7 GB",
    "purpose": "Dhesi v3 one-shot (RESERVED: metadata only before authorization)",
    "checklist": "SIERRA_OWNER_CHECKLIST.md"

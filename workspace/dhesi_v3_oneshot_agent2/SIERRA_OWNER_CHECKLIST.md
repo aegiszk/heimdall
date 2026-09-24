@@ -21,7 +21,7 @@ Menu names were checked against the Sierra Chart docs on 2026-09-24.
    | Session Times | Intraday Session Times | Start **00:00:00**, End **23:59:59** |
    | Session Times | Use Evening Session | **unticked** |
    | Session Times | Load Weekend Data | **ticked** |
-   | Data Limiting | Load Data Limiting Method | **Date Range**, From **2008-06-01**, To **2024-10-31** |
+   | Data Limiting | Load Data Limiting Method | **Date Range**, From **2011-09-01**, To **2024-10-31** (protocol V1 §2.3 excludes earlier data) |
 
    Press **OK**, then minimise Sierra. Wait until downloading stops; about 15–40 min is expected.
 6. Create the folder `C:\Users\Xerxus\Documents\Heimdall\validation_data\SEALED\`.

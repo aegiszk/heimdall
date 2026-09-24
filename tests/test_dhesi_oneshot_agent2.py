@@ -46,6 +46,18 @@ def test_converter_rejects_wrong_header(tmp_path):
         CONV.convert(src, tmp_path / "bad.parquet")
 
 
+def test_converter_never_reorders_so_gate1_blocks(tmp_path):
+    import importlib.util as iu
+    s_ = iu.spec_from_file_location("hi", ROOT / "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_harvest_integrity.py")
+    hi = iu.module_from_spec(s_); s_.loader.exec_module(hi)
+    lines = SIERRA.strip().split("\n")
+    src = tmp_path / "o.txt"; src.write_text("\n".join([lines[0], lines[2], lines[1], lines[3]]) + "\n")
+    meta = CONV.convert(src, tmp_path / "o.parquet")
+    df = pd.read_parquet(tmp_path / "o.parquet")
+    assert meta["non_increasing_steps_left_for_gate1"] == 1 and not df.index.is_monotonic_increasing
+    assert hi.row_integrity(df)["gate1_rows_valid"] is False
+
+
 def test_converter_reports_duplicates(tmp_path):
     src = tmp_path / "d.txt"; src.write_text(SIERRA + "2023/6/5, 13:33:00, 101.00, 101.50, 100.75, 101.25, 30, 20, 10, 20\n")
     assert CONV.convert(src, tmp_path / "d.parquet")["duplicate_timestamps"] == 1

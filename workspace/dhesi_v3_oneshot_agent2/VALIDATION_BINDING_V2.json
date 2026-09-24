@@ -24,7 +24,7 @@
   },
   "converter": {
    "path": "workspace/dhesi_v3_oneshot_agent2/dhesi_v3_sierra_convert.py",
-   "sha256": "8be2ae4de2a55fcd7e0335d0fc08e10f42d90a57900adba40de91bc7a272f5bd"
+   "sha256": "0fd1be0b9910a518df529d8d6e1f0245f0dc5e3b68fcdbffe9e650fbdaaf10a2"
   },
   "report_tool": {
    "path": "workspace/dhesi_v3_oneshot_agent2/dhesi_v3_report.py",
@@ -70,8 +70,8 @@
  "trials_ledger": {
   "trial_id": "NQ-dhesi-inversion-v3-untouched",
   "index": 154,
-  "entry_hash": "be622db0410d0c7714a5c662aabae9f7e304baee21f876d8a1f4ab41d0aed209",
-  "ledger_file_sha256_at_binding": "282a833c1b71b7527c73dbf6b81805dde80e2b63349a4aae2478804a0c943307",
+  "entry_hash": "216ebfdc047eba5ef757366e0a802f115f1ad5a1681a4494e95d968ccae06c4c",
+  "ledger_file_sha256_at_binding": "475869a82a6c79c590f77132086ea32f7c1be0b8d1af234f7a444fa3f344e860",
   "rule": "append-only: preflight requires the same entry_hash at the same index and a valid chain; later appends allowed"
  },
  "frozen_parameters": {
