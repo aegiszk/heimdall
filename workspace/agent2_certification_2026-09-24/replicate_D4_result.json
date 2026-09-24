@@ -1,0 +1,152 @@
+{
+ "MNQ": {
+  "n": 295,
+  "mean_R": 0.1512,
+  "median_R": -0.383,
+  "win": 0.349,
+  "ci95": [
+   -0.036,
+   0.347
+  ],
+  "drop_top5": 0.0144,
+  "drop_top1pct": 0.0645,
+  "top5_share_of_sumR": 0.91,
+  "bull": {
+   "n": 192,
+   "mean_R": 0.257
+  },
+  "bear": {
+   "n": 103,
+   "mean_R": -0.047
+  },
+  "by_year": {
+   "2024": 0.223,
+   "2025": 0.083,
+   "2026": 0.196
+  },
+  "vs_agent1": {
+   "n_a2": 295,
+   "n_a1": 295,
+   "matched": 0,
+   "field_mismatch": {
+    "entry": 0,
+    "stop0": 0,
+    "R": 0,
+    "t_exit": 0
+   }
+  }
+ },
+ "MNQ_one_bar_delay": {
+  "n": 274,
+  "mean_R": 0.1097,
+  "median_R": -0.219,
+  "win": 0.376,
+  "ci95": [
+   -0.075,
+   0.315
+  ],
+  "drop_top5": -0.0355,
+  "drop_top1pct": 0.0037,
+  "top5_share_of_sumR": 1.32
+ },
+ "MNQ_cost_x1.5": {
+  "n": 295,
+  "mean_R": 0.141,
+  "median_R": -0.387,
+  "win": 0.349,
+  "ci95": [
+   -0.046,
+   0.337
+  ],
+  "drop_top5": 0.0049,
+  "drop_top1pct": 0.0548,
+  "top5_share_of_sumR": 0.97
+ },
+ "MNQ_slip_x3": {
+  "n": 295,
+  "mean_R": 0.1315,
+  "median_R": -0.39,
+  "win": 0.342,
+  "ci95": [
+   -0.054,
+   0.326
+  ],
+  "drop_top5": -0.0031,
+  "drop_top1pct": 0.0464,
+  "top5_share_of_sumR": 1.02
+ },
+ "MNQ_frictionless": {
+  "n": 295,
+  "mean_R": 0.1717,
+  "median_R": -0.374,
+  "win": 0.356,
+  "ci95": [
+   -0.016,
+   0.369
+  ],
+  "drop_top5": 0.0338,
+  "drop_top1pct": 0.0842,
+  "top5_share_of_sumR": 0.81
+ },
+ "ES": {
+  "n": 290,
+  "mean_R": -0.0539,
+  "median_R": -0.428,
+  "win": 0.331,
+  "ci95": [
+   -0.206,
+   0.106
+  ],
+  "drop_top5": -0.156,
+  "drop_top1pct": -0.123,
+  "top5_share_of_sumR": null,
+  "bull": {
+   "n": 190,
+   "mean_R": -0.018
+  },
+  "bear": {
+   "n": 100,
+   "mean_R": -0.121
+  },
+  "by_year": {
+   "2024": 0.053,
+   "2025": -0.11,
+   "2026": -0.062
+  },
+  "vs_agent1": {
+   "n_a2": 290,
+   "n_a1": 290,
+   "matched": 0,
+   "field_mismatch": {
+    "entry": 0,
+    "stop0": 0,
+    "R": 0,
+    "t_exit": 0
+   }
+  }
+ },
+ "XAUUSD": {
+  "n": 458,
+  "mean_R": -0.0727,
+  "median_R": -0.555,
+  "win": 0.258,
+  "ci95": [
+   -0.226,
+   0.087
+  ],
+  "drop_top5": -0.1747,
+  "drop_top1pct": -0.1747,
+  "top5_share_of_sumR": null,
+  "vs_agent1": {
+   "n_a2": 458,
+   "n_a1": 458,
+   "matched": 458,
+   "field_mismatch": {
+    "entry": 0,
+    "stop0": 0,
+    "R": 0,
+    "t_exit": 0
+   }
+  }
+ }
+}

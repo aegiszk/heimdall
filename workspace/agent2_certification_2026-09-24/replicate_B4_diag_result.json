@@ -1,0 +1,54 @@
+{
+ "a_agent1_expiry": {
+  "n": 70,
+  "mean_R": -0.638,
+  "win": 0.071,
+  "ci95": [
+   -0.83,
+   -0.414
+  ],
+  "reasons": {
+   "stop": 56,
+   "be": 8,
+   "target": 5,
+   "max_hold": 1
+  },
+  "vs_agent1": {
+   "n_a2": 70,
+   "n_a1": 70,
+   "matched": 70,
+   "only_a2": 0,
+   "only_a1": 0,
+   "field_mismatch": {
+    "entry": 0,
+    "stop0": 0,
+    "R": 0,
+    "t_exit": 0,
+    "reason": 0
+   },
+   "mismatch_rate": 0.0
+  }
+ },
+ "b_prereg_expiry": {
+  "n": 43,
+  "mean_R": -0.741,
+  "win": 0.047,
+  "ci95": [
+   -0.922,
+   -0.494
+  ],
+  "reasons": {
+   "stop": 36,
+   "be": 5,
+   "target": 2
+  }
+ },
+ "placebo_random_entry_same_geometry": {
+  "reps": 50,
+  "placebo_mean_R": -0.021,
+  "placebo_p05_p95": [
+   -0.322,
+   0.393
+  ]
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "PO3": {
+  "sessions": 515,
+  "nq_sweeps_09h_extreme_in_10h": 477,
+  "smt_bear": 23,
+  "smt_bull": 27,
+  "smt_setups_per_year_upper_bound": 24.5,
+  "agent1_C1_trades_per_year": 22.1
+ },
+ "Trident_EURUSD": {
+  "fvg": 200.0,
+  "doji": 54.7,
+  "wick_ce": 19.3,
+  "body_above": 9.3,
+  "confirm": 6.0,
+  "ema_stack": 3.7,
+  "ema200": 2.0,
+  "unit": "per year, EURUSD, DEV 2022-2024",
+  "agent1_E1_EURUSD_trades_total": 2
+ }
+}

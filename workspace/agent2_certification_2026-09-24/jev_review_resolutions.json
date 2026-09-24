@@ -1,0 +1,8 @@
+{"rule": "cookbook AUTO_ACCEPT 0.8; below -> Agent 2 manual reading of the same verbatim section decides",
+ "resolutions": [
+  {"claim": "G US-stock order flow", "jev": "supports 0.50", "final": "VERIFIED", "basis": "0:00:00 'his entire orderflow strategy' + Tesla/NVDA/tape/Bookmap throughout (1:17:26, 1:55:57)"},
+  {"claim": "G Camarilla levels", "jev": "partially_supports 0.44", "final": "PARTIALLY_VERIFIED", "basis": "S3/S4/R3 spoken; the word Camarilla is never spoken (grep 0 hits)"},
+  {"claim": "C SMT at 0:48:12", "jev": "says_nothing 0.33", "final": "PARTIALLY_VERIFIED", "basis": "cited block has no SMT/ES; SMT stated at 0:28:59 and 1:01:03; tie to the 10:00 sweep is INTERPRETED"},
+  {"claim": "C BE when 15m low taken", "jev": "supports 0.62", "final": "VERIFIED", "basis": "1:01:56 verbatim 'as soon as we take out the 15minute low ... break even'"},
+  {"claim": "E 30m single timeframe", "jev": "partially_supports 0.47", "final": "VERIFIED", "basis": "0:02:47 'we're only going to be trading on one time frame ... the 30 mi[nute]' (word split across block)"}
+ ]}

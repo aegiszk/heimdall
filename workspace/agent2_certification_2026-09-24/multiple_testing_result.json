@@ -1,0 +1,33 @@
+{
+ "n_trial_rows_with_logs": 62,
+ "n_valid": 58,
+ "n_invalid_first_runs": 4,
+ "holm_min_adj_p_valid": 1.0,
+ "bh_min_q_valid": 1.0,
+ "raw_min_p": 0.0293169912561424,
+ "raw_min_p_trial": "D4_G_long_1h_pivot|MNQ",
+ "family_size_used_valid_n_ge_3": 53,
+ "dsr_best_n30": {
+  "trial": "C2_3m_overnight_H4|MNQ",
+  "sr_var": 0.0307,
+  "K_program_62": 0.0821,
+  "K_global_ledger_configs": 433,
+  "K_global": 0.0194
+ },
+ "white_rc_CME": {
+  "K": 18,
+  "T_union_trade_days": 517,
+  "T_full_calendar": 522,
+  "best": "D4_G_long_1h_pivot|MNQ",
+  "p_union": 0.454,
+  "p_full_calendar": 0.4265
+ },
+ "white_rc_FX_XAU": {
+  "K": 4,
+  "T_union_trade_days": 613,
+  "T_full_calendar": 780,
+  "best": "D4_G_long_1h_pivot|XAUUSD",
+  "p_union": 0.9635,
+  "p_full_calendar": 0.971
+ }
+}
