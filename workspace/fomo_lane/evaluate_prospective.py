@@ -6,7 +6,7 @@
 import json, os, sys, glob, bisect, collections
 import numpy as np
 
-HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(HERE, "data")
+HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(HERE, "data_amend1")   # Amendment 1 sample
 PREREG_SHA = "902263424c170fb7920c0a0880f056a8c7cc1b80e9a8dd5f2708a883c72fbc39"
 SIZE, GAS, EXIT_S, MUE, N_TARGET, MIN_DAYS, MAX_DAYS = 500.0, 0.66, 1800, 0.05, 3500, 14, 45
 EXTRA_MS = [0, 100, 250, 500, 1000, 2000, 5000]
@@ -44,6 +44,9 @@ def integrity():
         "s2_pass": sum(bool(e.get("s2_transfer_ok")) for e in ev),
         "s3_pass": sum(e.get("s3_impact") is not None and e["s3_impact"] <= 0.05 for e in ev),
         "eligible": sum(bool(e.get("eligible")) for e in ev),
+        # Amendment 1 sample clock: only events decided after the amended recorder reported warmup_complete=true count
+        "eligible_counted": sum(bool(e.get("eligible")) and bool(e.get("warmup_complete")) for e in ev),
+        "events_pre_warmup": sum(not e.get("warmup_complete") for e in ev),
         "eligible_missing_src_block_time": sum(bool(e.get("eligible")) and not e.get("t_arr_src_ns") for e in ev),
         "exit_checks_done": len(ex), "exit_transfer_failed": sum(x.get("exit_transfer_ok") is False for x in ex),
         "feed_blocks_recorded": len(bnums), "feed_block_span": span,
@@ -171,9 +174,9 @@ def compute(events, rtt, dec_fn, fee3_fn, exits_by_id, selftest=False):
 
 def final(selftest=False):
     rep = integrity()
-    ok = (rep["eligible"] >= N_TARGET and rep["days_elapsed"] >= MIN_DAYS) or rep["days_elapsed"] >= MAX_DAYS
+    ok = (rep["eligible_counted"] >= N_TARGET and rep["days_elapsed"] >= MIN_DAYS) or rep["days_elapsed"] >= MAX_DAYS
     if not ok and not selftest:
-        print(json.dumps({"REFUSED": "frozen stopping rule not met", **{k: rep[k] for k in ("eligible", "days_elapsed")}}, indent=1))
+        print(json.dumps({"REFUSED": "frozen stopping rule not met", **{k: rep[k] for k in ("eligible_counted", "days_elapsed")}}, indent=1))
         sys.exit(2)
     import requests
     RPC = "https://rpc.mainnet.chain.robinhood.com"; dc, fc = {}, {}
@@ -195,7 +198,8 @@ def final(selftest=False):
         return (not e.get("t_arr_src_ns")) or (e["t_detect_rpc"] - e["t_arr_src_ns"] / 1e9 > 10.0)
     allev = [e for e in load("events") if "id" in e]
     n_late = sum(late(e) for e in allev)
-    evs = [e for e in allev if not late(e) and e.get("route") not in (None, "UNROUTABLE") and e.get("universe")]
+    evs = [e for e in allev if not late(e) and e.get("route") not in (None, "UNROUTABLE") and e.get("universe")
+           and e.get("warmup_complete")]                          # Amendment 1 sample clock
     exits = {x["id"]: x for x in load("exits")}
     rows, cov = compute(evs, load("rtt"), dec_fn, fee3_fn, exits, selftest)
     if selftest:   # NO RETURNS PRINTED

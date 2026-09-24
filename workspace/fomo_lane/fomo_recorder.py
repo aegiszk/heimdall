@@ -1,6 +1,6 @@
 """FOMO prospective recorder (FOMO_PROSPECTIVE_PREREGISTRATION.md, SHA-256 902263424c17...).
 
-READ-ONLY. No keys, no signing, no transactions. Records, append-only JSONL under data/:
+READ-ONLY. No keys, no signing, no transactions. Records, append-only JSONL under data_amend1/ (Amendment 1; run 1-4 data/ kept):
   blocks/  L2 block arrival times on the sequencer feed (block = seq - 2)
   rtt/     sequencer / RPC round-trip probes
   logs/    raw swap/sync/UserOp/executor-Transfer logs (for offline pool-state replay)
@@ -12,7 +12,7 @@ import asyncio, aiohttp, json, os, sys, time, threading, heapq, collections, tra
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "data")
+OUT = os.path.join(HERE, "data_amend1")          # Amendment 1: fresh sample; pre-amendment data/ kept for the record
 RPC = "https://rpc.mainnet.chain.robinhood.com"
 FEED = "wss://feed.mainnet.chain.robinhood.com"
 SEQ = "https://sequencer.mainnet.chain.robinhood.com"
@@ -39,22 +39,76 @@ def write(kind, obj):
     with WRITE_LOCK:
         with open(os.path.join(d, day() + ".jsonl"), "a") as f: f.write(line)
 
+# ---------------- Amendment 1: RPC rate discipline (infrastructure only) ----------------
+# The public RPC answers HTTP 429 on eth_getLogs under load. Before Amendment 1 a rate-limited call counted as a failure,
+# get_logs() bisected the range and multiplied the load, and the 72 h warm-up never completed. Now: token bucket per
+# method class with AIMD on 429, rate errors never bisect, and warm-up calls are low priority (they wait while the live
+# poll loop lags). Decision logic, universe definition and all thresholds are unchanged.
+MAIN_LAG = [0]                    # live poll loop: head - last processed block
+WARMUP_MAX_MAIN_LAG = 300         # warm-up pauses while the poll loop is further behind than this (blocks)
+WARMUP_CHUNK0, WARMUP_CHUNK_MIN, WARMUP_CHUNK_MAX = 20_000, 100, 200_000
+_LOW = threading.local()          # _LOW.on = True marks warm-up threads
+
+class RateLimited(RuntimeError): pass
+
+class _Gate:
+    def __init__(self, name, rate, lo, hi):
+        self.name, self.rate, self.lo, self.hi = name, rate, lo, hi
+        self.tokens, self.t, self.t_low, self.cool_until, self.backoff, self.ok = 1.0, time.time(), 0.0, 0.0, 5.0, 0
+        self.lock = threading.Lock()
+    def acquire(self, low):
+        while True:
+            with self.lock:
+                now = time.time()
+                self.tokens = min(max(1.0, self.rate), self.tokens + (now - self.t) * self.rate); self.t = now
+                blocked = now < self.cool_until or (low and (MAIN_LAG[0] > WARMUP_MAX_MAIN_LAG
+                                                             or now - self.t_low < 2.0 / self.rate))
+                if not blocked and self.tokens >= 1.0:
+                    self.tokens -= 1.0
+                    if low: self.t_low = now
+                    return
+                wait = max(self.cool_until - now, (1.0 - self.tokens) / self.rate, 0.05)
+            time.sleep(min(wait, 1.0))
+    def limited(self):
+        with self.lock:
+            self.rate = max(self.lo, self.rate / 2); self.ok = 0
+            self.cool_until = time.time() + self.backoff; cool = self.backoff; self.backoff = min(self.backoff * 2, 300.0)
+        write("rtt", {"t": time.time(), "rpc_429": self.name, "rate_per_s": self.rate, "cooldown_s": cool})
+    def success(self):
+        with self.lock:
+            self.backoff = 5.0; self.ok += 1
+            if self.ok >= 50: self.rate = min(self.hi, self.rate + 0.25); self.ok = 0
+
+GATES = {"logs": _Gate("eth_getLogs", 2.0, 0.5, 5.0), "other": _Gate("other", 10.0, 0.5, 20.0)}
+
 SESSION = requests.Session()
-def rpc(method, params, url=RPC, tries=6):
-    for k in range(tries):
+def rpc(method, params, url=RPC, tries=6, rate_tries=40):
+    gate = (GATES["logs"] if method == "eth_getLogs" else GATES["other"]) if url == RPC else None
+    low = getattr(_LOW, "on", False); k = 0; r = 0
+    while k < tries:
+        if gate: gate.acquire(low)
         try:
-            j = SESSION.post(url, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params}, timeout=30).json()
+            resp = SESSION.post(url, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params}, timeout=30)
+            j = {} if resp.status_code == 429 else resp.json()
             e = str(j.get("error", ""))
-            if "429" in e or "Too Many" in e: time.sleep(1.5 * (k + 1)); continue
+            if resp.status_code == 429 or "429" in e or "Too Many" in e:
+                r += 1
+                if gate: gate.limited()
+                else: time.sleep(1.5 * r)
+                if r >= rate_tries: raise RateLimited(f"rpc {method} rate-limited")
+                continue
             if "error" in j: raise RuntimeError(e)
+            if gate: gate.success()
             return j["result"]
-        except requests.RequestException:
-            time.sleep(1.5 * (k + 1))
+        except (requests.RequestException, ValueError):
+            k += 1; time.sleep(1.5 * k)
     raise RuntimeError(f"rpc {method} gave up")
 
 def get_logs(flt, a, b):
     try:
         return rpc("eth_getLogs", [dict(flt, fromBlock=hex(a), toBlock=hex(b))])
+    except RateLimited:
+        raise                                     # never bisect on a rate limit (that multiplies the load)
     except RuntimeError as ex:
         if b - a < 50: raise
         m = (a + b) // 2
@@ -165,19 +219,40 @@ def _universe_ok(wallet, now):
 
 def warmup(head):
     """72 h of executor transfers before start -> per-wallet buy timestamps (block time)."""
+    _LOW.on = True                                                     # Amendment 1: low-priority RPC
     t_head = time.time(); start = head - int(UNIVERSE_WINDOW * 10.2)   # ~10 blocks/s measured
-    logs = []; a = start
-    while a <= head:
-        b = min(head, a + 200_000)
-        try: logs += get_logs({"topics": [T_TRANSFER, "0x" + "0" * 24 + EXECUTOR[2:]]}, a, b)
-        except Exception as ex: write("rtt", {"t": time.time(), "warmup_gap": [a, b], "err": str(ex)[:120]})
-        a = b + 1
+    flt = {"topics": [T_TRANSFER, "0x" + "0" * 24 + EXECUTOR[2:]]}
+    # Amendment 1: adaptive chunks, no recursive bisection; a range that fails at the minimum chunk is a gap and is
+    # retried until it succeeds, so warmup_complete is set only after a gap-free pass over the whole 72 h window.
+    logs = []; todo = [(start, head)]; chunk = WARMUP_CHUNK0; calls = 0
+    while todo:
+        a, end = todo.pop(0)
+        while a <= end:
+            b = min(end, a + chunk - 1)
+            try:
+                logs += rpc("eth_getLogs", [dict(flt, fromBlock=hex(a), toBlock=hex(b))])
+                a = b + 1; chunk = min(WARMUP_CHUNK_MAX, int(chunk * 1.5))
+            except RateLimited:
+                pass                                                   # the gate has cooled down; retry the range
+            except Exception as ex:
+                if chunk > WARMUP_CHUNK_MIN:
+                    chunk = max(WARMUP_CHUNK_MIN, chunk // 2)
+                else:
+                    write("rtt", {"t": time.time(), "warmup_gap": [a, b], "err": str(ex)[:120]})
+                    todo.append((a, b)); a = b + 1; time.sleep(5)
+            calls += 1
+            if calls % 25 == 0:
+                write("rtt", {"t": time.time(), "warmup_progress": [a, end], "warmup_start": start, "warmup_logs": len(logs),
+                              "chunk": chunk, "pending_gaps": len(todo)})
     from concurrent.futures import ThreadPoolExecutor
     rec = [(("0x" + l["topics"][2][-40:]).lower(), int(l["blockNumber"], 16)) for l in logs]
     addrs = sorted({a for a, _ in rec})
     def chk(a):
-        try: return a, is_fomo_wallet(a)
-        except Exception: return a, False
+        _LOW.on = True
+        for _ in range(3):
+            try: return a, is_fomo_wallet(a)
+            except Exception: time.sleep(5)
+        return a, False
     with ThreadPoolExecutor(8) as pool:
         fomo = dict(pool.map(chk, addrs))
     n = 0; warm = collections.defaultdict(list)
@@ -327,7 +402,8 @@ T_START = time.time()
 def main():
     threading.Thread(target=feed_thread, daemon=True).start()
     head = int(rpc("eth_blockNumber", []), 16)
-    write("rtt", {"t": time.time(), "start_head": head, "prereg_sha256": "902263424c170fb7920c0a0880f056a8c7cc1b80e9a8dd5f2708a883c72fbc39"})
+    write("rtt", {"t": time.time(), "start_head": head, "prereg_sha256": "902263424c170fb7920c0a0880f056a8c7cc1b80e9a8dd5f2708a883c72fbc39",
+                 "amendment": "FOMO_PROSPECTIVE_PREREGISTRATION_AMENDMENT_1.md"})
     threading.Thread(target=warmup, args=(head,), daemon=True).start()   # universe warm-up off the hot path
     last = head; last_rtt = 0
     while True:
@@ -335,6 +411,7 @@ def main():
             now = time.time()
             if now - last_rtt > 600: rtt_probe(); last_rtt = now
             head = int(rpc("eth_blockNumber", []), 16)
+            MAIN_LAG[0] = head - last
             if head > last:
                 a, b = last + 1, min(head, last + 100)
                 pl = get_logs({"topics": [[T_SWAP4, T_SWAP3, T_SWAP2, T_SYNC2, T_UOE]]}, a, b)
@@ -349,6 +426,7 @@ def main():
                                    "t": l["topics"], "d": l["data"], "tx": l["transactionHash"].lower()})
                     WORKERS.submit(safe_handle, l, now)
                 last = b
+            MAIN_LAG[0] = head - last
             run_exit_checks(time.time())
             if len(BLOCK_T) > 200_000:
                 for k in sorted(BLOCK_T)[:-100_000]: BLOCK_T.pop(k, None)
