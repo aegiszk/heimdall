@@ -1,0 +1,28 @@
+{
+  "defect_1_simpsons_paradox": {
+    "pooled_spread_bps": 4.217,
+    "per_session_mean_spread_bps": -1.272,
+    "per_session_median_spread_bps": -2.071,
+    "pct_sessions_positive": 36.51,
+    "verdict": "FALSE_POSITIVE_SIMPSONS_PARADOX"
+  },
+  "defect_2_hac_inflation": {
+    "beta_src_delta": -0.115423,
+    "ols_se": 0.027629,
+    "ols_t_stat": -4.18,
+    "hac_se": 0.040877,
+    "hac_t_stat": -2.82,
+    "t_stat_inflation_pct": 47.95
+  },
+  "defect_3_unaligned_rollover": {
+    "full_sample_mean_ticks": 20.004,
+    "full_sample_median_ticks": 2.0,
+    "full_sample_p95_ticks": 7.0,
+    "full_sample_max_ticks": 1208.0,
+    "roll_week_bars_affected": 6900,
+    "clean_sample_mean_ticks": 2.161,
+    "clean_sample_median_ticks": 2.0,
+    "clean_sample_p95_ticks": 6.0,
+    "verdict": "UNALIGNED_ROLLOVER_CORRUPTED_MEAN"
+  }
+}

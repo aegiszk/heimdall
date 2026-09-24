@@ -1,0 +1,20 @@
+events with candles: 189 / 678 ; baseline draws: 483
+median modelled round-trip cost: 0.0926  liquidity median $ 28585
+
+ENTRY A
+   5m: n= 189 gross mean +0.520 median +0.002 win 0.51 | NET mean +0.346 median -0.056 win 0.35 95%CI [+0.017,+0.768]
+  30m: n= 173 gross mean +2.165 median -0.088 win 0.34 | NET mean +1.987 median -0.225 win 0.24 95%CI [+0.470,+3.824]
+   2h: n= 169 gross mean +3.332 median -0.259 win 0.30 | NET mean +3.151 median -0.367 win 0.25 95%CI [+0.875,+6.018]
+   6h: n= 159 gross mean +1.213 median -0.433 win 0.21 | NET mean +1.032 median -0.540 win 0.17 95%CI [-0.502,+3.173]
+
+ENTRY B
+   5m: n= 188 gross mean +0.336 median -0.004 win 0.46 | NET mean +0.165 median -0.095 win 0.28 95%CI [-0.077,+0.490]
+  30m: n= 173 gross mean +1.132 median -0.090 win 0.29 | NET mean +0.954 median -0.246 win 0.22 95%CI [+0.123,+1.988]
+   2h: n= 169 gross mean +1.768 median -0.255 win 0.27 | NET mean +1.588 median -0.374 win 0.23 95%CI [+0.329,+3.221]
+   6h: n= 159 gross mean +0.522 median -0.426 win 0.24 | NET mean +0.341 median -0.532 win 0.18 95%CI [-0.494,+1.437]
+
+BASELINE random entry (same pools)
+   5m: n= 483 gross mean +0.194 median -0.002 | NET mean +0.016 median -0.091
+  30m: n= 483 gross mean +0.135 median -0.011 | NET mean -0.044 median -0.078
+   2h: n= 483 gross mean +0.103 median -0.045 | NET mean -0.076 median -0.140
+   6h: n= 483 gross mean +0.155 median -0.092 | NET mean -0.024 median -0.186

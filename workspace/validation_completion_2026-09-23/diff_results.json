@@ -1,0 +1,173 @@
+{
+ "engine": "backtesting.py 0.6.6 (Python 3.12.10, pandas 3.0.6, numpy 2.5.3)",
+ "fixtures": {
+  "F1_long_1000_20x20": {
+   "heimdall_trades": 515,
+   "bt_trades": 515,
+   "unmatched": 0,
+   "heimdall_total_pnl": -2859.0,
+   "bt_total_pnl_usd": -2425.0,
+   "raw_total_pnl_diff": -434.0,
+   "raw_nonzero_pnl_diffs": 515,
+   "raw_diff_by_reason": [
+    {
+     "reason": "stop",
+     "bt_reason": "stop",
+     "count": 353,
+     "min": -1.0,
+     "max": -1.0,
+     "sum": -353.0
+    },
+    {
+     "reason": "target",
+     "bt_reason": "target",
+     "count": 162,
+     "min": -0.5,
+     "max": -0.5,
+     "sum": -81.0
+    }
+   ],
+   "exit_time_mismatch": 0,
+   "reason_mismatch": 0,
+   "gap_stop_trades": 0,
+   "gap_target_trades": 0,
+   "exit_bar_both_levels_touched": 230,
+   "exit_bar_both_levels_touched_resolved_as_stop": 230,
+   "residual_nonzero_entry": 0,
+   "residual_nonzero_exit": 0,
+   "residual_nonzero_pnl": 0,
+   "residual_total_pnl": 0.0,
+   "residual_max_abs_pnl": 0.0
+  },
+  "F2_short_1530_80x240": {
+   "heimdall_trades": 495,
+   "bt_trades": 495,
+   "unmatched": 0,
+   "heimdall_total_pnl": -3040.5,
+   "bt_total_pnl_usd": -2583.0,
+   "raw_total_pnl_diff": -457.5,
+   "raw_nonzero_pnl_diffs": 495,
+   "raw_diff_by_reason": [
+    {
+     "reason": "session_flatten",
+     "bt_reason": "flatten",
+     "count": 75,
+     "min": -1.0,
+     "max": -1.0,
+     "sum": -75.0
+    },
+    {
+     "reason": "stop",
+     "bt_reason": "stop",
+     "count": 345,
+     "min": -1.0,
+     "max": -1.0,
+     "sum": -345.0
+    },
+    {
+     "reason": "target",
+     "bt_reason": "target",
+     "count": 75,
+     "min": -0.5,
+     "max": -0.5,
+     "sum": -37.5
+    }
+   ],
+   "exit_time_mismatch": 0,
+   "reason_mismatch": 0,
+   "gap_stop_trades": 0,
+   "gap_target_trades": 0,
+   "exit_bar_both_levels_touched": 0,
+   "exit_bar_both_levels_touched_resolved_as_stop": 0,
+   "residual_nonzero_entry": 0,
+   "residual_nonzero_exit": 0,
+   "residual_nonzero_pnl": 0,
+   "residual_total_pnl": 0.0,
+   "residual_max_abs_pnl": 0.0
+  },
+  "F3_two_per_day_6x6": {
+   "heimdall_trades": 1010,
+   "bt_trades": 1010,
+   "unmatched": 0,
+   "heimdall_total_pnl": -4245.0,
+   "bt_total_pnl_usd": -3298.5,
+   "raw_total_pnl_diff": -946.5,
+   "raw_nonzero_pnl_diffs": 1010,
+   "raw_diff_by_reason": [
+    {
+     "reason": "gap_stop",
+     "bt_reason": "stop",
+     "count": 8,
+     "min": -1.0,
+     "max": -0.5,
+     "sum": -4.5
+    },
+    {
+     "reason": "stop",
+     "bt_reason": "stop",
+     "count": 878,
+     "min": -1.0,
+     "max": -1.0,
+     "sum": -878.0
+    },
+    {
+     "reason": "target",
+     "bt_reason": "target",
+     "count": 124,
+     "min": -2.0,
+     "max": -0.5,
+     "sum": -64.0
+    }
+   ],
+   "exit_time_mismatch": 0,
+   "reason_mismatch": 0,
+   "gap_stop_trades": 7,
+   "gap_target_trades": 2,
+   "exit_bar_both_levels_touched": 747,
+   "exit_bar_both_levels_touched_resolved_as_stop": 747,
+   "residual_nonzero_entry": 0,
+   "residual_nonzero_exit": 0,
+   "residual_nonzero_pnl": 0,
+   "residual_total_pnl": 0.0,
+   "residual_max_abs_pnl": 0.0
+  },
+  "F4_random_200": {
+   "heimdall_trades": 197,
+   "bt_trades": 197,
+   "unmatched": 0,
+   "heimdall_total_pnl": -422.5,
+   "bt_total_pnl_usd": -267.0,
+   "raw_total_pnl_diff": -155.5,
+   "raw_nonzero_pnl_diffs": 197,
+   "raw_diff_by_reason": [
+    {
+     "reason": "stop",
+     "bt_reason": "stop",
+     "count": 114,
+     "min": -1.0,
+     "max": -1.0,
+     "sum": -114.0
+    },
+    {
+     "reason": "target",
+     "bt_reason": "target",
+     "count": 83,
+     "min": -0.5,
+     "max": -0.5,
+     "sum": -41.5
+    }
+   ],
+   "exit_time_mismatch": 0,
+   "reason_mismatch": 0,
+   "gap_stop_trades": 0,
+   "gap_target_trades": 0,
+   "exit_bar_both_levels_touched": 4,
+   "exit_bar_both_levels_touched_resolved_as_stop": 4,
+   "residual_nonzero_entry": 0,
+   "residual_nonzero_exit": 0,
+   "residual_nonzero_pnl": 0,
+   "residual_total_pnl": 0.0,
+   "residual_max_abs_pnl": 0.0
+  }
+ }
+}

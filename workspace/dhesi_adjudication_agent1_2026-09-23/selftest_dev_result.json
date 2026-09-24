@@ -1,0 +1,8 @@
+{
+ "mode": "selftest-dev",
+ "data": "DEVELOPMENT data/MNQ_1m.parquet",
+ "floor_pts_MNQ": 10.0,
+ "ref_trades": 49,
+ "official_trades": 49,
+ "identical": true
+}

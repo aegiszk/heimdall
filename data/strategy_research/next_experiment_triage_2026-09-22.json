@@ -1,0 +1,47 @@
+﻿{
+  "assessments": [
+    {
+      "candidate_id": "va_reacceptance",
+      "codifiability_confidence": 0.39,
+      "codifiability_score": 1.59,
+      "data_ready_probability": 0.63,
+      "name": "Prior-session value-area re-acceptance (auction-market 80% rule)",
+      "target_fit_probability": 0.85
+    },
+    {
+      "candidate_id": "poor_extreme_repair",
+      "codifiability_confidence": 0.94,
+      "codifiability_score": 0.96,
+      "data_ready_probability": 0.75,
+      "name": "Prior-session poor high or low repair",
+      "target_fit_probability": 0.74
+    },
+    {
+      "candidate_id": "nq_es_delta_divergence",
+      "codifiability_confidence": 0.74,
+      "codifiability_score": 0.84,
+      "data_ready_probability": 0.51,
+      "name": "NQ versus ES one-minute delta divergence",
+      "target_fit_probability": 0.41
+    },
+    {
+      "candidate_id": "pause_strategy_research",
+      "codifiability_confidence": 0.0,
+      "codifiability_score": 0.71,
+      "data_ready_probability": 0.72,
+      "name": "Pause new strategy tests until execution access is confirmed",
+      "target_fit_probability": 0.23
+    }
+  ],
+  "human_review_required": true,
+  "selected_candidate": "va_reacceptance",
+  "selected_candidate_name": "Prior-session value-area re-acceptance (auction-market 80% rule)",
+  "selection_confidence": 0.8,
+  "selection_probabilities": {
+    "none": 0.01,
+    "nq_es_delta_divergence": 0.0,
+    "pause_strategy_research": 0.07,
+    "poor_extreme_repair": 0.08,
+    "va_reacceptance": 0.84
+  }
+}

@@ -1,0 +1,12 @@
+[project]
+name = "trading-loop"   # codename: TBD
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "ccxt>=4.4", "hyperliquid-python-sdk", "vectorbt", "riskfolio-lib",
+  "duckdb", "pyarrow", "pandas", "numpy", "scipy", "databento",
+  "pydantic>=2", "python-dotenv", "psycopg[binary]", "typesafe-sdk>=0.7,<1",
+  "websockets",
+]
+[project.optional-dependencies]
+dev = ["pytest"]

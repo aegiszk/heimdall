@@ -1,0 +1,11 @@
+{
+ "nw_max_abs_diff": 1.509903313490213e-14,
+ "psr_max_abs_diff": 0.0,
+ "dsr_max_abs_diff": 0.0,
+ "SR0_conventionB_nb2_var1": 0.5197553442792135,
+ "SR0_nb25_var_1_over_200": 0.1412198228473657,
+ "SR0_nb25_var_0.004": 0.12631084946287505,
+ "SR0_nb40_var_0.004": 0.13847488821838522,
+ "walk_forward_first_fold_ignored_len": 10,
+ "walk_forward_n_scored_of_60": 50
+}

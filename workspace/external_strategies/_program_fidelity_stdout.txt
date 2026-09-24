@@ -1,0 +1,1 @@
+{"family": "liquidity_trap", "cfg": "A1_k1_spike_nearest", "inst": "MNQ", "n_orders": 48736, "geometry_violations": 0, "secs": 36.3, "la": 0}

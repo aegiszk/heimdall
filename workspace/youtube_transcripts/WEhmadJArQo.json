@@ -1,0 +1,1383 @@
+{
+  "video_id": "WEhmadJArQo",
+  "language": "English (auto-generated)",
+  "language_code": "en",
+  "is_generated": true,
+  "snippets": [
+    {
+      "text": "This FPG strategy consistently gives me",
+      "start": 0.08,
+      "duration": 5.12
+    },
+    {
+      "text": "days like this, this, and this. And I'm",
+      "start": 2.56,
+      "duration": 4.96
+    },
+    {
+      "text": "about to show you exactly how. I've been",
+      "start": 5.2,
+      "duration": 4.399
+    },
+    {
+      "text": "trading for 9 years, and in that time,",
+      "start": 7.52,
+      "duration": 3.92
+    },
+    {
+      "text": "I've tested hundreds of complicated",
+      "start": 9.599,
+      "duration": 4.241
+    },
+    {
+      "text": "strategies. And this is one of the only",
+      "start": 11.44,
+      "duration": 4.96
+    },
+    {
+      "text": "FVG strategies that actually works. And",
+      "start": 13.84,
+      "duration": 4.0
+    },
+    {
+      "text": "today, I'm going to teach you the full",
+      "start": 16.4,
+      "duration": 3.6
+    },
+    {
+      "text": "strategy, and then we'll do a one-mon",
+      "start": 17.84,
+      "duration": 5.04
+    },
+    {
+      "text": "back test to prove to you that it works.",
+      "start": 20.0,
+      "duration": 5.119
+    },
+    {
+      "text": "Let's hop right into the strategy. The",
+      "start": 22.88,
+      "duration": 3.92
+    },
+    {
+      "text": "goal of this strategy is to make",
+      "start": 25.119,
+      "duration": 3.92
+    },
+    {
+      "text": "consistent profits in less than 90",
+      "start": 26.8,
+      "duration": 3.92
+    },
+    {
+      "text": "minutes per day. And to do this, we're",
+      "start": 29.039,
+      "duration": 4.241
+    },
+    {
+      "text": "going to get to our desks right at 9:30",
+      "start": 30.72,
+      "duration": 5.519
+    },
+    {
+      "text": "a.m. EST. This strategy works for any",
+      "start": 33.28,
+      "duration": 5.119
+    },
+    {
+      "text": "market, whether it's futures, stocks,",
+      "start": 36.239,
+      "duration": 4.32
+    },
+    {
+      "text": "crypto, or forex, and you use the same",
+      "start": 38.399,
+      "duration": 4.401
+    },
+    {
+      "text": "time for each market. There are two ways",
+      "start": 40.559,
+      "duration": 4.401
+    },
+    {
+      "text": "that you can use this strategy depending",
+      "start": 42.8,
+      "duration": 4.239
+    },
+    {
+      "text": "on whether you're scalping or day",
+      "start": 44.96,
+      "duration": 3.919
+    },
+    {
+      "text": "trading. And knowing when to decide",
+      "start": 47.039,
+      "duration": 3.68
+    },
+    {
+      "text": "between the two is what separates",
+      "start": 48.879,
+      "duration": 4.0
+    },
+    {
+      "text": "profitable traders from the unprofitable",
+      "start": 50.719,
+      "duration": 3.921
+    },
+    {
+      "text": "traders. If you weren't aware already,",
+      "start": 52.879,
+      "duration": 4.081
+    },
+    {
+      "text": "scalping means catching quick and small",
+      "start": 54.64,
+      "duration": 4.96
+    },
+    {
+      "text": "moves and taking a lot more trades. And",
+      "start": 56.96,
+      "duration": 4.64
+    },
+    {
+      "text": "then day trading is catching bigger",
+      "start": 59.6,
+      "duration": 4.16
+    },
+    {
+      "text": "moves and taking less trades. First,",
+      "start": 61.6,
+      "duration": 3.76
+    },
+    {
+      "text": "we're going to go over how to scalp",
+      "start": 63.76,
+      "duration": 3.76
+    },
+    {
+      "text": "using this strategy. For step one, we're",
+      "start": 65.36,
+      "duration": 4.48
+    },
+    {
+      "text": "going to identify our key levels. Now,",
+      "start": 67.52,
+      "duration": 4.24
+    },
+    {
+      "text": "this part is stupid simple, but if you",
+      "start": 69.84,
+      "duration": 3.92
+    },
+    {
+      "text": "mess it up, everything else will be",
+      "start": 71.76,
+      "duration": 3.84
+    },
+    {
+      "text": "wrong. So, make sure to pay close",
+      "start": 73.76,
+      "duration": 3.6
+    },
+    {
+      "text": "attention. We're going to start on our",
+      "start": 75.6,
+      "duration": 4.08
+    },
+    {
+      "text": "five-minute chart. Now, to get to this",
+      "start": 77.36,
+      "duration": 3.68
+    },
+    {
+      "text": "chart, you're going to go over here on",
+      "start": 79.68,
+      "duration": 3.36
+    },
+    {
+      "text": "Trading View and click the five minute",
+      "start": 81.04,
+      "duration": 4.64
+    },
+    {
+      "text": "button. This means that each candle you",
+      "start": 83.04,
+      "duration": 4.88
+    },
+    {
+      "text": "see represents five minutes of trading",
+      "start": 85.68,
+      "duration": 4.24
+    },
+    {
+      "text": "time. Next, we're going to wait for the",
+      "start": 87.92,
+      "duration": 4.8
+    },
+    {
+      "text": "first candle of the day at that 9:30",
+      "start": 89.92,
+      "duration": 4.96
+    },
+    {
+      "text": "time to print. And then, we're going to",
+      "start": 92.72,
+      "duration": 4.96
+    },
+    {
+      "text": "mark out the high and the low of the",
+      "start": 94.88,
+      "duration": 4.8
+    },
+    {
+      "text": "first 5-minute candle. To do this, we're",
+      "start": 97.68,
+      "duration": 3.36
+    },
+    {
+      "text": "going to go over here to the left hand",
+      "start": 99.68,
+      "duration": 3.119
+    },
+    {
+      "text": "side of the screen on Trading View and",
+      "start": 101.04,
+      "duration": 3.92
+    },
+    {
+      "text": "select the trend line tool. and then",
+      "start": 102.799,
+      "duration": 4.561
+    },
+    {
+      "text": "we're going to mark out the high and the",
+      "start": 104.96,
+      "duration": 4.72
+    },
+    {
+      "text": "low of that first 5-minute candle that",
+      "start": 107.36,
+      "duration": 5.52
+    },
+    {
+      "text": "happens at 9:30 to 9:35 a.m. Eastern",
+      "start": 109.68,
+      "duration": 5.04
+    },
+    {
+      "text": "Standard Time. But in order to find good",
+      "start": 112.88,
+      "duration": 3.519
+    },
+    {
+      "text": "trades, we need to know which way the",
+      "start": 114.72,
+      "duration": 3.439
+    },
+    {
+      "text": "market is going to move, which brings us",
+      "start": 116.399,
+      "duration": 4.0
+    },
+    {
+      "text": "to step two, confirming the market's",
+      "start": 118.159,
+      "duration": 4.161
+    },
+    {
+      "text": "direction. For step two, we are going to",
+      "start": 120.399,
+      "duration": 3.76
+    },
+    {
+      "text": "switch to the 1 minute chart by clicking",
+      "start": 122.32,
+      "duration": 3.759
+    },
+    {
+      "text": "this one minute button on Trading View.",
+      "start": 124.159,
+      "duration": 3.521
+    },
+    {
+      "text": "And once you're on this screen, each",
+      "start": 126.079,
+      "duration": 3.841
+    },
+    {
+      "text": "candle represents 1 minute worth of",
+      "start": 127.68,
+      "duration": 4.24
+    },
+    {
+      "text": "trading time. Next, we're going to wait",
+      "start": 129.92,
+      "duration": 4.959
+    },
+    {
+      "text": "for a break of the level, but we need a",
+      "start": 131.92,
+      "duration": 5.12
+    },
+    {
+      "text": "fair value gap. Simply crossing through",
+      "start": 134.879,
+      "duration": 4.08
+    },
+    {
+      "text": "the level, whether it's a wick or a",
+      "start": 137.04,
+      "duration": 4.0
+    },
+    {
+      "text": "candle closure, just won't cut it. As",
+      "start": 138.959,
+      "duration": 4.481
+    },
+    {
+      "text": "you can see, the market rather quickly",
+      "start": 141.04,
+      "duration": 5.04
+    },
+    {
+      "text": "forms a fair value gap. Now, if you",
+      "start": 143.44,
+      "duration": 4.799
+    },
+    {
+      "text": "didn't know already, a fair value gap is",
+      "start": 146.08,
+      "duration": 4.72
+    },
+    {
+      "text": "just a three candle formation where we",
+      "start": 148.239,
+      "duration": 5.761
+    },
+    {
+      "text": "leave a gap between one candle's wick",
+      "start": 150.8,
+      "duration": 4.96
+    },
+    {
+      "text": "and the third candle's wick. So, as you",
+      "start": 154.0,
+      "duration": 3.84
+    },
+    {
+      "text": "can see here, the middle candle was very",
+      "start": 155.76,
+      "duration": 4.88
+    },
+    {
+      "text": "expansive, showing a lot of force, which",
+      "start": 157.84,
+      "duration": 5.44
+    },
+    {
+      "text": "tells us that buyers are in control,",
+      "start": 160.64,
+      "duration": 4.48
+    },
+    {
+      "text": "especially when it happens through this",
+      "start": 163.28,
+      "duration": 4.0
+    },
+    {
+      "text": "first 5-minute candle level. So, since",
+      "start": 165.12,
+      "duration": 4.479
+    },
+    {
+      "text": "we broke through the high, the direction",
+      "start": 167.28,
+      "duration": 4.08
+    },
+    {
+      "text": "is bullish. We're going to be looking",
+      "start": 169.599,
+      "duration": 3.841
+    },
+    {
+      "text": "for long trades. But knowing the market",
+      "start": 171.36,
+      "duration": 4.159
+    },
+    {
+      "text": "direction is useless if you don't know",
+      "start": 173.44,
+      "duration": 4.72
+    },
+    {
+      "text": "when to enter and exit trades, which",
+      "start": 175.519,
+      "duration": 4.641
+    },
+    {
+      "text": "brings us to step number three, finding",
+      "start": 178.16,
+      "duration": 4.64
+    },
+    {
+      "text": "our entry, our stop loss, and our",
+      "start": 180.16,
+      "duration": 4.719
+    },
+    {
+      "text": "target. So, first we want to wait for a",
+      "start": 182.8,
+      "duration": 4.48
+    },
+    {
+      "text": "retest of the fair value gap. Meaning we",
+      "start": 184.879,
+      "duration": 4.801
+    },
+    {
+      "text": "need the market to trade back into the",
+      "start": 187.28,
+      "duration": 4.72
+    },
+    {
+      "text": "fair value gap. Now, after we've traded",
+      "start": 189.68,
+      "duration": 4.72
+    },
+    {
+      "text": "into the fair value gap, then we wait",
+      "start": 192.0,
+      "duration": 5.36
+    },
+    {
+      "text": "for this retest candle right here to get",
+      "start": 194.4,
+      "duration": 4.559
+    },
+    {
+      "text": "engulfed. Now, if you're not aware of",
+      "start": 197.36,
+      "duration": 4.0
+    },
+    {
+      "text": "what an engulfing is, it's when the body",
+      "start": 198.959,
+      "duration": 4.961
+    },
+    {
+      "text": "of one candle gets completely closed",
+      "start": 201.36,
+      "duration": 5.28
+    },
+    {
+      "text": "through by opposing direction candles.",
+      "start": 203.92,
+      "duration": 4.48
+    },
+    {
+      "text": "As you can see, this first candle that",
+      "start": 206.64,
+      "duration": 3.76
+    },
+    {
+      "text": "traded into the fair value gap has now",
+      "start": 208.4,
+      "duration": 4.0
+    },
+    {
+      "text": "gotten engulfed. And this shows us that",
+      "start": 210.4,
+      "duration": 4.72
+    },
+    {
+      "text": "buyers are in control. And as soon as we",
+      "start": 212.4,
+      "duration": 4.72
+    },
+    {
+      "text": "get this engulfing, you're good to enter",
+      "start": 215.12,
+      "duration": 4.32
+    },
+    {
+      "text": "the trade. Now, in order to do this,",
+      "start": 217.12,
+      "duration": 3.759
+    },
+    {
+      "text": "we're going to go over here to the left",
+      "start": 219.44,
+      "duration": 3.28
+    },
+    {
+      "text": "on Trading View, and you're going to",
+      "start": 220.879,
+      "duration": 4.801
+    },
+    {
+      "text": "find this icon right here. And then you",
+      "start": 222.72,
+      "duration": 5.84
+    },
+    {
+      "text": "click long position since we are taking",
+      "start": 225.68,
+      "duration": 5.04
+    },
+    {
+      "text": "a buy. This helps you plot out your",
+      "start": 228.56,
+      "duration": 4.72
+    },
+    {
+      "text": "entry and find good risk-to-reward. So",
+      "start": 230.72,
+      "duration": 5.04
+    },
+    {
+      "text": "for our stop loss or our invalidation",
+      "start": 233.28,
+      "duration": 4.64
+    },
+    {
+      "text": "point where we will cut our losses if",
+      "start": 235.76,
+      "duration": 4.32
+    },
+    {
+      "text": "we're wrong, you want to put that under",
+      "start": 237.92,
+      "duration": 4.8
+    },
+    {
+      "text": "the lowest area that we traded into that",
+      "start": 240.08,
+      "duration": 4.56
+    },
+    {
+      "text": "fair value gap. And you always want to",
+      "start": 242.72,
+      "duration": 4.159
+    },
+    {
+      "text": "give it one tick of breathing room. And",
+      "start": 244.64,
+      "duration": 4.0
+    },
+    {
+      "text": "then for our takerit, we are just",
+      "start": 246.879,
+      "duration": 5.121
+    },
+    {
+      "text": "targeting a fixed 3:1 return, meaning",
+      "start": 248.64,
+      "duration": 5.76
+    },
+    {
+      "text": "that on our winning trades, we make",
+      "start": 252.0,
+      "duration": 4.799
+    },
+    {
+      "text": "three times as much profit as we would",
+      "start": 254.4,
+      "duration": 4.64
+    },
+    {
+      "text": "lose on a losing trade. So, as you can",
+      "start": 256.799,
+      "duration": 5.28
+    },
+    {
+      "text": "see here, we've got $400 at risk to make",
+      "start": 259.04,
+      "duration": 6.0
+    },
+    {
+      "text": "$1,200 in profit. And after you execute",
+      "start": 262.079,
+      "duration": 4.961
+    },
+    {
+      "text": "the trade, you sit back and let the",
+      "start": 265.04,
+      "duration": 4.48
+    },
+    {
+      "text": "market do the heavy lifting for you. No",
+      "start": 267.04,
+      "duration": 4.719
+    },
+    {
+      "text": "need to micromanage your trade. There's",
+      "start": 269.52,
+      "duration": 4.32
+    },
+    {
+      "text": "no guessing and no confusion with this",
+      "start": 271.759,
+      "duration": 4.0
+    },
+    {
+      "text": "strategy. As you can see here, this",
+      "start": 273.84,
+      "duration": 4.56
+    },
+    {
+      "text": "trade took 24 minutes to play out and",
+      "start": 275.759,
+      "duration": 5.44
+    },
+    {
+      "text": "netted a profit of $1,200.",
+      "start": 278.4,
+      "duration": 5.359
+    },
+    {
+      "text": "Not bad for 24 minutes worth of work, if",
+      "start": 281.199,
+      "duration": 4.401
+    },
+    {
+      "text": "you ask me. And there you have it. It's",
+      "start": 283.759,
+      "duration": 3.921
+    },
+    {
+      "text": "that stupid simple. And yes, the",
+      "start": 285.6,
+      "duration": 5.28
+    },
+    {
+      "text": "scalping entry alone is powerful, but",
+      "start": 287.68,
+      "duration": 5.28
+    },
+    {
+      "text": "knowing when to use the scalping versus",
+      "start": 290.88,
+      "duration": 4.08
+    },
+    {
+      "text": "the day trading entry is what separates",
+      "start": 292.96,
+      "duration": 3.679
+    },
+    {
+      "text": "the profitable traders from the",
+      "start": 294.96,
+      "duration": 3.6
+    },
+    {
+      "text": "unprofitable. Let's learn how to use the",
+      "start": 296.639,
+      "duration": 4.241
+    },
+    {
+      "text": "day trading entry first, and then you'll",
+      "start": 298.56,
+      "duration": 4.56
+    },
+    {
+      "text": "learn how to choose which one you will",
+      "start": 300.88,
+      "duration": 4.64
+    },
+    {
+      "text": "use. And this brings us to step one of",
+      "start": 303.12,
+      "duration": 4.72
+    },
+    {
+      "text": "the day trading entry. Now, we're still",
+      "start": 305.52,
+      "duration": 4.959
+    },
+    {
+      "text": "going to identify key levels, but we're",
+      "start": 307.84,
+      "duration": 4.56
+    },
+    {
+      "text": "going to do it just a little differently",
+      "start": 310.479,
+      "duration": 3.921
+    },
+    {
+      "text": "because for this entry, you're going to",
+      "start": 312.4,
+      "duration": 4.96
+    },
+    {
+      "text": "start on the 15minute chart. Now, to do",
+      "start": 314.4,
+      "duration": 4.96
+    },
+    {
+      "text": "this, you go over on the top at Trading",
+      "start": 317.36,
+      "duration": 3.839
+    },
+    {
+      "text": "View and you select the 15-minute",
+      "start": 319.36,
+      "duration": 4.16
+    },
+    {
+      "text": "button. Now, this means that each candle",
+      "start": 321.199,
+      "duration": 4.72
+    },
+    {
+      "text": "represents 15 minutes of trading time.",
+      "start": 323.52,
+      "duration": 5.119
+    },
+    {
+      "text": "We're going to wait until the 9:30 to",
+      "start": 325.919,
+      "duration": 5.441
+    },
+    {
+      "text": "9:45 Eastern Standard Time candle",
+      "start": 328.639,
+      "duration": 4.801
+    },
+    {
+      "text": "closes. So, it's still the first candle",
+      "start": 331.36,
+      "duration": 4.399
+    },
+    {
+      "text": "of the day. It's just using the 15minute",
+      "start": 333.44,
+      "duration": 4.24
+    },
+    {
+      "text": "instead. And then just like we did with",
+      "start": 335.759,
+      "duration": 3.841
+    },
+    {
+      "text": "the scalping strategy, we're going to",
+      "start": 337.68,
+      "duration": 5.28
+    },
+    {
+      "text": "mark the high and the low of the first",
+      "start": 339.6,
+      "duration": 5.68
+    },
+    {
+      "text": "15-minute candle. And this brings us to",
+      "start": 342.96,
+      "duration": 5.12
+    },
+    {
+      "text": "step two of the day trading entry, which",
+      "start": 345.28,
+      "duration": 4.8
+    },
+    {
+      "text": "again, we're going to confirm direction,",
+      "start": 348.08,
+      "duration": 3.92
+    },
+    {
+      "text": "but we're going to do this differently",
+      "start": 350.08,
+      "duration": 4.0
+    },
+    {
+      "text": "than we did in the scalping strategy.",
+      "start": 352.0,
+      "duration": 3.919
+    },
+    {
+      "text": "So, pay close attention. Instead of",
+      "start": 354.08,
+      "duration": 3.52
+    },
+    {
+      "text": "going to the one minute chart, we're",
+      "start": 355.919,
+      "duration": 3.521
+    },
+    {
+      "text": "going to go to the five-minute chart.",
+      "start": 357.6,
+      "duration": 3.2
+    },
+    {
+      "text": "So, go up here and click that",
+      "start": 359.44,
+      "duration": 3.36
+    },
+    {
+      "text": "five-minute button. And then we're going",
+      "start": 360.8,
+      "duration": 5.44
+    },
+    {
+      "text": "to wait for a very specific pattern.",
+      "start": 362.8,
+      "duration": 6.72
+    },
+    {
+      "text": "What we need is similar to the previous",
+      "start": 366.24,
+      "duration": 6.48
+    },
+    {
+      "text": "strategy, but a little bit different. As",
+      "start": 369.52,
+      "duration": 5.36
+    },
+    {
+      "text": "you'll see here, we have now created our",
+      "start": 372.72,
+      "duration": 5.12
+    },
+    {
+      "text": "fair value gap through this first",
+      "start": 374.88,
+      "duration": 5.36
+    },
+    {
+      "text": "candle. But here is where things get",
+      "start": 377.84,
+      "duration": 4.479
+    },
+    {
+      "text": "different because instead of waiting for",
+      "start": 380.24,
+      "duration": 4.64
+    },
+    {
+      "text": "a retest, we're actually going to set a",
+      "start": 382.319,
+      "duration": 6.16
+    },
+    {
+      "text": "limit order on the FVG. This means once",
+      "start": 384.88,
+      "duration": 5.36
+    },
+    {
+      "text": "the market trades back into the fair",
+      "start": 388.479,
+      "duration": 4.321
+    },
+    {
+      "text": "value gap, we're automatically entered",
+      "start": 390.24,
+      "duration": 4.239
+    },
+    {
+      "text": "into the market. Now, if you don't know",
+      "start": 392.8,
+      "duration": 3.519
+    },
+    {
+      "text": "how to do this, you just click the buy",
+      "start": 394.479,
+      "duration": 3.84
+    },
+    {
+      "text": "button here on Trading View, and then",
+      "start": 396.319,
+      "duration": 4.081
+    },
+    {
+      "text": "you want to make sure to click for a",
+      "start": 398.319,
+      "duration": 4.0
+    },
+    {
+      "text": "limit order. Now, on Trading View, you",
+      "start": 400.4,
+      "duration": 4.0
+    },
+    {
+      "text": "can actually drag down your order to put",
+      "start": 402.319,
+      "duration": 4.241
+    },
+    {
+      "text": "it right on that level. Now, for my stop",
+      "start": 404.4,
+      "duration": 4.48
+    },
+    {
+      "text": "loss, I'm going to put it right at the",
+      "start": 406.56,
+      "duration": 4.479
+    },
+    {
+      "text": "first candle in the fair value gap",
+      "start": 408.88,
+      "duration": 4.96
+    },
+    {
+      "text": "pattern. Remember a fair value gap is",
+      "start": 411.039,
+      "duration": 5.28
+    },
+    {
+      "text": "three candles. So it goes right under",
+      "start": 413.84,
+      "duration": 5.12
+    },
+    {
+      "text": "this first one. And then for our target",
+      "start": 416.319,
+      "duration": 5.681
+    },
+    {
+      "text": "instead of a 3 to one return we are",
+      "start": 418.96,
+      "duration": 6.239
+    },
+    {
+      "text": "going to target a fixed 2:1 return. Now",
+      "start": 422.0,
+      "duration": 5.28
+    },
+    {
+      "text": "I know what you might be thinking. Why",
+      "start": 425.199,
+      "duration": 4.081
+    },
+    {
+      "text": "less than the scalping strategy. But",
+      "start": 427.28,
+      "duration": 3.6
+    },
+    {
+      "text": "wait till you see the back test and",
+      "start": 429.28,
+      "duration": 4.0
+    },
+    {
+      "text": "you'll see exactly why I chose this",
+      "start": 430.88,
+      "duration": 4.24
+    },
+    {
+      "text": "target. Now, as you can see, the market",
+      "start": 433.28,
+      "duration": 3.919
+    },
+    {
+      "text": "traded into the fair value gap, which",
+      "start": 435.12,
+      "duration": 4.479
+    },
+    {
+      "text": "entered us into the trade, and we have a",
+      "start": 437.199,
+      "duration": 5.361
+    },
+    {
+      "text": "nice move away from our entry. For this",
+      "start": 439.599,
+      "duration": 6.0
+    },
+    {
+      "text": "trade, we risked $945",
+      "start": 442.56,
+      "duration": 6.079
+    },
+    {
+      "text": "to make $1,900. And the one thing that",
+      "start": 445.599,
+      "duration": 4.72
+    },
+    {
+      "text": "isn't different about this strategy from",
+      "start": 448.639,
+      "duration": 3.28
+    },
+    {
+      "text": "the last is that you don't need to",
+      "start": 450.319,
+      "duration": 3.761
+    },
+    {
+      "text": "micromanage your trades, and you can",
+      "start": 451.919,
+      "duration": 4.4
+    },
+    {
+      "text": "just sit back and let the market do the",
+      "start": 454.08,
+      "duration": 4.64
+    },
+    {
+      "text": "heavy lifting for you. Now, I want to be",
+      "start": 456.319,
+      "duration": 4.641
+    },
+    {
+      "text": "clear that every once in a while, you're",
+      "start": 458.72,
+      "duration": 4.16
+    },
+    {
+      "text": "going to have the market come down and",
+      "start": 460.96,
+      "duration": 4.0
+    },
+    {
+      "text": "revisit the fair value gap. That's",
+      "start": 462.88,
+      "duration": 4.48
+    },
+    {
+      "text": "totally fine. Don't freak out and close",
+      "start": 464.96,
+      "duration": 4.959
+    },
+    {
+      "text": "your trades. Just trust in the system.",
+      "start": 467.36,
+      "duration": 5.119
+    },
+    {
+      "text": "Now, this trade took 35 minutes to play",
+      "start": 469.919,
+      "duration": 6.241
+    },
+    {
+      "text": "out. And remember, it made $1,900.",
+      "start": 472.479,
+      "duration": 6.4
+    },
+    {
+      "text": "Not bad for 35 minutes if you ask me.",
+      "start": 476.16,
+      "duration": 4.4
+    },
+    {
+      "text": "Now, I know you're probably thinking,",
+      "start": 478.879,
+      "duration": 3.681
+    },
+    {
+      "text": "\"Well, Casper, when do I trade the",
+      "start": 480.56,
+      "duration": 3.84
+    },
+    {
+      "text": "scalping entry versus the day trading",
+      "start": 482.56,
+      "duration": 4.079
+    },
+    {
+      "text": "entry?\" And my answer for you is the",
+      "start": 484.4,
+      "duration": 4.639
+    },
+    {
+      "text": "only way to know for sure is to look at",
+      "start": 486.639,
+      "duration": 4.4
+    },
+    {
+      "text": "the data. So, let's go over to the back",
+      "start": 489.039,
+      "duration": 4.56
+    },
+    {
+      "text": "test and put this strategy to the test.",
+      "start": 491.039,
+      "duration": 4.241
+    },
+    {
+      "text": "But before we get into the back test, I",
+      "start": 493.599,
+      "duration": 2.88
+    },
+    {
+      "text": "need you to take a look at this",
+      "start": 495.28,
+      "duration": 2.8
+    },
+    {
+      "text": "disclaimer. Now that we've got that out",
+      "start": 496.479,
+      "duration": 4.4
+    },
+    {
+      "text": "of the way, let's take a look at how the",
+      "start": 498.08,
+      "duration": 5.6
+    },
+    {
+      "text": "back test turned out for both strategy",
+      "start": 500.879,
+      "duration": 4.961
+    },
+    {
+      "text": "entries. Let's take a look at our",
+      "start": 503.68,
+      "duration": 4.48
+    },
+    {
+      "text": "5minute first candle scalping entry",
+      "start": 505.84,
+      "duration": 6.24
+    },
+    {
+      "text": "first. It netted $10,950",
+      "start": 508.16,
+      "duration": 7.439
+    },
+    {
+      "text": "in our back test with a win rate of 70%.",
+      "start": 512.08,
+      "duration": 6.079
+    },
+    {
+      "text": "And now taking a look at our 15minute",
+      "start": 515.599,
+      "duration": 4.961
+    },
+    {
+      "text": "first candle day trading entry, it",
+      "start": 518.159,
+      "duration": 5.521
+    },
+    {
+      "text": "netted $15,400",
+      "start": 520.56,
+      "duration": 6.399
+    },
+    {
+      "text": "with a win rate of 81%",
+      "start": 523.68,
+      "duration": 6.24
+    },
+    {
+      "text": "over 16 trades. So to answer the big",
+      "start": 526.959,
+      "duration": 5.361
+    },
+    {
+      "text": "question, how do you pick which strategy",
+      "start": 529.92,
+      "duration": 4.479
+    },
+    {
+      "text": "to use? Well, here is how you're going",
+      "start": 532.32,
+      "duration": 4.72
+    },
+    {
+      "text": "to decide. If you have blown accounts",
+      "start": 534.399,
+      "duration": 5.041
+    },
+    {
+      "text": "before or if you struggle with emotional",
+      "start": 537.04,
+      "duration": 4.96
+    },
+    {
+      "text": "trading, then use the day trading",
+      "start": 539.44,
+      "duration": 4.88
+    },
+    {
+      "text": "approach. It's more forgiving and it has",
+      "start": 542.0,
+      "duration": 4.48
+    },
+    {
+      "text": "a higher win rate. And yes, as you've",
+      "start": 544.32,
+      "duration": 3.84
+    },
+    {
+      "text": "seen in the back test, the scalping",
+      "start": 546.48,
+      "duration": 4.24
+    },
+    {
+      "text": "works, too. But it requires split-second",
+      "start": 548.16,
+      "duration": 4.08
+    },
+    {
+      "text": "decision-making that most struggling",
+      "start": 550.72,
+      "duration": 3.6
+    },
+    {
+      "text": "traders aren't ready to make. So,",
+      "start": 552.24,
+      "duration": 4.56
+    },
+    {
+      "text": "congratulations. You now have a powerful",
+      "start": 554.32,
+      "duration": 5.199
+    },
+    {
+      "text": "and proven strategy. But chances are",
+      "start": 556.8,
+      "duration": 5.039
+    },
+    {
+      "text": "that you've had great strategies before",
+      "start": 559.519,
+      "duration": 4.32
+    },
+    {
+      "text": "and yet you're still not profitable.",
+      "start": 561.839,
+      "duration": 3.841
+    },
+    {
+      "text": "Now, the reason that I know this is",
+      "start": 563.839,
+      "duration": 4.081
+    },
+    {
+      "text": "because I used to be in the exact same",
+      "start": 565.68,
+      "duration": 4.96
+    },
+    {
+      "text": "boat, which is why I mentor traders to",
+      "start": 567.92,
+      "duration": 4.88
+    },
+    {
+      "text": "help them avoid all the losses and all",
+      "start": 570.64,
+      "duration": 3.92
+    },
+    {
+      "text": "the wasted time that I had to go",
+      "start": 572.8,
+      "duration": 3.92
+    },
+    {
+      "text": "through. I do this by trading live with",
+      "start": 574.56,
+      "duration": 4.56
+    },
+    {
+      "text": "my traders. I share my screen and my",
+      "start": 576.72,
+      "duration": 4.799
+    },
+    {
+      "text": "executions. Every single trade that you",
+      "start": 579.12,
+      "duration": 4.56
+    },
+    {
+      "text": "take will be reviewed. Plus, you get",
+      "start": 581.519,
+      "duration": 4.161
+    },
+    {
+      "text": "direct access to me for anything that",
+      "start": 583.68,
+      "duration": 3.76
+    },
+    {
+      "text": "you need. And you get access to our",
+      "start": 585.68,
+      "duration": 3.839
+    },
+    {
+      "text": "trader dashboard and all of the other",
+      "start": 587.44,
+      "duration": 4.32
+    },
+    {
+      "text": "stuff we have in our software. Now, I'm",
+      "start": 589.519,
+      "duration": 4.401
+    },
+    {
+      "text": "so confident in this system that if you",
+      "start": 591.76,
+      "duration": 4.0
+    },
+    {
+      "text": "don't get funded in 12 weeks, then I",
+      "start": 593.92,
+      "duration": 4.0
+    },
+    {
+      "text": "will personally sit with you and trade",
+      "start": 595.76,
+      "duration": 4.72
+    },
+    {
+      "text": "until you get funded. This is not your",
+      "start": 597.92,
+      "duration": 4.64
+    },
+    {
+      "text": "average trading discord. And due to this",
+      "start": 600.48,
+      "duration": 4.32
+    },
+    {
+      "text": "being a direct and intensive mentorship,",
+      "start": 602.56,
+      "duration": 4.8
+    },
+    {
+      "text": "I limit availability to the public. So,",
+      "start": 604.8,
+      "duration": 4.0
+    },
+    {
+      "text": "if the link at the top of the",
+      "start": 607.36,
+      "duration": 3.44
+    },
+    {
+      "text": "description still works, then there are",
+      "start": 608.8,
+      "duration": 3.84
+    },
+    {
+      "text": "slots remaining in this enrollment. But",
+      "start": 610.8,
+      "duration": 3.52
+    },
+    {
+      "text": "if there are no slots, then you can join",
+      "start": 612.64,
+      "duration": 3.36
+    },
+    {
+      "text": "the wait list for the next enrollment.",
+      "start": 614.32,
+      "duration": 3.28
+    },
+    {
+      "text": "Thank you guys for watching this video.",
+      "start": 616.0,
+      "duration": 2.959
+    },
+    {
+      "text": "Make sure to subscribe to the channel",
+      "start": 617.6,
+      "duration": 4.96
+    },
+    {
+      "text": "and I'll see you in the next video.",
+      "start": 618.959,
+      "duration": 3.601
+    }
+  ]
+}

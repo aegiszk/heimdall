@@ -1,0 +1,14 @@
+{
+ "window": [
+  "2025-09-11",
+  "2026-06-30"
+ ],
+ "trials_with_logs": 27,
+ "trials_n_ge_30": 24,
+ "var_sr_all_n_ge_30": 0.003449473183343993,
+ "mean_sampling_var_1_over_n": 0.002940270077697697,
+ "var_sr_one_per_family": 0.005247644704735647,
+ "families_n_ge_30": 9,
+ "max_sr_observed": 0.0023535586517706808,
+ "var_sr_excess_over_sampling": 0.0005092031056462961
+}

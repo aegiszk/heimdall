@@ -1,0 +1,13 @@
+{
+  "v2+side_continue": {
+    "n": 27,
+    "total": -304.88,
+    "mean": -11.29,
+    "win": 0.3704,
+    "long_n": 12,
+    "long_total": 746.75,
+    "short_n": 15,
+    "short_total": -1051.62,
+    "rejections": 325
+  }
+}

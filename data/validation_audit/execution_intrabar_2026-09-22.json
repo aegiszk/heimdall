@@ -1,0 +1,92 @@
+[
+ {
+  "name": "luxalgo_poc_sweep_reclaim",
+  "full": {
+   "trades": 512,
+   "base_matches_log": true,
+   "gross_mean": -5.322265625,
+   "gross_total": -2725.0,
+   "execution_tax_per_trade_base": 1.8291015625,
+   "net_mean_optimistic": -6.322265625,
+   "net_mean_base": -7.1513671875,
+   "net_mean_stress": -8.3212890625,
+   "ambiguous_stop_exits": 165,
+   "resolution_counts": {
+    "unresolved": 84,
+    "1m:stop": 38,
+    "1m:target": 30,
+    "tick:stop": 7,
+    "tick:target": 6
+   },
+   "net_mean_worst_order": -7.1513671875,
+   "net_mean_resolved_order": -4.3232421875,
+   "net_mean_best_order": 2.10546875,
+   "tstat_pnl_optimistic": -2.7077889377339006,
+   "tstat_pnl_base": -3.053142332761187,
+   "tstat_gross": -2.279494857993475
+  },
+  "holdout": {
+   "trades": 205,
+   "base_matches_log": true,
+   "gross_mean": -3.3878048780487804,
+   "gross_total": -694.5,
+   "execution_tax_per_trade_base": 1.8097560975609757,
+   "net_mean_optimistic": -4.38780487804878,
+   "net_mean_base": -5.197560975609756,
+   "net_mean_stress": -6.321951219512195,
+   "ambiguous_stop_exits": 65,
+   "resolution_counts": {
+    "unresolved": 25,
+    "1m:stop": 18,
+    "1m:target": 9,
+    "tick:stop": 7,
+    "tick:target": 6
+   },
+   "net_mean_worst_order": -5.197560975609756,
+   "net_mean_resolved_order": -2.2439024390243905,
+   "net_mean_best_order": 6.019512195121951,
+   "tstat_pnl_optimistic": -1.098572133188065,
+   "tstat_pnl_base": -1.297266853418993,
+   "tstat_gross": -0.8482027198433697
+  }
+ },
+ {
+  "name": "youtube_opening_fvg_scalp",
+  "full": {
+   "trades": 174,
+   "base_matches_log": true,
+   "gross_mean": 18.53735632183908,
+   "gross_total": 3225.5,
+   "execution_tax_per_trade_base": 1.882183908045977,
+   "net_mean_optimistic": 17.53735632183908,
+   "net_mean_base": 16.655172413793103,
+   "net_mean_stress": 15.456896551724139,
+   "ambiguous_stop_exits": 0,
+   "resolution_counts": {},
+   "net_mean_worst_order": 16.655172413793103,
+   "net_mean_resolved_order": NaN,
+   "net_mean_best_order": NaN,
+   "tstat_pnl_optimistic": 1.2764852799580422,
+   "tstat_pnl_base": 1.2113161889938564,
+   "tstat_gross": 1.3492719221709537
+  },
+  "holdout": {
+   "trades": 67,
+   "base_matches_log": true,
+   "gross_mean": 2.3805970149253732,
+   "gross_total": 159.5,
+   "execution_tax_per_trade_base": 1.9179104477611941,
+   "net_mean_optimistic": 1.3805970149253732,
+   "net_mean_base": 0.4626865671641791,
+   "net_mean_stress": -0.7910447761194029,
+   "ambiguous_stop_exits": 0,
+   "resolution_counts": {},
+   "net_mean_worst_order": 0.4626865671641791,
+   "net_mean_resolved_order": NaN,
+   "net_mean_best_order": NaN,
+   "tstat_pnl_optimistic": 0.057515911083413744,
+   "tstat_pnl_base": 0.019264707834035527,
+   "tstat_gross": 0.09917608451680532
+  }
+ }
+]

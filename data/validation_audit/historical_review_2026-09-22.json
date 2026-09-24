@@ -1,0 +1,248 @@
+[
+ {
+  "label": "terrible",
+  "name": "vwap_reversion_hard_stop_MES",
+  "holdout_start": "2025-09-11",
+  "full": {
+   "n": 1511,
+   "mean": -3.175412780645848,
+   "sd": 43.91626787689912,
+   "per_trade_sr": -0.07230607094270372,
+   "t": -2.8106514706743413,
+   "mean_ci95": [
+    -5.389778067485423,
+    -0.9610474938062725
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout": {
+   "n": 610,
+   "mean": -2.9433349068954233,
+   "sd": 45.19915425443237,
+   "per_trade_sr": -0.0651192473719083,
+   "t": -1.6083267674055262,
+   "mean_ci95": [
+    -6.530253022311232,
+    0.6435832085203854
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_gross": {
+   "n": 610,
+   "mean": 0.22059951933407007,
+   "sd": 44.75823761364082,
+   "per_trade_sr": 0.0049286909202796375,
+   "t": 0.12172968600331076,
+   "mean_ci95": [
+    -3.331328297870829,
+    3.772527336538969
+   ],
+   "n_needed_80pct_power_at_observed_sr": 332402,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_execution_tax_per_trade": 3.1639344262294933,
+  "same_bar_ambiguity_holdout": {
+   "checked": true,
+   "stop_exits": 441,
+   "ambiguous_stop_exits": 1
+  }
+ },
+ {
+  "label": "borderline",
+  "name": "youtube_opening_fvg_scalp_MNQ",
+  "holdout_start": "2025-09-11",
+  "full": {
+   "n": 174,
+   "mean": 16.655172413793103,
+   "sd": 181.37032677789173,
+   "per_trade_sr": 0.09182964330316958,
+   "t": 1.2113161889938564,
+   "mean_ci95": [
+    -10.294139605349773,
+    43.604484432935976
+   ],
+   "n_needed_80pct_power_at_observed_sr": 958,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout": {
+   "n": 67,
+   "mean": 0.4626865671641791,
+   "sd": 196.59020046773878,
+   "per_trade_sr": 0.0023535586517706808,
+   "t": 0.01926470783403553,
+   "mean_ci95": [
+    -46.61125192463089,
+    47.536625058959245
+   ],
+   "n_needed_80pct_power_at_observed_sr": 1457726,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_gross": {
+   "n": 67,
+   "mean": 2.3805970149253732,
+   "sd": 196.4790853537759,
+   "per_trade_sr": 0.01211628713885207,
+   "t": 0.09917608451680532,
+   "mean_ci95": [
+    -44.66673472827413,
+    49.42792875812487
+   ],
+   "n_needed_80pct_power_at_observed_sr": 55004,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_execution_tax_per_trade": 1.9179104477611941,
+  "same_bar_ambiguity_holdout": {
+   "checked": true,
+   "stop_exits": 45,
+   "ambiguous_stop_exits": 0
+  }
+ },
+ {
+  "label": "sparse_promising",
+  "name": "inversion_model_v2_MNQ",
+  "holdout_start": "2025-09-11",
+  "full": {
+   "n": 30,
+   "mean": -14.879166666666666,
+   "sd": 257.84402546715955,
+   "per_trade_sr": -0.05770607497966541,
+   "t": -0.3160691897144721,
+   "mean_ci95": [
+    -107.14746618998254,
+    77.38913285664921
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout": {
+   "n": 13,
+   "mean": 26.307692307692307,
+   "sd": 296.6668858937536,
+   "per_trade_sr": 0.08867754899046595,
+   "t": 0.3197314498675949,
+   "mean_ci95": [
+    -134.96226391472464,
+    187.57764853010923
+   ],
+   "n_needed_80pct_power_at_observed_sr": 1027,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_gross": {
+   "n": 13,
+   "mean": 32.46153846153846,
+   "sd": 293.63935586719737,
+   "per_trade_sr": 0.11054900446049085,
+   "t": 0.39859010403379697,
+   "mean_ci95": [
+    -127.16263369106613,
+    192.08571061414304
+   ],
+   "n_needed_80pct_power_at_observed_sr": 661,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_execution_tax_per_trade": 6.153846153846154,
+  "same_bar_ambiguity_holdout": {
+   "checked": false
+  },
+  "wrong_side_stop_trades_full": 5,
+  "holdout_excluding_wrong_side": {
+   "n": 12,
+   "mean": 29.333333333333332,
+   "sd": 309.64889085230163,
+   "per_trade_sr": 0.09473094914886984,
+   "t": 0.3281576339501325,
+   "mean_ci95": [
+    -145.86701974475517,
+    204.53368641142185
+   ],
+   "n_needed_80pct_power_at_observed_sr": 900,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  }
+ },
+ {
+  "label": "execution_sensitive",
+  "name": "time_structured_scalp_MES",
+  "holdout_start": "2025-09-11",
+  "full": {
+   "n": 2325,
+   "mean": -2.9161290322580644,
+   "sd": 10.62720606157865,
+   "per_trade_sr": -0.27440222908643586,
+   "t": -13.231196326737852,
+   "mean_ci95": [
+    -3.348109086221559,
+    -2.48414897829457
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout": {
+   "n": 933,
+   "mean": -2.726956055734191,
+   "sd": 10.629666587174999,
+   "per_trade_sr": -0.2565420122418837,
+   "t": -7.836088257165824,
+   "mean_ci95": [
+    -3.409035390962626,
+    -2.044876720505756
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_gross": {
+   "n": 933,
+   "mean": 0.13933547695605572,
+   "sd": 10.004392082047058,
+   "per_trade_sr": 0.013927430653791956,
+   "t": 0.42541404756648493,
+   "mean_ci95": [
+    -0.5026215444354128,
+    0.7812924983475243
+   ],
+   "n_needed_80pct_power_at_observed_sr": 41628,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout_execution_tax_per_trade": 2.8662915326902465,
+  "same_bar_ambiguity_holdout": {
+   "checked": true,
+   "stop_exits": 460,
+   "ambiguous_stop_exits": 58
+  }
+ },
+ {
+  "label": "orderflow",
+  "name": "orderflow_initiative_v3_NQ",
+  "holdout_start": "2026-06-16",
+  "full": {
+   "n": 64,
+   "mean": -0.203125,
+   "sd": 65.85100538878875,
+   "per_trade_sr": -0.0030846150153780705,
+   "t": -0.024676920123024564,
+   "mean_ci95": [
+    -16.336621320253244,
+    15.930371320253244
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "holdout": {
+   "n": 28,
+   "mean": -12.678571428571429,
+   "sd": 65.71546611546239,
+   "per_trade_sr": -0.19293131705548763,
+   "t": -1.0208965700899493,
+   "mean_ci95": [
+    -37.01992071708017,
+    11.662777859937313
+   ],
+   "n_needed_80pct_power_at_observed_sr": null,
+   "n_needed_80pct_power_at_sr_0.10": 808
+  },
+  "same_bar_ambiguity_holdout": {
+   "checked": false
+  }
+ }
+]

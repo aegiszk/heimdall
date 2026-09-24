@@ -1,0 +1,47 @@
+{
+ "generated": "2026-09-23 (Agent 2)",
+ "rule": "previously_read=NO only if no Heimdall artifact ever loaded any bar of the dataset's date range for that instrument family",
+ "datasets": [
+  {
+   "path": "data/MNQ_1m.parquet",
+   "range": "2024-07-01..2026-06-30",
+   "sha256": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774",
+   "previously_read": "YES",
+   "trial_ledger_overlap": ">=12 (N1)",
+   "role": "DEVELOPMENT ONLY"
+  },
+  {
+   "path": "data/sierra/MNQ_continuous_1m_latest_90d.parquet",
+   "range": "2026-06-23..2026-09-21",
+   "sha256": "7c7dd10865cf09936152f2913bafec4a978160e23c76e191049e53eb8535733b",
+   "previously_read": "YES",
+   "trial_ledger_overlap": "Dhesi v3 fresh window (read 2026-09-23), PD",
+   "role": "CONSUMED"
+  },
+  {
+   "path": "validation_data/SEALED/NQ_continuous_1m_<start>_2024-06-30.parquet",
+   "sha256": "TBD at build",
+   "previously_read": "NO",
+   "trial_ledger_overlap": 0,
+   "dataset_group": "CME_EQUITY_INDEX",
+   "role": "PRIMARY FINAL VALIDATION (once)",
+   "evidence_for_NO": "no index-futures data before 2024-07-01 held locally (audited); no ledger entry overlaps (86 entries checked 2026-09-23)"
+  },
+  {
+   "path": "validation_data/SEALED/MNQ_continuous_1m_2019-05-06_2024-06-30.parquet",
+   "sha256": "TBD at build",
+   "previously_read": "NO",
+   "trial_ledger_overlap": 0,
+   "dataset_group": "CME_EQUITY_INDEX",
+   "role": "PRIMARY cross-check (micro economics) if the protocol lists it"
+  },
+  {
+   "path": "validation_data/SEALED/{ES,MES,RTY,M2K,YM,MYM}_continuous_1m_..._2024-06-30.parquet",
+   "sha256": "TBD",
+   "previously_read": "NO",
+   "trial_ledger_overlap": 0,
+   "dataset_group": "CME_EQUITY_INDEX",
+   "role": "SECONDARY, only per frozen protocol scaling rule"
+  }
+ ]
+}

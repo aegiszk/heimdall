@@ -1,0 +1,28 @@
+{
+ "owner": "Agent 2 (checker). Independent of Agent 1's ledger.",
+ "as_of": "2026-09-24 (see WORK_ORDER_START_UTC.txt)",
+ "counting_rule": "Every attempted mechanization, parameter variant, data window, rerun and post-result change counts as a trial. A family with k interpretations is k trials, not 1.",
+ "global_context": {
+  "data/trials_ledger.json": {"sha256": "a4a797fc36a161743910aec2c1db652234e46b236424d7d70f6458b080c69064", "trials": 86, "sum_n_configs": 367, "families": 23},
+  "missing_from_global_ledger": ["MNQ-dhesi-inversion-v3 (dev)", "MNQ-dhesi-inversion-v3-fresh (REUSED_HOLDOUT)", "Dhesi 2026-09-23 forensic cycle"],
+  "note": "Any DSR/trial deflation for an eight-strategy survivor must use the global count (>= 86 trials / 367 configs + this program), not only this program's count. Families A (sweep/reclaim), B (sweep + breaker), C (sweep + SMT + inverted FVG), F (sweep + displacement + FVG) overlap mechanically with the existing dhesi_inversion (6 registered + 2 unregistered) and casper_fvg families; the overlap must be disclosed."
+ },
+ "source_evidence": {
+  "rule_sheet": {"path": "Trading-Strategy Rule Sheet.md", "sha256": "5e307c80c848486f4a35eab35d362fece41f37a7223474f41b2772640d7293ca"},
+  "reports_zip": {"path": "trading_strategy_video_reports.zip", "sha256": "ecd90a4d002056bfdf796b27a199b9b235de97fcc853191e2c2553e735376742"},
+  "verbatim_transcripts": "workspace/external_strategies/_source_transcripts/*.txt (hashes in SOURCE_EVIDENCE_HASHES.sha256; fetched by Agent 1 at 08:21 local 2026-09-24)"
+ },
+ "families": [
+  {"id": "A", "name": "Liquidity Trap", "video": "DAnXM7C16h0", "sub_setups": 2, "sub_setup_names": ["bullish sweep long", "bearish sweep short"], "implementation_defining_ambiguities": 9, "source_supported_interpretations_min": 8, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "B", "name": "Trader Mayne ICT blueprint", "video": "coBMd1vk2Lo", "sub_setups": 3, "sub_setup_names": ["HTF OB + LTF breaker long", "mirror short", "HTF-OB direct entry (stated alternative)"], "implementation_defining_ambiguities": 7, "source_supported_interpretations_min": 24, "timeframe_pair_multiplier": 4, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "C", "name": "PO3 / 50% rebalance", "video": "HNuRp9Z1bMs", "sub_setups": 2, "sub_setup_names": ["bearish reversal", "bullish mirror (INTERPRETED)"], "implementation_defining_ambiguities": 10, "source_supported_interpretations_min": 16, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "D", "name": "Little Rizzy", "video": "AVVM-FyewLg", "sub_setups": 3, "sub_setup_names": ["downtrend continuation short", "uptrend continuation long", "crash-bottom reversal long"], "implementation_defining_ambiguities": 9, "source_supported_interpretations_min": 12, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "E", "name": "Trident", "video": "ADnslyKOwFE", "sub_setups": 2, "sub_setup_names": ["bullish FX (hard stop)", "gold (close-based invalidation)"], "implementation_defining_ambiguities": 9, "source_supported_interpretations_min": 8, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "F", "name": "MMXM / OTE", "video": "IB-fyWI5j8w", "sub_setups": 3, "sub_setup_names": ["bearish OTE sell", "bullish mirror (VISUAL/INTERPRETED)", "5m FVG Silver Bullet alternative"], "implementation_defining_ambiguities": 10, "source_supported_interpretations_min": 12, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "G", "name": "SQEtBHOJW6I (verbatim transcript = Jay Ortani large-cap stock tape reading)", "video": "SQEtBHOJW6I", "sub_setups": 1, "sub_setup_names": ["level + tape-aggression break (long/short, stocks/options)"], "rule_sheet_alternatives_invalidated": 3, "implementation_defining_ambiguities": "not enumerable without tick+L2 data", "source_supported_interpretations_min": null, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0},
+  {"id": "H", "name": "Small-cap shorts (Dux statistics)", "video": "52ZsDmFHqyY", "sub_setups": 3, "sub_setup_names": ["Gap-Up Short", "Bounce Short", "First Red Day"], "implementation_defining_ambiguities": 11, "source_supported_interpretations_min": 12, "attempted_mechanizations": 0, "parameter_variants_run": 0, "data_windows": 0, "reruns": 0, "post_result_changes": 0}
+ ],
+ "totals": {"families": 8, "sub_setups": 19, "minimum_source_supported_interpretations_excluding_G": 92, "attempted_mechanizations": 0, "reruns": 0, "post_result_changes": 0},
+ "interpretation_count_method": "Per sub-setup, the product of the [k]-marked source-supported choices in AGENT2_EXTERNAL_STRATEGY_AUDIT.md §3, summed across sub-setups where they differ (D, H); parameters the source leaves wholly unspecified (e.g. swing lookback) are NOT counted here and multiply this further.",
+ "agent1_ledger_comparison": {"agent1_ledger_found": false, "searched": "workspace/external_strategies/ (only _source_transcripts/ present)", "status": "UNRESOLVED until Agent 1 publishes a ledger; any later discrepancy = UNRESOLVED"}
+}

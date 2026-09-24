@@ -1,0 +1,238 @@
+{
+ "HYPE": {
+  "spot_pair": "@107",
+  "hours": 5000,
+  "from": "2026-02-26 22:00:00",
+  "to": "2026-09-23 05:00:00",
+  "funding_ann_%": 9.05,
+  "hold_net_ann_%": 8.59,
+  "basis_mean_bps": -1.3,
+  "basis_p1_p99_bps": [
+   -10.7,
+   12.1
+  ],
+  "share_hours_funding_negative": 0.116,
+  "worst_month_net_%": 0.279,
+  "months": {
+   "2026-03": {
+    "hours": 744,
+    "funding_%": 0.583,
+    "basis_chg_%": 0.075,
+    "net_%": 0.279
+   },
+   "2026-04": {
+    "hours": 720,
+    "funding_%": 0.418,
+    "basis_chg_%": -0.107,
+    "net_%": 0.295
+   },
+   "2026-05": {
+    "hours": 744,
+    "funding_%": 0.631,
+    "basis_chg_%": 0.098,
+    "net_%": 0.303
+   },
+   "2026-06": {
+    "hours": 720,
+    "funding_%": 1.146,
+    "basis_chg_%": -0.256,
+    "net_%": 1.172
+   },
+   "2026-07": {
+    "hours": 744,
+    "funding_%": 0.798,
+    "basis_chg_%": -0.076,
+    "net_%": 0.643
+   },
+   "2026-08": {
+    "hours": 744,
+    "funding_%": 0.998,
+    "basis_chg_%": 0.012,
+    "net_%": 0.757
+   },
+   "2026-09": {
+    "hours": 534,
+    "funding_%": 0.57,
+    "basis_chg_%": -0.005,
+    "net_%": 0.345
+   }
+  }
+ },
+ "BTC": {
+  "spot_pair": "@142",
+  "hours": 5000,
+  "from": "2026-02-26 22:00:00",
+  "to": "2026-09-23 05:00:00",
+  "funding_ann_%": 4.91,
+  "hold_net_ann_%": 4.33,
+  "basis_mean_bps": 0.1,
+  "basis_p1_p99_bps": [
+   -13.3,
+   11.5
+  ],
+  "share_hours_funding_negative": 0.23,
+  "worst_month_net_%": -0.252,
+  "months": {
+   "2026-03": {
+    "hours": 744,
+    "funding_%": 0.076,
+    "basis_chg_%": 0.074,
+    "net_%": -0.227
+   },
+   "2026-04": {
+    "hours": 720,
+    "funding_%": -0.07,
+    "basis_chg_%": -0.048,
+    "net_%": -0.252
+   },
+   "2026-05": {
+    "hours": 744,
+    "funding_%": 0.262,
+    "basis_chg_%": 0.055,
+    "net_%": -0.023
+   },
+   "2026-06": {
+    "hours": 720,
+    "funding_%": 0.483,
+    "basis_chg_%": -0.025,
+    "net_%": 0.278
+   },
+   "2026-07": {
+    "hours": 744,
+    "funding_%": 0.804,
+    "basis_chg_%": -0.034,
+    "net_%": 0.608
+   },
+   "2026-08": {
+    "hours": 744,
+    "funding_%": 0.707,
+    "basis_chg_%": -0.015,
+    "net_%": 0.492
+   },
+   "2026-09": {
+    "hours": 534,
+    "funding_%": 0.548,
+    "basis_chg_%": 0.026,
+    "net_%": 0.293
+   }
+  }
+ },
+ "ETH": {
+  "spot_pair": "@151",
+  "hours": 5000,
+  "from": "2026-02-26 22:00:00",
+  "to": "2026-09-23 05:00:00",
+  "funding_ann_%": 5.73,
+  "hold_net_ann_%": 5.0,
+  "basis_mean_bps": 0.2,
+  "basis_p1_p99_bps": [
+   -14.5,
+   14.8
+  ],
+  "share_hours_funding_negative": 0.197,
+  "worst_month_net_%": -0.195,
+  "months": {
+   "2026-03": {
+    "hours": 744,
+    "funding_%": 0.219,
+    "basis_chg_%": -0.033,
+    "net_%": 0.022
+   },
+   "2026-04": {
+    "hours": 720,
+    "funding_%": -0.034,
+    "basis_chg_%": -0.069,
+    "net_%": -0.195
+   },
+   "2026-05": {
+    "hours": 744,
+    "funding_%": 0.647,
+    "basis_chg_%": 0.092,
+    "net_%": 0.325
+   },
+   "2026-06": {
+    "hours": 720,
+    "funding_%": 0.273,
+    "basis_chg_%": -0.087,
+    "net_%": 0.13
+   },
+   "2026-07": {
+    "hours": 744,
+    "funding_%": 0.818,
+    "basis_chg_%": -0.056,
+    "net_%": 0.644
+   },
+   "2026-08": {
+    "hours": 744,
+    "funding_%": 0.733,
+    "basis_chg_%": -0.015,
+    "net_%": 0.518
+   },
+   "2026-09": {
+    "hours": 534,
+    "funding_%": 0.601,
+    "basis_chg_%": 0.063,
+    "net_%": 0.307
+   }
+  }
+ },
+ "SOL": {
+  "spot_pair": "@156",
+  "hours": 5000,
+  "from": "2026-02-26 22:00:00",
+  "to": "2026-09-23 05:00:00",
+  "funding_ann_%": 1.42,
+  "hold_net_ann_%": 0.6,
+  "basis_mean_bps": -0.4,
+  "basis_p1_p99_bps": [
+   -18.5,
+   15.6
+  ],
+  "share_hours_funding_negative": 0.362,
+  "worst_month_net_%": -1.198,
+  "months": {
+   "2026-03": {
+    "hours": 744,
+    "funding_%": -0.827,
+    "basis_chg_%": 0.141,
+    "net_%": -1.198
+   },
+   "2026-04": {
+    "hours": 720,
+    "funding_%": -0.043,
+    "basis_chg_%": -0.016,
+    "net_%": -0.258
+   },
+   "2026-05": {
+    "hours": 744,
+    "funding_%": 0.275,
+    "basis_chg_%": 0.16,
+    "net_%": -0.114
+   },
+   "2026-06": {
+    "hours": 720,
+    "funding_%": -0.182,
+    "basis_chg_%": -0.03,
+    "net_%": -0.382
+   },
+   "2026-07": {
+    "hours": 744,
+    "funding_%": 0.497,
+    "basis_chg_%": -0.006,
+    "net_%": 0.274
+   },
+   "2026-08": {
+    "hours": 744,
+    "funding_%": 0.738,
+    "basis_chg_%": -0.028,
+    "net_%": 0.535
+   },
+   "2026-09": {
+    "hours": 534,
+    "funding_%": 0.392,
+    "basis_chg_%": 0.104,
+    "net_%": 0.058
+   }
+  }
+ }
+}

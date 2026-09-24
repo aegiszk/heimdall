@@ -1,0 +1,81 @@
+{
+  "module_1_trade_size": {
+    "n_ticks_analyzed": 7078017,
+    "n_bars_created": 26479,
+    "trade_size_shares": {
+      "small_1lot_contract_pct": 96.39,
+      "small_1lot_volume_pct": 89.02,
+      "large_10plus_contract_pct": 0.11,
+      "large_10plus_volume_pct": 1.84
+    },
+    "h_1m": {
+      "rho_delta_total": 0.0051,
+      "rho_delta_small_1lot": -0.0015,
+      "rho_delta_large_10plus": 0.0034,
+      "beta_small": 0.0,
+      "t_stat_small": 0.45,
+      "beta_large": 0.0,
+      "t_stat_large": 0.16
+    },
+    "h_5m": {
+      "rho_delta_total": 0.0071,
+      "rho_delta_small_1lot": -0.0002,
+      "rho_delta_large_10plus": 0.0022,
+      "beta_small": 0.0,
+      "t_stat_small": 1.77,
+      "beta_large": 0.0,
+      "t_stat_large": 0.68
+    }
+  },
+  "module_2_footprint_structure": {
+    "n_bars_analyzed": 11549,
+    "poc_location": {
+      "rho_poc_vs_fwd1m": -0.0056,
+      "rho_poc_vs_fwd5m": -0.0087,
+      "high_poc_top20pct_mean_5m_bps": -0.409,
+      "low_poc_bot20pct_mean_5m_bps": 0.185,
+      "poc_spread_5m_bps": -0.594
+    },
+    "trapped_traders_at_extremes": {
+      "n_trapped_buyer_events": 731,
+      "mean_fwd5m_trapped_buyers_bps": 0.43,
+      "n_trapped_seller_events": 0,
+      "mean_fwd5m_trapped_sellers_bps": NaN,
+      "reversal_spread_bps": NaN
+    }
+  },
+  "module_3_cross_asset_lead_lag": {
+    "ES->NQ": {
+      "n_valid_bars": 74160,
+      "r2": 0.00031,
+      "beta_src_delta": -0.12238,
+      "se_hac": 0.04506,
+      "t_stat_hac": -2.72,
+      "is_stat_sig_hac": true
+    },
+    "NQ->ES": {
+      "n_valid_bars": 74160,
+      "r2": 0.000297,
+      "beta_src_delta": -0.01951,
+      "se_hac": 0.02635,
+      "t_stat_hac": -0.74,
+      "is_stat_sig_hac": false
+    },
+    "ES->RTY": {
+      "n_valid_bars": 74160,
+      "r2": 0.00136,
+      "beta_src_delta": -0.01898,
+      "se_hac": 0.03417,
+      "t_stat_hac": -0.56,
+      "is_stat_sig_hac": false
+    },
+    "YM->ES": {
+      "n_valid_bars": 74160,
+      "r2": 0.00035,
+      "beta_src_delta": -0.0357,
+      "se_hac": 0.02197,
+      "t_stat_hac": -1.62,
+      "is_stat_sig_hac": false
+    }
+  }
+}

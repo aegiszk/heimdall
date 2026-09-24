@@ -1,0 +1,2 @@
+entry_ts,exit_ts,session,side,entry_price,exit_price,stop_price,tp1_price,runner_target_price,contracts,risk_dollars,pnl,gross_pnl,tp1_hit,tp1_gross_pnl,runner_gross_pnl,reason,htf_timeframe,sweep_pool,tp1_pool,runner_pool,r_mult
+2025-06-16 14:55:00-04:00,2025-06-16 15:06:00-04:00,2025-06-16,1,6036.25,6031.25,6031.5,6043.375,6049.5,1,237.5,-253.5,-250.0,False,0.0,-250.0,stop,4H,equal_low,equal_high_promoted_to_1.5R,stacked_equal_high,-1.0673684210526315

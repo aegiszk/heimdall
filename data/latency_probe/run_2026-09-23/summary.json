@@ -1,0 +1,144 @@
+{
+ "run": "data\\latency_probe\\run_2026-09-23",
+ "duration_min": 65.0,
+ "ntp": {
+  "samples_ok": 87,
+  "offset_ms_used": -14970.183,
+  "offset_ms_range_all": [
+   -14986.274,
+   -14955.563
+  ],
+  "rtt_ms_median": 76.98,
+  "per_server_median_offset": {
+   "pool.ntp.org": -14970.274,
+   "time.cloudflare.com": -14969.206,
+   "time.google.com": -14968.866
+  }
+ },
+ "disconnects": {},
+ "latency_ms": {
+  "binance:BTCUSDT": {
+   "n": 22295,
+   "event_to_recv_corrected": {
+    "p1": 71.6,
+    "p10": 72.4,
+    "p50": 78.7,
+    "p90": 84.6,
+    "p99": 221.6
+   },
+   "event_to_recv_raw_clock": {
+    "p1": 15041.8,
+    "p10": 15042.6,
+    "p50": 15048.9,
+    "p90": 15054.8,
+    "p99": 15191.8
+   },
+   "trade_T_to_recv_corrected": {
+    "p1": 72.9,
+    "p10": 74.0,
+    "p50": 83.2,
+    "p90": 229.2,
+    "p99": 234.8
+   }
+  },
+  "binance:ETHUSDT": {
+   "n": 19603,
+   "event_to_recv_corrected": {
+    "p1": 71.6,
+    "p10": 72.4,
+    "p50": 78.7,
+    "p90": 84.4,
+    "p99": 213.2
+   },
+   "event_to_recv_raw_clock": {
+    "p1": 15041.8,
+    "p10": 15042.6,
+    "p50": 15048.9,
+    "p90": 15054.6,
+    "p99": 15183.4
+   },
+   "trade_T_to_recv_corrected": {
+    "p1": 72.8,
+    "p10": 73.9,
+    "p50": 84.2,
+    "p90": 229.3,
+    "p99": 235.6
+   }
+  },
+  "binance:SOLUSDT": {
+   "n": 9560,
+   "event_to_recv_corrected": {
+    "p1": 71.4,
+    "p10": 72.0,
+    "p50": 78.4,
+    "p90": 81.4,
+    "p99": 115.4
+   },
+   "event_to_recv_raw_clock": {
+    "p1": 15041.6,
+    "p10": 15042.2,
+    "p50": 15048.6,
+    "p90": 15051.6,
+    "p99": 15085.6
+   },
+   "trade_T_to_recv_corrected": {
+    "p1": 74.1,
+    "p10": 97.5,
+    "p50": 222.7,
+    "p90": 230.8,
+    "p99": 234.7
+   }
+  },
+  "hyperliquid:BTC": {
+   "n": 6217,
+   "event_to_recv_corrected": {
+    "p1": 259.5,
+    "p10": 277.4,
+    "p50": 315.1,
+    "p90": 484.7,
+    "p99": 750.6
+   },
+   "event_to_recv_raw_clock": {
+    "p1": 15229.7,
+    "p10": 15247.6,
+    "p50": 15285.3,
+    "p90": 15454.9,
+    "p99": 15720.8
+   }
+  },
+  "hyperliquid:ETH": {
+   "n": 3237,
+   "event_to_recv_corrected": {
+    "p1": 263.9,
+    "p10": 278.1,
+    "p50": 321.3,
+    "p90": 609.8,
+    "p99": 725.6
+   },
+   "event_to_recv_raw_clock": {
+    "p1": 15234.1,
+    "p10": 15248.3,
+    "p50": 15291.5,
+    "p90": 15580.0,
+    "p99": 15695.8
+   }
+  },
+  "hyperliquid:SOL": {
+   "n": 2145,
+   "event_to_recv_corrected": {
+    "p1": 258.3,
+    "p10": 273.7,
+    "p50": 314.0,
+    "p90": 520.0,
+    "p99": 678.7
+   },
+   "event_to_recv_raw_clock": {
+    "p1": 15228.5,
+    "p10": 15243.9,
+    "p50": 15284.2,
+    "p90": 15490.1,
+    "p99": 15648.9
+   }
+  }
+ }
+}

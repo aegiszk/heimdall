@@ -1,0 +1,2 @@
+core purity OK: /core is free of /meta imports
+exit=0

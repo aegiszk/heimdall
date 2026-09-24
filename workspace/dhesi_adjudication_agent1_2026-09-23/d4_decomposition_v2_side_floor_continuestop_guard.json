@@ -1,0 +1,13 @@
+{
+  "v2+side_floor_continue(=stop_guard)": {
+    "n": 26,
+    "total": 617.12,
+    "mean": 23.74,
+    "win": 0.4231,
+    "long_n": 12,
+    "long_total": 746.75,
+    "short_n": 14,
+    "short_total": -129.62,
+    "rejections": 492
+  }
+}

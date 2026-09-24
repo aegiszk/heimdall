@@ -1,0 +1,304 @@
+{
+  "preregistration": "DHESI_V3_PREREGISTRATION.md",
+  "overlap_minutes": 7065,
+  "overlap_close_equal_rate": 0.9949044585987261,
+  "reproduction": {
+    "v2_trades": 30,
+    "v3_all_off_trades": 30,
+    "v2_total": -446.375,
+    "v3_all_off_total": -446.375
+  },
+  "development_v3": {
+    "whole": {
+      "n_trades": 49,
+      "win_rate": 0.46938775510204084,
+      "avg_win": 311.7119565217391,
+      "avg_loss": -179.57692307692307,
+      "realized_rr": 1.735812994124056,
+      "mean_pnl": 51.0280612244898,
+      "total_pnl": 2500.375,
+      "skew": 0.3704163819744646,
+      "tp1_hit_rate": 0.2653061224489796,
+      "runner_contribution_pct": 0.7726297771626005,
+      "worst_5": "-326.00,-310.00,-308.00,-296.00,-296.00",
+      "max_consec_losses": 4
+    },
+    "train": {
+      "n_trades": 29,
+      "win_rate": 0.4482758620689655,
+      "avg_win": 350.4326923076923,
+      "avg_loss": -171.9375,
+      "realized_rr": 2.0381399770712747,
+      "mean_pnl": 62.22844827586207,
+      "total_pnl": 1804.625,
+      "skew": 0.33640475828247257,
+      "tp1_hit_rate": 0.27586206896551724,
+      "runner_contribution_pct": 0.7752349326440835,
+      "worst_5": "-308.00,-296.00,-294.00,-291.00,-290.00",
+      "max_consec_losses": 4
+    },
+    "holdout": {
+      "n_trades": 20,
+      "win_rate": 0.5,
+      "avg_win": 261.375,
+      "avg_loss": -191.8,
+      "realized_rr": 1.362747653806048,
+      "mean_pnl": 34.7875,
+      "total_pnl": 695.75,
+      "skew": 0.4413350244225476,
+      "tp1_hit_rate": 0.25,
+      "runner_contribution_pct": 0.7684280271658108,
+      "worst_5": "-326.00,-310.00,-296.00,-293.00,-228.00",
+      "max_consec_losses": 4
+    },
+    "holdout_buckets": [
+      {
+        "bucket": 1,
+        "start": "2025-09-11",
+        "end": "2025-11-21",
+        "n_trades": 6,
+        "win_rate": 0.5,
+        "mean_pnl": 36.291666666666664,
+        "total_pnl": 217.75
+      },
+      {
+        "bucket": 2,
+        "start": "2025-11-24",
+        "end": "2026-02-05",
+        "n_trades": 5,
+        "win_rate": 0.6,
+        "mean_pnl": -12.7,
+        "total_pnl": -63.5
+      },
+      {
+        "bucket": 3,
+        "start": "2026-02-06",
+        "end": "2026-04-20",
+        "n_trades": 6,
+        "win_rate": 0.5,
+        "mean_pnl": 53.229166666666664,
+        "total_pnl": 319.375
+      },
+      {
+        "bucket": 4,
+        "start": "2026-04-21",
+        "end": "2026-06-30",
+        "n_trades": 3,
+        "win_rate": 0.3333333333333333,
+        "mean_pnl": 74.04166666666667,
+        "total_pnl": 222.125
+      }
+    ],
+    "holdout_gate": {
+      "passed": false,
+      "reasons": [
+        "min_trades"
+      ],
+      "dsr": 0.0,
+      "nw_t": 0.0,
+      "boot_lo": 0.0,
+      "wf_min": 0.0
+    },
+    "holdout_mc": {
+      "pass_rate": 0.0013,
+      "ev_per_eval": -95.7513,
+      "fail_died_mll": 0.0,
+      "fail_never_target": 0.9987,
+      "fail_5day": 0.0,
+      "avg_trades": 7.7144
+    },
+    "entry_hour_counts": {
+      "10": 2,
+      "11": 11,
+      "12": 12,
+      "13": 5,
+      "14": 10,
+      "15": 6,
+      "16": 3
+    },
+    "reason_counts": {
+      "session_flatten": 21,
+      "stop": 15,
+      "runner_target": 10,
+      "runner_session_flatten": 2,
+      "runner_stop": 1
+    }
+  },
+  "ablations_single_fix_on_v2": {
+    "htf_24h": {
+      "whole": {
+        "n_trades": 11,
+        "win_rate": 0.36363636363636365,
+        "avg_win": 134.625,
+        "avg_loss": -128.57142857142858,
+        "realized_rr": 1.0470833333333331,
+        "mean_pnl": -32.86363636363637,
+        "total_pnl": -361.5,
+        "skew": 0.2365821945883191,
+        "tp1_hit_rate": 0.0,
+        "runner_contribution_pct": 1.0,
+        "worst_5": "-310.00,-296.00,-137.00,-80.00,-42.00",
+        "max_consec_losses": 5
+      },
+      "holdout": {
+        "n_trades": 5,
+        "win_rate": 0.2,
+        "avg_win": 7.5,
+        "avg_loss": -177.75,
+        "realized_rr": 0.04219409282700422,
+        "mean_pnl": -140.7,
+        "total_pnl": -703.5,
+        "skew": -0.42781972009202357,
+        "tp1_hit_rate": 0.0,
+        "runner_contribution_pct": 1.0,
+        "worst_5": "-310.00,-296.00,-80.00,-25.00,7.50",
+        "max_consec_losses": 3
+      }
+    },
+    "early_sweeps": {
+      "whole": {
+        "n_trades": 30,
+        "win_rate": 0.3,
+        "avg_win": 292.18055555555554,
+        "avg_loss": -146.47619047619048,
+        "realized_rr": 1.9947307108799306,
+        "mean_pnl": -14.879166666666666,
+        "total_pnl": -446.375,
+        "skew": 0.803682058144588,
+        "tp1_hit_rate": 0.13333333333333333,
+        "runner_contribution_pct": 0.8446295425539061,
+        "worst_5": "-332.00,-315.00,-314.00,-300.00,-294.00",
+        "max_consec_losses": 5
+      },
+      "holdout": {
+        "n_trades": 13,
+        "win_rate": 0.38461538461538464,
+        "avg_win": 311.9,
+        "avg_loss": -152.1875,
+        "realized_rr": 2.0494455852156057,
+        "mean_pnl": 26.307692307692307,
+        "total_pnl": 342.0,
+        "skew": 0.7911864941253302,
+        "tp1_hit_rate": 0.23076923076923078,
+        "runner_contribution_pct": 0.762550384756321,
+        "worst_5": "-332.00,-300.00,-282.50,-168.00,-78.50",
+        "max_consec_losses": 2
+      }
+    },
+    "session_pools": {
+      "whole": {
+        "n_trades": 30,
+        "win_rate": 0.3,
+        "avg_win": 292.18055555555554,
+        "avg_loss": -146.47619047619048,
+        "realized_rr": 1.9947307108799306,
+        "mean_pnl": -14.879166666666666,
+        "total_pnl": -446.375,
+        "skew": 0.803682058144588,
+        "tp1_hit_rate": 0.13333333333333333,
+        "runner_contribution_pct": 0.8446295425539061,
+        "worst_5": "-332.00,-315.00,-314.00,-300.00,-294.00",
+        "max_consec_losses": 5
+      },
+      "holdout": {
+        "n_trades": 13,
+        "win_rate": 0.38461538461538464,
+        "avg_win": 311.9,
+        "avg_loss": -152.1875,
+        "realized_rr": 2.0494455852156057,
+        "mean_pnl": 26.307692307692307,
+        "total_pnl": 342.0,
+        "skew": 0.7911864941253302,
+        "tp1_hit_rate": 0.23076923076923078,
+        "runner_contribution_pct": 0.762550384756321,
+        "worst_5": "-332.00,-300.00,-282.50,-168.00,-78.50",
+        "max_consec_losses": 2
+      }
+    },
+    "stop_guard": {
+      "whole": {
+        "n_trades": 26,
+        "win_rate": 0.4230769230769231,
+        "avg_win": 325.5568181818182,
+        "avg_loss": -197.6,
+        "realized_rr": 1.6475547478836954,
+        "mean_pnl": 23.735576923076923,
+        "total_pnl": 617.125,
+        "skew": 0.48374837926053943,
+        "tp1_hit_rate": 0.23076923076923078,
+        "runner_contribution_pct": 0.7963306968994772,
+        "worst_5": "-332.00,-322.50,-315.00,-314.00,-294.00",
+        "max_consec_losses": 2
+      },
+      "holdout": {
+        "n_trades": 12,
+        "win_rate": 0.4166666666666667,
+        "avg_win": 311.9,
+        "avg_loss": -175.71428571428572,
+        "realized_rr": 1.775040650406504,
+        "mean_pnl": 27.458333333333332,
+        "total_pnl": 329.5,
+        "skew": 0.7134884578134011,
+        "tp1_hit_rate": 0.25,
+        "runner_contribution_pct": 0.7671995688880905,
+        "worst_5": "-332.00,-322.50,-282.50,-168.00,-78.50",
+        "max_consec_losses": 2
+      }
+    },
+    "attempts": {
+      "whole": {
+        "n_trades": 30,
+        "win_rate": 0.3,
+        "avg_win": 292.18055555555554,
+        "avg_loss": -146.47619047619048,
+        "realized_rr": 1.9947307108799306,
+        "mean_pnl": -14.879166666666666,
+        "total_pnl": -446.375,
+        "skew": 0.803682058144588,
+        "tp1_hit_rate": 0.13333333333333333,
+        "runner_contribution_pct": 0.8446295425539061,
+        "worst_5": "-332.00,-315.00,-314.00,-300.00,-294.00",
+        "max_consec_losses": 5
+      },
+      "holdout": {
+        "n_trades": 13,
+        "win_rate": 0.38461538461538464,
+        "avg_win": 311.9,
+        "avg_loss": -152.1875,
+        "realized_rr": 2.0494455852156057,
+        "mean_pnl": 26.307692307692307,
+        "total_pnl": 342.0,
+        "skew": 0.7911864941253302,
+        "tp1_hit_rate": 0.23076923076923078,
+        "runner_contribution_pct": 0.762550384756321,
+        "worst_5": "-332.00,-300.00,-282.50,-168.00,-78.50",
+        "max_consec_losses": 2
+      }
+    }
+  },
+  "fresh": {
+    "sessions": 58,
+    "n_trades": 4,
+    "win_rate": 0.5,
+    "avg_win": 377.4375,
+    "avg_loss": -188.25,
+    "realized_rr": 2.004980079681275,
+    "mean_pnl": 94.59375,
+    "total_pnl": 378.375,
+    "skew": -0.27706860949205264,
+    "tp1_hit_rate": 0.5,
+    "runner_contribution_pct": 0.6483674598782513,
+    "worst_5": "-316.50,-60.00,299.62,455.25",
+    "max_consec_losses": 1,
+    "mc": {
+      "pass_rate": 0.0021,
+      "ev_per_eval": -93.7521,
+      "fail_died_mll": 0.0,
+      "fail_never_target": 0.9979,
+      "fail_5day": 0.0,
+      "avg_trades": 5.5485
+    }
+  },
+  "verdict": "SURVIVING RESEARCH CANDIDATE (not validated)",
+  "dead_reasons": []
+}

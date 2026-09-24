@@ -1,0 +1,33 @@
+{
+ "status": "DRAFT \u2014 becomes canonical only when its SHA-256 is written into AUTHORIZATION.txt with REOPEN_APPROVED",
+ "strategy": "Dhesi inversion v3 exactly as pre-registered (all six fixes ON), MNQ",
+ "module": "core.alpha.inversion_model_v3",
+ "class": "InversionModelV3",
+ "kwargs": {
+  "contract": "MNQ"
+ },
+ "instrument_family": "MNQ",
+ "tick_value": 0.5,
+ "commission_rt_per_contract": 1.0,
+ "source_sha256": {
+  "core/alpha/inversion_model.py": "e32e88f1a309c8e259274fd181929c3aa19935e667bcf568ff31eb9fbbdd0037",
+  "core/alpha/inversion_model_v3.py": "0ab7a5156e506c629110efe5253a6b93315072cd3f544490d80c2a746922bf85",
+  "DHESI_V3_PREREGISTRATION.md": "c9d143e5f633297038c2d1425ccda16a43ca7b6e15a9f5176e69578aba23d843",
+  "core/risk/prop_engine.py": "5750672eea42047ae294415a14c795c783aef4348cd4af7bfc9eead0cae7a265"
+ },
+ "alpha_pass_criteria": {
+  "min_trades": 30,
+  "min_net_expectancy_usd": 20.0,
+  "min_positive_years": 4,
+  "note": "PASS requires n>=30, mean>+$20/trade after costs, year-cluster bootstrap 95% lower bound > 0, >=4 positive calendar years in 2019-06..2024-06 (5+ years). n<30 -> INCONCLUSIVE_UNDERPOWERED, never PASS."
+ },
+ "lucid_target": 3000.0,
+ "lucid_mll": 2000.0,
+ "lucid_max_days": 250,
+ "eval_window": {
+  "start": "2019-06-01",
+  "end": "2024-06-28",
+  "warmup_from": "2019-01-01",
+  "note": "MNQ listed 2019-05; warmup needs >=20 sessions of history"
+ }
+}

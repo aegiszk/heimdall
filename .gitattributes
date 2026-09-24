@@ -1,0 +1,3 @@
+# Byte-exact checkout on every OS. Frozen Heimdall artifacts (Dhesi spec, validator, core/alpha,
+# core/risk) are verified by SHA-256 of their exact bytes (CRLF). Never let git rewrite line endings.
+* -text

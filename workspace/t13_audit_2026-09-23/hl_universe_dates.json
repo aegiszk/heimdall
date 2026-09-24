@@ -1,0 +1,1874 @@
+[
+{
+"coin": "BTC",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 40,
+"onlyIso": false
+},
+{
+"coin": "ETH",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 25,
+"onlyIso": false
+},
+{
+"coin": "ATOM",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "MATIC",
+"delisted": true,
+"first_funding": "2023-05-12",
+"last_candle": "2024-09-09",
+"maxLev": 20,
+"onlyIso": false
+},
+{
+"coin": "DYDX",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "SOL",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 20,
+"onlyIso": false
+},
+{
+"coin": "AVAX",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "BNB",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "APE",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "OP",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "LTC",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "ARB",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "DOGE",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "INJ",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "SUI",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "kPEPE",
+"delisted": false,
+"first_funding": "2023-05-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "CRV",
+"delisted": false,
+"first_funding": "2023-05-15",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "LDO",
+"delisted": false,
+"first_funding": "2023-05-16",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "LINK",
+"delisted": false,
+"first_funding": "2023-05-18",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "STX",
+"delisted": false,
+"first_funding": "2023-05-18",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "RNDR",
+"delisted": true,
+"first_funding": "2023-05-18",
+"last_candle": "2024-07-21",
+"maxLev": 20,
+"onlyIso": false
+},
+{
+"coin": "CFX",
+"delisted": false,
+"first_funding": "2023-05-25",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "FTM",
+"delisted": true,
+"first_funding": "2023-05-25",
+"last_candle": "2025-01-12",
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "GMX",
+"delisted": false,
+"first_funding": "2023-05-25",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SNX",
+"delisted": false,
+"first_funding": "2023-05-25",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "XRP",
+"delisted": false,
+"first_funding": "2023-06-18",
+"last_candle": null,
+"maxLev": 20,
+"onlyIso": false
+},
+{
+"coin": "BCH",
+"delisted": false,
+"first_funding": "2023-06-30",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "APT",
+"delisted": false,
+"first_funding": "2023-06-30",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "AAVE",
+"delisted": false,
+"first_funding": "2023-07-18",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "COMP",
+"delisted": false,
+"first_funding": "2023-07-18",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "MKR",
+"delisted": true,
+"first_funding": "2023-07-21",
+"last_candle": "2025-09-05",
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "WLD",
+"delisted": false,
+"first_funding": "2023-07-24",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "FXS",
+"delisted": true,
+"first_funding": "2023-07-30",
+"last_candle": "2026-01-06",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "HPOS",
+"delisted": true,
+"first_funding": "2023-07-31",
+"last_candle": "2025-04-04",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "RLB",
+"delisted": true,
+"first_funding": "2023-08-02",
+"last_candle": "2025-04-02",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "UNIBOT",
+"delisted": true,
+"first_funding": "2023-08-02",
+"last_candle": "2024-06-27",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "YGG",
+"delisted": false,
+"first_funding": "2023-08-06",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "TRX",
+"delisted": false,
+"first_funding": "2023-08-06",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "kSHIB",
+"delisted": false,
+"first_funding": "2023-08-11",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "UNI",
+"delisted": false,
+"first_funding": "2023-08-11",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "SEI",
+"delisted": false,
+"first_funding": "2023-08-15",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "RUNE",
+"delisted": false,
+"first_funding": "2023-08-15",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "OX",
+"delisted": true,
+"first_funding": "2023-08-17",
+"last_candle": "2024-06-27",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "FRIEND",
+"delisted": true,
+"first_funding": "2023-08-21",
+"last_candle": "2024-05-02",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "SHIA",
+"delisted": true,
+"first_funding": "2023-08-26",
+"last_candle": "2024-06-28",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "CYBER",
+"delisted": true,
+"first_funding": "2023-08-31",
+"last_candle": "2025-04-11",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ZRO",
+"delisted": false,
+"first_funding": "2023-09-07",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "BLZ",
+"delisted": true,
+"first_funding": "2023-09-12",
+"last_candle": "2024-12-22",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "DOT",
+"delisted": false,
+"first_funding": "2023-09-12",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "BANANA",
+"delisted": false,
+"first_funding": "2023-09-15",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "TRB",
+"delisted": false,
+"first_funding": "2023-09-17",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "FTT",
+"delisted": true,
+"first_funding": "2023-09-25",
+"last_candle": "2026-05-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "LOOM",
+"delisted": true,
+"first_funding": "2023-09-28",
+"last_candle": "2024-12-12",
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "OGN",
+"delisted": true,
+"first_funding": "2023-10-01",
+"last_candle": "2025-08-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "RDNT",
+"delisted": true,
+"first_funding": "2023-10-03",
+"last_candle": "2025-04-11",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "ARK",
+"delisted": true,
+"first_funding": "2023-10-06",
+"last_candle": "2026-06-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BNT",
+"delisted": true,
+"first_funding": "2023-10-08",
+"last_candle": "2025-04-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "CANTO",
+"delisted": true,
+"first_funding": "2023-10-09",
+"last_candle": "2024-08-13",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "REQ",
+"delisted": true,
+"first_funding": "2023-10-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BIGTIME",
+"delisted": false,
+"first_funding": "2023-10-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "KAS",
+"delisted": false,
+"first_funding": "2023-10-12",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ORBS",
+"delisted": true,
+"first_funding": "2023-10-13",
+"last_candle": "2025-04-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BLUR",
+"delisted": false,
+"first_funding": "2023-10-18",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "TIA",
+"delisted": false,
+"first_funding": "2023-10-19",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "BSV",
+"delisted": false,
+"first_funding": "2023-10-20",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ADA",
+"delisted": false,
+"first_funding": "2023-10-22",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "TON",
+"delisted": true,
+"first_funding": "2023-10-22",
+"last_candle": "2026-06-15",
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "MINA",
+"delisted": false,
+"first_funding": "2023-10-24",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "POLYX",
+"delisted": false,
+"first_funding": "2023-10-24",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "GAS",
+"delisted": false,
+"first_funding": "2023-10-24",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PENDLE",
+"delisted": false,
+"first_funding": "2023-10-26",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "STG",
+"delisted": true,
+"first_funding": "2023-10-26",
+"last_candle": "2025-08-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "FET",
+"delisted": false,
+"first_funding": "2023-10-26",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "STRAX",
+"delisted": true,
+"first_funding": "2023-10-26",
+"last_candle": "2024-03-15",
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "NEAR",
+"delisted": false,
+"first_funding": "2023-11-01",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "MEME",
+"delisted": false,
+"first_funding": "2023-11-03",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ORDI",
+"delisted": false,
+"first_funding": "2023-11-07",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BADGER",
+"delisted": true,
+"first_funding": "2023-11-09",
+"last_candle": "2025-04-11",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "NEO",
+"delisted": false,
+"first_funding": "2023-11-09",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "ZEN",
+"delisted": false,
+"first_funding": "2023-11-09",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "FIL",
+"delisted": false,
+"first_funding": "2023-11-14",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "PYTH",
+"delisted": false,
+"first_funding": "2023-11-14",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "SUSHI",
+"delisted": false,
+"first_funding": "2023-11-17",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ILV",
+"delisted": true,
+"first_funding": "2023-11-17",
+"last_candle": "2025-04-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "IMX",
+"delisted": false,
+"first_funding": "2023-11-17",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "kBONK",
+"delisted": false,
+"first_funding": "2023-11-20",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "GMT",
+"delisted": false,
+"first_funding": "2023-11-26",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SUPER",
+"delisted": false,
+"first_funding": "2023-11-26",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "USTC",
+"delisted": true,
+"first_funding": "2023-11-27",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "NFTI",
+"delisted": true,
+"first_funding": "2023-11-30",
+"last_candle": "2024-06-25",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "JUP",
+"delisted": false,
+"first_funding": "2023-12-03",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "kLUNC",
+"delisted": false,
+"first_funding": "2023-12-05",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "RSR",
+"delisted": false,
+"first_funding": "2023-12-05",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "GALA",
+"delisted": false,
+"first_funding": "2023-12-05",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "JTO",
+"delisted": false,
+"first_funding": "2023-12-07",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "NTRN",
+"delisted": true,
+"first_funding": "2023-12-12",
+"last_candle": "2025-04-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ACE",
+"delisted": false,
+"first_funding": "2023-12-18",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MAV",
+"delisted": true,
+"first_funding": "2023-12-20",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "WIF",
+"delisted": false,
+"first_funding": "2023-12-22",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "CAKE",
+"delisted": false,
+"first_funding": "2023-12-30",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PEOPLE",
+"delisted": false,
+"first_funding": "2024-01-03",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ENS",
+"delisted": false,
+"first_funding": "2024-01-05",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "ETC",
+"delisted": false,
+"first_funding": "2024-01-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "XAI",
+"delisted": false,
+"first_funding": "2024-01-15",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MANTA",
+"delisted": false,
+"first_funding": "2024-01-18",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "UMA",
+"delisted": false,
+"first_funding": "2024-01-19",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ONDO",
+"delisted": false,
+"first_funding": "2024-01-20",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "ALT",
+"delisted": false,
+"first_funding": "2024-01-25",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ZETA",
+"delisted": false,
+"first_funding": "2024-02-02",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "DYM",
+"delisted": false,
+"first_funding": "2024-02-06",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MAVIA",
+"delisted": true,
+"first_funding": "2024-02-06",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "W",
+"delisted": false,
+"first_funding": "2024-02-07",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "PANDORA",
+"delisted": true,
+"first_funding": "2024-02-09",
+"last_candle": "2024-06-27",
+"maxLev": 3,
+"onlyIso": true
+},
+{
+"coin": "STRK",
+"delisted": false,
+"first_funding": "2024-02-14",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "PIXEL",
+"delisted": true,
+"first_funding": "2024-02-19",
+"last_candle": "2025-04-11",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "AI",
+"delisted": true,
+"first_funding": "2024-02-19",
+"last_candle": "2025-04-11",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "TAO",
+"delisted": false,
+"first_funding": "2024-02-19",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "AR",
+"delisted": false,
+"first_funding": "2024-02-28",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "MYRO",
+"delisted": true,
+"first_funding": "2024-03-05",
+"last_candle": "2025-03-29",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "kFLOKI",
+"delisted": false,
+"first_funding": "2024-03-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "BOME",
+"delisted": false,
+"first_funding": "2024-03-15",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ETHFI",
+"delisted": false,
+"first_funding": "2024-03-21",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "ENA",
+"delisted": false,
+"first_funding": "2024-04-02",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "MNT",
+"delisted": false,
+"first_funding": "2024-04-05",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "TNSR",
+"delisted": false,
+"first_funding": "2024-04-08",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SAGA",
+"delisted": false,
+"first_funding": "2024-04-21",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MERL",
+"delisted": false,
+"first_funding": "2024-04-23",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "HBAR",
+"delisted": false,
+"first_funding": "2024-04-24",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "POPCAT",
+"delisted": false,
+"first_funding": "2024-04-28",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "OMNI",
+"delisted": true,
+"first_funding": "2024-04-29",
+"last_candle": "2025-09-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "EIGEN",
+"delisted": false,
+"first_funding": "2024-04-30",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "REZ",
+"delisted": false,
+"first_funding": "2024-04-30",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "NOT",
+"delisted": false,
+"first_funding": "2024-05-17",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "TURBO",
+"delisted": false,
+"first_funding": "2024-05-31",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BRETT",
+"delisted": false,
+"first_funding": "2024-06-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "IO",
+"delisted": false,
+"first_funding": "2024-06-12",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ZK",
+"delisted": false,
+"first_funding": "2024-06-12",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "BLAST",
+"delisted": true,
+"first_funding": "2024-06-26",
+"last_candle": "2026-05-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "LISTA",
+"delisted": true,
+"first_funding": "2024-06-28",
+"last_candle": "2025-04-11",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MEW",
+"delisted": true,
+"first_funding": "2024-07-23",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "RENDER",
+"delisted": false,
+"first_funding": "2024-07-31",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "kDOGS",
+"delisted": true,
+"first_funding": "2024-09-03",
+"last_candle": "2025-08-04",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "POL",
+"delisted": false,
+"first_funding": "2024-09-17",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "CATI",
+"delisted": true,
+"first_funding": "2024-09-25",
+"last_candle": "2025-04-11",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "CELO",
+"delisted": false,
+"first_funding": "2024-09-25",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "HMSTR",
+"delisted": false,
+"first_funding": "2024-09-27",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SCR",
+"delisted": true,
+"first_funding": "2024-10-09",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "NEIROETH",
+"delisted": true,
+"first_funding": "2024-10-23",
+"last_candle": "2025-09-25",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "kNEIRO",
+"delisted": false,
+"first_funding": "2024-10-23",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "GOAT",
+"delisted": false,
+"first_funding": "2024-10-23",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MOODENG",
+"delisted": false,
+"first_funding": "2024-10-25",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "GRASS",
+"delisted": false,
+"first_funding": "2024-10-28",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PURR",
+"delisted": false,
+"first_funding": "2024-11-04",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PNUT",
+"delisted": false,
+"first_funding": "2024-11-14",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "XLM",
+"delisted": false,
+"first_funding": "2024-11-23",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "CHILLGUY",
+"delisted": true,
+"first_funding": "2024-11-25",
+"last_candle": "2026-05-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SAND",
+"delisted": false,
+"first_funding": "2024-12-04",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "IOTA",
+"delisted": false,
+"first_funding": "2024-12-04",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ALGO",
+"delisted": false,
+"first_funding": "2024-12-04",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "HYPE",
+"delisted": false,
+"first_funding": "2024-12-05",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "ME",
+"delisted": false,
+"first_funding": "2024-12-10",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MOVE",
+"delisted": false,
+"first_funding": "2024-12-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "VIRTUAL",
+"delisted": false,
+"first_funding": "2024-12-16",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "PENGU",
+"delisted": false,
+"first_funding": "2024-12-17",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "USUAL",
+"delisted": false,
+"first_funding": "2024-12-18",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "FARTCOIN",
+"delisted": false,
+"first_funding": "2024-12-20",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "AI16Z",
+"delisted": true,
+"first_funding": "2025-01-01",
+"last_candle": "2025-11-06",
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "AIXBT",
+"delisted": false,
+"first_funding": "2025-01-01",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ZEREBRO",
+"delisted": true,
+"first_funding": "2025-01-02",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BIO",
+"delisted": false,
+"first_funding": "2025-01-03",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "GRIFFAIN",
+"delisted": false,
+"first_funding": "2025-01-07",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SPX",
+"delisted": false,
+"first_funding": "2025-01-07",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "S",
+"delisted": false,
+"first_funding": "2025-01-17",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "MORPHO",
+"delisted": false,
+"first_funding": "2025-01-17",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "TRUMP",
+"delisted": false,
+"first_funding": "2025-01-18",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "MELANIA",
+"delisted": false,
+"first_funding": "2025-01-20",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ANIME",
+"delisted": false,
+"first_funding": "2025-01-21",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "VINE",
+"delisted": true,
+"first_funding": "2025-01-23",
+"last_candle": "2026-08-26",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "VVV",
+"delisted": false,
+"first_funding": "2025-01-28",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "JELLY",
+"delisted": true,
+"first_funding": "2025-01-30",
+"last_candle": "2025-03-26",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BERA",
+"delisted": false,
+"first_funding": "2025-02-06",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "TST",
+"delisted": true,
+"first_funding": "2025-02-09",
+"last_candle": "2026-05-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "LAYER",
+"delisted": false,
+"first_funding": "2025-02-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "IP",
+"delisted": true,
+"first_funding": "2025-02-13",
+"last_candle": "2026-06-29",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "OM",
+"delisted": true,
+"first_funding": "2025-02-16",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "KAITO",
+"delisted": false,
+"first_funding": "2025-02-20",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "NIL",
+"delisted": false,
+"first_funding": "2025-03-24",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PAXG",
+"delisted": false,
+"first_funding": "2025-04-06",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "PROMPT",
+"delisted": true,
+"first_funding": "2025-04-12",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "BABY",
+"delisted": false,
+"first_funding": "2025-04-12",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "WCT",
+"delisted": false,
+"first_funding": "2025-04-15",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "HYPER",
+"delisted": false,
+"first_funding": "2025-04-22",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ZORA",
+"delisted": false,
+"first_funding": "2025-04-23",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "INIT",
+"delisted": false,
+"first_funding": "2025-04-24",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "DOOD",
+"delisted": true,
+"first_funding": "2025-05-09",
+"last_candle": "2026-06-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "LAUNCHCOIN",
+"delisted": true,
+"first_funding": "2025-05-14",
+"last_candle": "2025-10-25",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "NXPC",
+"delisted": false,
+"first_funding": "2025-05-15",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SOPH",
+"delisted": false,
+"first_funding": "2025-05-28",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "RESOLV",
+"delisted": false,
+"first_funding": "2025-06-10",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SYRUP",
+"delisted": false,
+"first_funding": "2025-06-26",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PUMP",
+"delisted": false,
+"first_funding": "2025-07-10",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "PROVE",
+"delisted": false,
+"first_funding": "2025-08-06",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "YZY",
+"delisted": true,
+"first_funding": "2025-08-21",
+"last_candle": "2026-05-05",
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "XPL",
+"delisted": false,
+"first_funding": "2025-08-22",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "WLFI",
+"delisted": false,
+"first_funding": "2025-08-23",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "LINEA",
+"delisted": false,
+"first_funding": "2025-09-01",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "SKY",
+"delisted": false,
+"first_funding": "2025-09-17",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ASTER",
+"delisted": false,
+"first_funding": "2025-09-19",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "AVNT",
+"delisted": false,
+"first_funding": "2025-09-21",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "STBL",
+"delisted": false,
+"first_funding": "2025-09-22",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "0G",
+"delisted": false,
+"first_funding": "2025-09-22",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "HEMI",
+"delisted": false,
+"first_funding": "2025-09-24",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "APEX",
+"delisted": false,
+"first_funding": "2025-09-27",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "2Z",
+"delisted": false,
+"first_funding": "2025-10-02",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ZEC",
+"delisted": false,
+"first_funding": "2025-10-02",
+"last_candle": null,
+"maxLev": 10,
+"onlyIso": false
+},
+{
+"coin": "MON",
+"delisted": false,
+"first_funding": "2025-10-08",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "MET",
+"delisted": false,
+"first_funding": "2025-10-10",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "MEGA",
+"delisted": false,
+"first_funding": "2025-10-22",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "CC",
+"delisted": false,
+"first_funding": "2025-10-31",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "ICP",
+"delisted": false,
+"first_funding": "2025-11-08",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "AERO",
+"delisted": false,
+"first_funding": "2025-11-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "STABLE",
+"delisted": false,
+"first_funding": "2025-12-08",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "FOGO",
+"delisted": false,
+"first_funding": "2025-12-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "LIT",
+"delisted": false,
+"first_funding": "2025-12-22",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "XMR",
+"delisted": false,
+"first_funding": "2026-01-15",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "AXS",
+"delisted": false,
+"first_funding": "2026-01-18",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "DASH",
+"delisted": false,
+"first_funding": "2026-01-18",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "SKR",
+"delisted": false,
+"first_funding": "2026-01-22",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "AZTEC",
+"delisted": false,
+"first_funding": "2026-02-12",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "CHIP",
+"delisted": false,
+"first_funding": "2026-04-22",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "GRAM",
+"delisted": false,
+"first_funding": "2026-07-02",
+"last_candle": null,
+"maxLev": 5,
+"onlyIso": false
+},
+{
+"coin": "CASHCAT",
+"delisted": false,
+"first_funding": "2026-07-11",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "PONS",
+"delisted": false,
+"first_funding": "2026-08-31",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+},
+{
+"coin": "USELESS",
+"delisted": false,
+"first_funding": "2026-09-08",
+"last_candle": null,
+"maxLev": 3,
+"onlyIso": false
+}
+]

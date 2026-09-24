@@ -1,0 +1,109 @@
+{
+ "run_id": "DRY_RUN_DEV_20260923T151455Z",
+ "spec_sha256": "903bc0d5997e2db53bb8de7047ff4bdf162df11d717bd2d95ff445afaede3b92",
+ "dataset": "data\\MNQ_1m.parquet",
+ "dataset_sha256": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774",
+ "eval_window": [
+  "2025-09-11",
+  "2026-06-30"
+ ],
+ "label": "DRY_RUN_DEV (already-seen data; NOT evidence)",
+ "ALPHA": {
+  "overall": {
+   "n": 20,
+   "net_expectancy": 34.7875,
+   "median": -1.25,
+   "win_rate": 0.5,
+   "payoff": 1.362747653806048,
+   "skew": 0.4413350244225475,
+   "total": 695.75,
+   "max_dd": -932.0
+  },
+  "per_year": {
+   "2025": {
+    "n": 11,
+    "net_expectancy": 14.022727272727273,
+    "median": 12.5,
+    "win_rate": 0.5454545454545454,
+    "payoff": 0.9373314455231931,
+    "skew": 0.2633394384909678,
+    "total": 154.25,
+    "max_dd": -932.0
+   },
+   "2026": {
+    "n": 9,
+    "net_expectancy": 60.166666666666664,
+    "median": -10.0,
+    "win_rate": 0.4444444444444444,
+    "payoff": 2.2424853372434015,
+    "skew": 0.8613444956752099,
+    "total": 541.5,
+    "max_dd": -454.0
+   }
+  },
+  "per_instrument_family": {
+   "MNQ": {
+    "n": 20,
+    "net_expectancy": 34.7875,
+    "median": -1.25,
+    "win_rate": 0.5,
+    "payoff": 1.362747653806048,
+    "skew": 0.4413350244225475,
+    "total": 695.75,
+    "max_dd": -932.0
+   }
+  },
+  "bootstrap_ci95_iid": [
+   -83.42140625,
+   158.36109374999992
+  ],
+  "bootstrap_ci95_year_cluster": [
+   14.022727272727273,
+   60.166666666666664
+  ],
+  "year_consistency": {
+   "years": 2,
+   "positive_years": 2
+  },
+  "mae_mfe_points": {
+   "mae_median": 40.25,
+   "mae_p90": 92.62500000000004,
+   "mfe_median": 42.5,
+   "mfe_p90": 174.02500000000015
+  },
+  "cost_sensitivity": {
+   "commission_x0": 37.0875,
+   "commission_x1": 34.7875,
+   "commission_x2": 32.4875,
+   "commission_x3": 30.1875
+  },
+  "slippage_sensitivity": {
+   "extra_ticks_per_fill_0": 34.7875,
+   "extra_ticks_per_fill_1": 32.2125,
+   "extra_ticks_per_fill_2": 29.6375,
+   "extra_ticks_per_fill_3": 27.0625
+  },
+  "capacity": {
+   "median_contracts": 2.0,
+   "median_entry_bar_volume": 3699.5,
+   "median_share_of_entry_bar_volume": 0.000539338907465235
+  },
+  "ALPHA_VERDICT": {
+   "verdict": "INCONCLUSIVE_UNDERPOWERED",
+   "fail_reasons": [],
+   "criteria": {
+    "min_trades": 30,
+    "min_net_expectancy_usd": 20.0,
+    "min_positive_years": 4,
+    "note": "PASS requires n>=30, mean>+$20/trade after costs, year-cluster bootstrap 95% lower bound > 0, >=4 positive calendar years in 2019-06..2024-06 (5+ years). n<30 -> INCONCLUSIVE_UNDERPOWERED, never PASS."
+   }
+  }
+ },
+ "PROP_LUCID_SEPARATE": {
+  "pass": 0.1227,
+  "fail_mll": 0.1073,
+  "timeout": 0.77,
+  "sizing": "as produced by the frozen strategy (not rescaled)",
+  "note": "PROP only; cannot alter ALPHA_VERDICT"
+ }
+}

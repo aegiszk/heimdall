@@ -1,0 +1,211 @@
+<USER_REQUEST>
+# HEIMDALL — AGENT 3
+# SIERRA INFORMATION-CONTENT ATLAS
+
+Your previous role was external discovery.
+For this cycle, stop searching for more strategies.
+
+QUESTION:
+
+WHAT INFORMATION DOES THE SIERRA DATA WE ALREADY PAID FOR CONTAIN
+THAT HEIMDALL HAS NOT YET EXPLOITED?
+
+This is NOT a strategy-optimization task.
+
+Read:
+HEIMDALL_MEMORY.md
+data/sierra/MANIFEST.md
+trials ledger
+all Sierra/order-flow reports
+dead strategy ledger
+
+Respect all dead strategies.
+
+DATA:
+Use the existing Sierra archive only.
+No new paid acquisition.
+
+Analyze independent underlying markets primarily as:
+
+NQ
+ES
+GC
+CL
+RTY
+YM
+
+Treat MNQ/MES/MGC/MCL/M2K/MYM primarily as related execution/sizing
+variants unless data proves a distinct informational effect.
+
+DO NOT:
+- optimize entry/exit parameters;
+- search for profitable combinations;
+- rerun absorption v1/v2 or initiative v3;
+- call a statistically significant conditional return a strategy;
+- infer MBO, queue position or order lifecycle;
+- inspect PnL and then create a rule around the winner.
+
+PHASE 1 — DATA TRUTH
+
+For each instrument report:
+
+date range
+sessions
+trade/tick count
+footprint-cell count
+missingness
+bid/ask reconciliation
+rolls
+session coverage
+available fields
+important limitations
+
+PHASE 2 — MICROSTRUCTURE RESPONSE ATLAS
+
+Using common PRE-DECLARED definitions across instruments, measure:
+
+A. signed aggressor imbalance
+B. normalized delta
+C. trade intensity
+D. volume concentration by price
+E. price impact per unit signed volume
+F. absorption-like price response WITHOUT using the dead strategy rule
+G. continuation/reversal response
+H. liquidity/resilience proxy supported by available fields
+
+For each feature measure forward markouts at fixed horizons such as:
+
+1m
+2m
+5m
+15m
+30m
+
+This is descriptive characterization, not a trading backtest.
+
+Report effect size, uncertainty and stability — not just p-values.
+
+PHASE 3 — SESSION DEPENDENCE
+
+Repeat the response atlas by structural period:
+
+overnight
+European/US overlap where available
+RTH open
+midday
+final hour
+
+Determine whether the same order-flow event carries different information
+in different sessions.
+
+Do NOT create a session-filtered strategy yet.
+
+PHASE 4 — CROSS-INSTRUMENT INFORMATION
+
+Measure whether flow in one market contains incremental information about
+another market AFTER controlling for the target's own recent price/flow.
+
+Especially inspect:
+
+NQ ↔ ES
+RTY ↔ ES
+YM ↔ ES/NQ
+
+Also test GC/CL relationships only where an economically defensible
+mechanism exists.
+
+Use strict lagging.
+No contemporaneous/future leakage.
+
+Ask:
+
+Does source-market flow at t improve prediction of target-market returns
+after t beyond target-market state alone?
+
+Include time-shift/randomization placebo controls.
+
+PHASE 5 — MICRO VS MINI
+
+Where both exist, compare mini vs micro:
+
+price timing
+signed-flow timing
+volume shares
+lead/lag
+impact
+noise
+
+Determine whether the micro contract contributes information or merely
+follows the mini.
+
+Do not count mini and micro as independent evidence.
+
+PHASE 6 — ECONOMIC MAGNITUDE
+
+For every statistically detectable response compare:
+
+observed forward displacement
+versus
+realistic entry/exit friction.
+
+Classify:
+
+INFORMATION EXISTS BUT TOO SMALL TO TRADE
+POTENTIALLY ECONOMIC
+NO MEASURABLE INFORMATION
+DATA INSUFFICIENT
+
+No strategy design yet.
+
+PHASE 7 — NOVELTY CHECK
+
+Compare every interesting phenomenon to the Heimdall graveyard.
+
+A result is not novel because the threshold changed.
+
+Identify only mechanisms that are materially different from:
+absorption v1/v2,
+initiative continuation,
+generic TA,
+POC reclaim,
+FVG/opening-range work.
+
+PHASE 8 — FIDELITY / MULTIPLE TESTING
+
+This is an exploratory atlas.
+
+Everything examined is DEVELOPMENT DATA.
+
+Record all feature × horizon × instrument × session comparisons in the
+global trials ledger or a dedicated exploration ledger.
+
+Nothing discovered here may later be called untouched OOS on these dates.
+
+Apply multiple-testing correction where reporting significance.
+
+Do not select a profitable-looking cell and pretend it was pre-registered.
+
+FINAL RESPONSE:
+
+STATUS
+
+1. DATA INVENTORY
+2. WHAT SIERRA ACTUALLY LETS US MEASURE
+3. INFORMATION-CONTENT ATLAS
+4. SESSION EFFECTS
+5. CROSS-INSTRUMENT RESULTS
+6. MINI-vs-MICRO RESULTS
+7. EFFECT SIZE VS FRICTION
+8. NEGATIVE FINDINGS
+9. GENUINELY NEW MECHANISMS
+10. WHAT THE $26 PURCHASE TAUGHT US
+11. TOP 0–3 HYPOTHESES WORTH PRE-REGISTERING
+12. FRESH DATA EACH WOULD REQUIRE
+
+TOP 0 IS VALID.
+
+Do not implement strategies in this cycle.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-23T09:28:08+04:00.
+</ADDITIONAL_METADATA>

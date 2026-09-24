@@ -1,0 +1,100 @@
+{
+ "events": {
+  "n": 24,
+  "m0_1_disp_t": {
+   "mean": -0.21,
+   "median": 3.5,
+   "mean_abs": 17.96,
+   "t": -0.04
+  },
+  "m1_2_disp_t": {
+   "mean": 3.54,
+   "median": 4.0,
+   "mean_abs": 9.79,
+   "t": 1.37
+  },
+  "m2_5_disp_t": {
+   "mean": 2.21,
+   "median": 2.5,
+   "mean_abs": 11.71,
+   "t": 0.75
+  },
+  "m5_15_disp_t": {
+   "mean": 1.29,
+   "median": 8.0,
+   "mean_abs": 24.54,
+   "t": 0.21
+  },
+  "cont_1_5_t": {
+   "mean": -1.25,
+   "median": -5.5,
+   "mean_abs": 15.08,
+   "t": -0.3
+  },
+  "cont_1_15_t": {
+   "mean": 4.96,
+   "median": 4.5,
+   "mean_abs": 28.54,
+   "t": 0.65
+  },
+  "mae_1_5_t": {
+   "mean": 15.71,
+   "median": 11.5,
+   "mean_abs": 15.71,
+   "t": 5.82
+  },
+  "m0_1_intensity_median": 2.06,
+  "corr_flow_disp_m0_1": 0.637,
+  "share_continuation_1_5": 0.417,
+  "corr_first_min_vs_next_4": -0.159
+ },
+ "placebo_same_clock_non_release_days": {
+  "n": 94,
+  "m0_1_disp_t": {
+   "mean": 2.59,
+   "median": 3.5,
+   "mean_abs": 8.76,
+   "t": 2.35
+  },
+  "m1_2_disp_t": {
+   "mean": -0.28,
+   "median": 0.0,
+   "mean_abs": 7.38,
+   "t": -0.27
+  },
+  "m2_5_disp_t": {
+   "mean": 1.46,
+   "median": -0.5,
+   "mean_abs": 12.35,
+   "t": 0.8
+  },
+  "m5_15_disp_t": {
+   "mean": 1.7,
+   "median": 0.5,
+   "mean_abs": 18.45,
+   "t": 0.67
+  },
+  "cont_1_5_t": {
+   "mean": -1.16,
+   "median": 0.0,
+   "mean_abs": 13.63,
+   "t": -0.59
+  },
+  "cont_1_15_t": {
+   "mean": -4.5,
+   "median": -3.0,
+   "mean_abs": 23.44,
+   "t": -1.27
+  },
+  "mae_1_5_t": {
+   "mean": 15.78,
+   "median": 12.0,
+   "mean_abs": 15.8,
+   "t": 7.59
+  },
+  "m0_1_intensity_median": 1.13,
+  "corr_flow_disp_m0_1": 0.581,
+  "share_continuation_1_5": 0.457,
+  "corr_first_min_vs_next_4": -0.162
+ }
+}

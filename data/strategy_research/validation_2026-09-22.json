@@ -1,0 +1,246 @@
+{
+  "pre_registered": true,
+  "post_result_tuning": false,
+  "poc_proxy_fidelity": {
+    "minute_source": "data\\sierra\\NQ_continuous_1m_latest_90d.parquet",
+    "footprint_source": "data\\sierra\\tick\\NQ_continuous_1m_footprint.parquet",
+    "overlap_5m_bars": 4857,
+    "exact_match_rate": 0.02697138151122092,
+    "median_absolute_ticks": 21.0,
+    "p95_absolute_ticks": 150.19999999999982
+  },
+  "candidates": [
+    {
+      "name": "luxalgo_poc_sweep_reclaim",
+      "bar_rows": 39468,
+      "sessions": 515,
+      "train_session_count": 309,
+      "holdout_session_count": 206,
+      "train": {
+        "trades": 307,
+        "win_rate": 0.2996742671009772,
+        "mean_pnl": -8.456026058631922,
+        "total_pnl": -2596.0,
+        "avg_win": 46.0,
+        "avg_loss": -31.75813953488372,
+        "realized_payoff": 1.448447568834212,
+        "skew": -0.09197586321129245,
+        "max_consecutive_losses": 13
+      },
+      "holdout": {
+        "trades": 205,
+        "win_rate": 0.375609756097561,
+        "mean_pnl": -5.197560975609756,
+        "total_pnl": -1065.5,
+        "avg_win": 49.04545454545455,
+        "avg_loss": -37.828125,
+        "realized_payoff": 1.2965341143779805,
+        "skew": -0.5275796053532879,
+        "max_consecutive_losses": 8
+      },
+      "holdout_walk_forward": [
+        {
+          "bucket": 1,
+          "start": "2025-09-11",
+          "end": "2025-11-21",
+          "trades": 52,
+          "win_rate": 0.36538461538461536,
+          "mean_pnl": -3.769230769230769,
+          "total_pnl": -196.0,
+          "avg_win": 48.973684210526315,
+          "avg_loss": -34.13636363636363,
+          "realized_payoff": 1.434648538790385,
+          "skew": -0.4532202142978159,
+          "max_consecutive_losses": 6
+        },
+        {
+          "bucket": 2,
+          "start": "2025-11-24",
+          "end": "2026-02-05",
+          "trades": 51,
+          "win_rate": 0.37254901960784315,
+          "mean_pnl": -2.392156862745098,
+          "total_pnl": -122.0,
+          "avg_win": 44.73684210526316,
+          "avg_loss": -30.375,
+          "realized_payoff": 1.472817847086853,
+          "skew": 0.05818173391161552,
+          "max_consecutive_losses": 7
+        },
+        {
+          "bucket": 3,
+          "start": "2026-02-06",
+          "end": "2026-04-20",
+          "trades": 51,
+          "win_rate": 0.35294117647058826,
+          "mean_pnl": -4.284313725490196,
+          "total_pnl": -218.5,
+          "avg_win": 56.333333333333336,
+          "avg_loss": -37.34848484848485,
+          "realized_payoff": 1.5083164300202838,
+          "skew": -0.6239566367074295,
+          "max_consecutive_losses": 5
+        },
+        {
+          "bucket": 4,
+          "start": "2026-04-21",
+          "end": "2026-06-30",
+          "trades": 51,
+          "win_rate": 0.4117647058823529,
+          "mean_pnl": -10.372549019607844,
+          "total_pnl": -529.0,
+          "avg_win": 46.76190476190476,
+          "avg_loss": -50.36666666666667,
+          "realized_payoff": 0.9284296114210078,
+          "skew": -0.5655628621505949,
+          "max_consecutive_losses": 6
+        }
+      ],
+      "holdout_gate": {
+        "passed": false,
+        "reasons": [
+          "dsr",
+          "nw_t",
+          "boot_lo",
+          "wf_min"
+        ],
+        "dsr": 2.977081001921117e-19,
+        "pbo": null,
+        "mc_p": null,
+        "boot_lo": -0.2224685744734022,
+        "nw_t": -1.1964679870302364,
+        "max_dd": -0.024504251337945426,
+        "n_trades": 205,
+        "n_params": 3,
+        "wf_min": -0.1786216511084326
+      },
+      "holdout_lucid_monte_carlo": {
+        "sims": 10000,
+        "pass_rate": 0.0,
+        "fail_died_mll": 0.0,
+        "fail_never_reached_target": 1.0,
+        "fail_target_min_days": 0.0,
+        "avg_days": 80.0,
+        "avg_trades": 79.3915,
+        "avg_final_balance": 49592.48675,
+        "observed_daily_count_zero_rate": 0.0048543689320388345
+      }
+    },
+    {
+      "name": "youtube_opening_fvg_scalp",
+      "bar_rows": 197340,
+      "sessions": 515,
+      "train_session_count": 309,
+      "holdout_session_count": 206,
+      "train": {
+        "trades": 107,
+        "win_rate": 0.38317757009345793,
+        "mean_pnl": 26.794392523364486,
+        "total_pnl": 2867.0,
+        "avg_win": 211.3170731707317,
+        "avg_loss": -87.83333333333333,
+        "realized_payoff": 2.405886981070949,
+        "skew": 1.0661592661075308,
+        "max_consecutive_losses": 9
+      },
+      "holdout": {
+        "trades": 67,
+        "win_rate": 0.2835820895522388,
+        "mean_pnl": 0.4626865671641791,
+        "total_pnl": 31.0,
+        "avg_win": 274.9736842105263,
+        "avg_loss": -108.19791666666667,
+        "realized_payoff": 2.541395367691395,
+        "skew": 1.2545393461157246,
+        "max_consecutive_losses": 7
+      },
+      "holdout_walk_forward": [
+        {
+          "bucket": 1,
+          "start": "2025-09-11",
+          "end": "2025-11-21",
+          "trades": 17,
+          "win_rate": 0.23529411764705882,
+          "mean_pnl": 8.882352941176471,
+          "total_pnl": 151.0,
+          "avg_win": 282.875,
+          "avg_loss": -75.42307692307692,
+          "realized_payoff": 3.7505099439061707,
+          "skew": 1.4991637870161103,
+          "max_consecutive_losses": 5
+        },
+        {
+          "bucket": 2,
+          "start": "2025-11-24",
+          "end": "2026-02-05",
+          "trades": 11,
+          "win_rate": 0.2727272727272727,
+          "mean_pnl": -15.090909090909092,
+          "total_pnl": -166.0,
+          "avg_win": 297.3333333333333,
+          "avg_loss": -132.25,
+          "realized_payoff": 2.248267170762445,
+          "skew": 1.3992540492915568,
+          "max_consecutive_losses": 4
+        },
+        {
+          "bucket": 3,
+          "start": "2026-02-06",
+          "end": "2026-04-20",
+          "trades": 21,
+          "win_rate": 0.38095238095238093,
+          "mean_pnl": 17.61904761904762,
+          "total_pnl": 370.0,
+          "avg_win": 229.75,
+          "avg_loss": -112.92307692307692,
+          "realized_payoff": 2.0345708446866486,
+          "skew": 0.7971335079882623,
+          "max_consecutive_losses": 5
+        },
+        {
+          "bucket": 4,
+          "start": "2026-04-21",
+          "end": "2026-06-30",
+          "trades": 18,
+          "win_rate": 0.2222222222222222,
+          "mean_pnl": -18.0,
+          "total_pnl": -324.0,
+          "avg_win": 340.75,
+          "avg_loss": -120.5,
+          "realized_payoff": 2.827800829875519,
+          "skew": 1.8067261098173657,
+          "max_consecutive_losses": 7
+        }
+      ],
+      "holdout_gate": {
+        "passed": false,
+        "reasons": [
+          "dsr",
+          "nw_t",
+          "boot_lo",
+          "wf_min"
+        ],
+        "dsr": 1.27989447198892e-05,
+        "pbo": null,
+        "mc_p": null,
+        "boot_lo": -0.2705262222727679,
+        "nw_t": 0.02375004118621434,
+        "max_dd": -0.02226481278274106,
+        "n_trades": 67,
+        "n_params": 3,
+        "wf_min": -0.2015600919700994
+      },
+      "holdout_lucid_monte_carlo": {
+        "sims": 10000,
+        "pass_rate": 0.0064,
+        "fail_died_mll": 0.0,
+        "fail_never_reached_target": 0.9936,
+        "fail_target_min_days": 0.0,
+        "avg_days": 79.8941,
+        "avg_trades": 25.2677,
+        "avg_final_balance": 49999.51485,
+        "observed_daily_count_zero_rate": 0.6747572815533981
+      }
+    }
+  ]
+}

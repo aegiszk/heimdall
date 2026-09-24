@@ -1,0 +1,13 @@
+{
+  "v2+side_skip": {
+    "n": 25,
+    "total": -411.88,
+    "mean": -16.48,
+    "win": 0.36,
+    "long_n": 11,
+    "long_total": 279.75,
+    "short_n": 14,
+    "short_total": -691.62,
+    "rejections": 444
+  }
+}

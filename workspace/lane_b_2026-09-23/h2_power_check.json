@@ -1,0 +1,74 @@
+{
+ "xyz:XYZ100|h1": {
+  "contemp_corr_flow_vs_NQret_by_day": [
+   0.26,
+   0.205,
+   0.216,
+   0.174,
+   0.139
+  ],
+  "R2_lean": -0.0001,
+  "R2_lean_plus_lagged_flow": -0.001,
+  "R2_lean_plus_FUTURE_flow(pos.control)": 0.0356
+ },
+ "xyz:XYZ100|h5": {
+  "contemp_corr_flow_vs_NQret_by_day": [
+   0.278,
+   0.247,
+   0.23,
+   0.173,
+   0.171
+  ],
+  "R2_lean": 0.0022,
+  "R2_lean_plus_lagged_flow": -0.0001,
+  "R2_lean_plus_FUTURE_flow(pos.control)": 0.0456
+ },
+ "xyz:XYZ100|h15": {
+  "contemp_corr_flow_vs_NQret_by_day": [
+   0.315,
+   0.287,
+   0.215,
+   0.187,
+   0.14
+  ],
+  "R2_lean": -0.0052,
+  "R2_lean_plus_lagged_flow": -0.0117,
+  "R2_lean_plus_FUTURE_flow(pos.control)": 0.0421
+ },
+ "xyz:SP500|h1": {
+  "contemp_corr_flow_vs_NQret_by_day": [
+   0.203,
+   0.203,
+   0.057,
+   0.136,
+   0.191
+  ],
+  "R2_lean": 0.0001,
+  "R2_lean_plus_lagged_flow": -0.0001,
+  "R2_lean_plus_FUTURE_flow(pos.control)": 0.0176
+ },
+ "xyz:SP500|h5": {
+  "contemp_corr_flow_vs_NQret_by_day": [
+   0.246,
+   0.273,
+   0.062,
+   0.21,
+   0.236
+  ],
+  "R2_lean": 0.0028,
+  "R2_lean_plus_lagged_flow": 0.0011,
+  "R2_lean_plus_FUTURE_flow(pos.control)": 0.0315
+ },
+ "xyz:SP500|h15": {
+  "contemp_corr_flow_vs_NQret_by_day": [
+   0.3,
+   0.306,
+   0.032,
+   0.379,
+   0.313
+  ],
+  "R2_lean": -0.0065,
+  "R2_lean_plus_lagged_flow": -0.0079,
+  "R2_lean_plus_FUTURE_flow(pos.control)": 0.0425
+ }
+}

@@ -1,0 +1,3 @@
+strategy,selected_pair,filters
+vwap_reversion,volatility+trend_alignment,"volatility,trend_alignment"
+trend_pullback,volatility+time_of_day,"volatility,time_of_day"

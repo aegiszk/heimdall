@@ -1,0 +1,22 @@
+0x9ce0cb4a193acbce0dca3283972341aed6f3f614 in 1647 out 7 failed chunks 0 40s
+0x6c309600df63448a1ba1129cffb34999192a7513 in 102 out 52 failed chunks 0 76s
+0x8224c04a8f66557df682fd0581eb3724bd2bee07 in 2263 out 269 failed chunks 0 97s
+0xa81a48e9e52527564b1fddba2ea600b6d2d74c61 in 771 out 100 failed chunks 0 143s
+0x6c1234dc73ee99934e8553ac82c4b0755f09a80a in 779 out 112 failed chunks 0 189s
+0xbe8ae5acb8ea453669c15178b7e23776f2379885 in 129 out 49 failed chunks 0 247s
+0xde7c85ed0520221b7d5802753366410fc8eba6d7 in 1328 out 55 failed chunks 0 348s
+0x57d45262be6e300141fc020e1fe48e97a37820f3 in 100 out 26 failed chunks 0 385s
+0x0e17fc4e333958e7b259ab652f334b2f5bbdb27e in 1028 out 80 failed chunks 0 424s
+0x0f9a7a53b36daf1f52fe7a616ea4b25c532d2fd2 in 621 out 93 failed chunks 0 473s
+0xea01ee72a9ab6b5d9934aee0d01ac587aa0e4627 in 146 out 13 failed chunks 0 551s
+0x59bd60d56bc7deb82d5fb35742638d92c07894b1 in 801 out 72 failed chunks 0 625s
+0xe9fefd69660c889adb74e6455434fd8bf6e539e1 in 410 out 90 failed chunks 0 718s
+0x180906a0ef400e4747eac35d4e02ffa18979e328 in 365 out 43 failed chunks 0 813s
+0xdc5e4898fae6f88dc4825783196ecb8d02209ba9 in 408 out 144 failed chunks 0 874s
+0x1e4d574fb1e311f9255e9453cde36965de7ba905 in 0 out 0 failed chunks 0 932s
+0x1949d393f568a54ed025bd2ee8ae6b7502fa798a in 1867 out 105 failed chunks 0 992s
+0x96c56043eca98efb1f4b80acb6db797667999641 in 179 out 40 failed chunks 0 1061s
+0x684e64fb1bb86e7ec5ae41555d87a5439c7cc5d9 in 505 out 61 failed chunks 0 1105s
+0x0f66a86f8f80563acd2f82e452cd627458998fd6 in 265 out 85 failed chunks 0 1142s
+SUMMARY 20 wallets, 2026-08-05..09-05: transfers in 13714, out 1496, distinct tx 13462, tokens 2553, failed chunks 0
+compare: same 20 wallets, FomoPulse 09-05..09-22 non-dust fills 4364

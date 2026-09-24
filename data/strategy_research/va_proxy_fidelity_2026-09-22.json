@@ -1,0 +1,16 @@
+{
+  "preregistration": "VA_REACCEPTANCE_PREREGISTRATION.md",
+  "stage": 1,
+  "outcomes_computed": false,
+  "sessions": 146,
+  "tolerance_ticks": 4,
+  "required_pass_rate": 0.8,
+  "both_edges_within_tolerance_rate": 0.00684931506849315,
+  "verdict": "FAIL",
+  "vah_err_ticks_median": 143.0,
+  "vah_err_ticks_p95": 803.75,
+  "val_err_ticks_median": 197.5,
+  "val_err_ticks_p95": 758.25,
+  "poc_err_ticks_median_diagnostic": 255.5,
+  "true_va_width_ticks_median": 790.0
+}

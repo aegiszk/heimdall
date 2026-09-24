@@ -1,0 +1,964 @@
+........................................................................ [ 36%]
+.............................s....F....F................................ [ 72%]
+........................................................                 [100%]
+================================== FAILURES ===================================
+_________________________ test_live_public_connectors _________________________
+
+    def test_live_public_connectors():
+        table = []
+        failures = []
+    
+        for venue in VENUES:
+            try:
+                client = CcxtReadOnly(venue)
+                rows = client.ohlcv("BTC", timeframe="1h", limit=10)
+                assert len(rows) == 10, f"{venue} returned {len(rows)} BTC candles"
+                for row in rows:
+                    assert len(row) >= 6, f"{venue} returned malformed candle: {row!r}"
+                    _, open_, high, low, close, volume = row[:6]
+                    assert open_ > 0 and high > 0 and low > 0 and close > 0
+                    assert volume >= 0
+    
+                funding = {}
+                for asset in ASSETS:
+                    funding[asset] = client.funding_bps(asset, "now")
+                    assert isinstance(funding[asset], float)
+                    assert math.isfinite(funding[asset])
+    
+                oi_btc = client.open_interest("BTC")
+                assert isinstance(oi_btc, float)
+                assert math.isfinite(oi_btc)
+                assert oi_btc > 0
+    
+                table.append((venue, funding["BTC"], funding["ETH"], oi_btc))
+            except Exception as exc:
+                failures.append((venue, exc))
+    
+        print("venue | funding_bps(BTC) | funding_bps(ETH) | oi(BTC)")
+        for venue, btc_bps, eth_bps, oi_btc in table:
+            print(f"{venue} | {btc_bps:.8f} | {eth_bps:.8f} | {oi_btc:.2f}")
+        for venue, exc in failures:
+            print(f"{venue} | FAILED | FAILED | FAILED")
+            print(f"{venue} failure: {exc}")
+    
+>       assert not failures, "; ".join(f"{venue}: {exc}" for venue, exc in failures)
+E       AssertionError: okx: okx.load_markets public request failed: RequestTimeout: okx GET https://www.okx.com/api/v5/public/instruments?instType=SWAP
+E       assert not [('okx', RuntimeError('okx.load_markets public request failed: RequestTimeout: okx GET https://www.okx.com/api/v5/public/instruments?instType=SWAP'))]
+
+tests\test_connectors_live.py:51: AssertionError
+---------------------------- Captured stdout call -----------------------------
+venue | funding_bps(BTC) | funding_bps(ETH) | oi(BTC)
+hyperliquid | 0.12500000 | 0.12500000 | 4058237346.50
+binance | 0.42040000 | 1.00000000 | 9276067237.59
+okx | FAILED | FAILED | FAILED
+okx failure: okx.load_markets public request failed: RequestTimeout: okx GET https://www.okx.com/api/v5/public/instruments?instType=SWAP
+__________________ test_btc_real_history_and_funnel_verdicts __________________
+
+self = <HTTPSConnection(host='www.okx.com', port=443) at 0x226ce3e0a50>
+
+    def _new_conn(self) -> socket.socket:
+        """Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        try:
+>           sock = connection.create_connection(
+                (self._dns_host, self.port),
+                self.timeout,
+                source_address=self.source_address,
+                socket_options=self.socket_options,
+            )
+
+.venv\Lib\site-packages\urllib3\connection.py:204: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\urllib3\util\connection.py:85: in create_connection
+    raise err
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+address = ('www.okx.com', 443), timeout = 30.0, source_address = None
+socket_options = [(6, 1, 1)]
+
+    def create_connection(
+        address: tuple[str, int],
+        timeout: _TYPE_TIMEOUT = _DEFAULT_TIMEOUT,
+        source_address: tuple[str, int] | None = None,
+        socket_options: _TYPE_SOCKET_OPTIONS | None = None,
+    ) -> socket.socket:
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`socket.getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith("["):
+            host = host.strip("[]")
+        err = None
+    
+        # Using the value from allowed_gai_family() in the context of getaddrinfo lets
+        # us select whether to work with IPv4 DNS records, IPv6 records, or both.
+        # The original create_connection function always returns all records.
+        family = allowed_gai_family()
+    
+        try:
+            host.encode("idna")
+        except UnicodeError:
+            raise LocationParseError(f"'{host}', label empty or too long") from None
+    
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not _DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+.venv\Lib\site-packages\urllib3\util\connection.py:73: TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+self = <urllib3.connectionpool.HTTPSConnectionPool object at 0x00000226CA7768B0>
+method = 'GET', url = '/api/v5/public/instruments?instType=SPOT', body = None
+headers = {'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+retries = Retry(total=0, connect=None, read=False, redirect=None, status=None)
+redirect = False, assert_same_host = False
+timeout = Timeout(connect=30.0, read=30.0, total=None), pool_timeout = None
+release_conn = False, chunked = False, body_pos = None, preload_content = False
+decode_content = False, response_kw = {}
+
+    def urlopen(  # type: ignore[override]
+        self,
+        method: str,
+        url: str,
+        body: _TYPE_BODY | None = None,
+        headers: typing.Mapping[str, str] | None = None,
+        retries: Retry | bool | int | None = None,
+        redirect: bool = True,
+        assert_same_host: bool = True,
+        timeout: _TYPE_TIMEOUT = _DEFAULT_TIMEOUT,
+        pool_timeout: int | None = None,
+        release_conn: bool | None = None,
+        chunked: bool = False,
+        body_pos: _TYPE_BODY_POSITION | None = None,
+        preload_content: bool = True,
+        decode_content: bool = True,
+        **response_kw: typing.Any,
+    ) -> BaseHTTPResponse:
+        """
+        Get a connection from the pool and perform an HTTP request. This is the
+        lowest level call for making a request, so you'll need to specify all
+        the raw details.
+    
+        .. note::
+    
+           More commonly, it's appropriate to use a convenience method
+           such as :meth:`request`.
+    
+        .. note::
+    
+           `release_conn` will only behave as expected if
+           `preload_content=False` because we want to make
+           `preload_content=False` the default behaviour someday soon without
+           breaking backwards compatibility.
+    
+        :param method:
+            HTTP request method (such as GET, POST, PUT, etc.)
+    
+        :param url:
+            The URL to perform the request on.
+    
+        :param body:
+            Data to send in the request body, either :class:`str`, :class:`bytes`,
+            an iterable of :class:`str`/:class:`bytes`, or a file-like object.
+    
+        :param headers:
+            Dictionary of custom headers to send, such as User-Agent,
+            If-None-Match, etc. If None, pool headers are used. If provided,
+            these headers completely replace any pool-specific headers.
+    
+        :param retries:
+            Configure the number of retries to allow before raising a
+            :class:`~urllib3.exceptions.MaxRetryError` exception.
+    
+            If ``None`` (default) will retry 3 times, see ``Retry.DEFAULT``. Pass a
+            :class:`~urllib3.util.retry.Retry` object for fine-grained control
+            over different types of retries.
+            Pass an integer number to retry connection errors that many times,
+            but no other types of errors. Pass zero to never retry.
+    
+            If ``False``, then retries are disabled and any exception is raised
+            immediately. Also, instead of raising a MaxRetryError on redirects,
+            the redirect response will be returned.
+    
+        :type retries: :class:`~urllib3.util.retry.Retry`, False, or an int.
+    
+        :param redirect:
+            If True, automatically handle redirects (status codes 301, 302,
+            303, 307, 308). Each redirect counts as a retry. Disabling retries
+            will disable redirect, too.
+    
+        :param assert_same_host:
+            If ``True``, will make sure that the host of the pool requests is
+            consistent else will raise HostChangedError. When ``False``, you can
+            use the pool on an HTTP proxy and request foreign hosts.
+    
+        :param timeout:
+            If specified, overrides the default timeout for this one
+            request. It may be a float (in seconds) or an instance of
+            :class:`urllib3.util.Timeout`.
+    
+        :param pool_timeout:
+            If set and the pool is set to block=True, then this method will
+            block for ``pool_timeout`` seconds and raise EmptyPoolError if no
+            connection is available within the time period.
+    
+        :param bool preload_content:
+            If True, the response's body will be preloaded into memory.
+    
+        :param bool decode_content:
+            If True, will attempt to decode the body based on the
+            'content-encoding' header.
+    
+        :param release_conn:
+            If False, then the urlopen call will not release the connection
+            back into the pool once a response is received (but will release if
+            you read the entire contents of the response such as when
+            `preload_content=True`). This is useful if you're not preloading
+            the response's content immediately. You will need to call
+            ``r.release_conn()`` on the response ``r`` to return the connection
+            back into the pool. If None, it takes the value of ``preload_content``
+            which defaults to ``True``.
+    
+        :param bool chunked:
+            If True, urllib3 will send the body using chunked transfer
+            encoding. Otherwise, urllib3 will send the body using the standard
+            content-length form. Defaults to False.
+    
+        :param int body_pos:
+            Position to seek to in file-like body in the event of a retry or
+            redirect. Typically this won't need to be set because urllib3 will
+            auto-populate the value when needed.
+        """
+        # Ensure that the URL we're connecting to is properly encoded
+        if url.startswith("/"):
+            # URLs starting with / are inherently schemeless.
+            url = to_str(_encode_target(url))
+            destination_scheme = None
+        else:
+            parsed_url = parse_url(url)
+            destination_scheme = parsed_url.scheme
+            url = to_str(parsed_url.url)
+    
+        if headers is None:
+            headers = self.headers
+    
+        if not isinstance(retries, Retry):
+            retries = Retry.from_int(retries, redirect=redirect, default=self.retries)
+    
+        if release_conn is None:
+            release_conn = preload_content
+    
+        # Check host
+        if assert_same_host and not self.is_same_host(url):
+            raise HostChangedError(self, url, retries)
+    
+        conn = None
+    
+        # Track whether `conn` needs to be released before
+        # returning/raising/recursing. Update this variable if necessary, and
+        # leave `release_conn` constant throughout the function. That way, if
+        # the function recurses, the original value of `release_conn` will be
+        # passed down into the recursive call, and its value will be respected.
+        #
+        # See issue #651 [1] for details.
+        #
+        # [1] <https://github.com/urllib3/urllib3/issues/651>
+        release_this_conn = release_conn
+    
+        http_tunnel_required = connection_requires_http_tunnel(
+            self.proxy, self.proxy_config, destination_scheme
+        )
+    
+        # Merge the proxy headers. Only done when not using HTTP CONNECT. We
+        # have to copy the headers dict so we can safely change it without those
+        # changes being reflected in anyone else's copy.
+        if not http_tunnel_required:
+            headers = headers.copy()  # type: ignore[attr-defined]
+            headers.update(self.proxy_headers)  # type: ignore[union-attr]
+    
+        # Must keep the exception bound to a separate variable or else Python 3
+        # complains about UnboundLocalError.
+        err = None
+    
+        # Keep track of whether we cleanly exited the except block. This
+        # ensures we do proper cleanup in finally.
+        clean_exit = False
+    
+        # Rewind body position, if needed. Record current position
+        # for future rewinds in the event of a redirect/retry.
+        body_pos = set_file_position(body, body_pos)
+    
+        try:
+            # Request a connection from the queue.
+            timeout_obj = self._get_timeout(timeout)
+            conn = self._get_conn(timeout=pool_timeout)
+    
+            conn.timeout = timeout_obj.connect_timeout  # type: ignore[assignment]
+    
+            # Is this a closed/new connection that requires CONNECT tunnelling?
+            if self.proxy is not None and http_tunnel_required and conn.is_closed:
+                try:
+                    self._prepare_proxy(conn)
+                except (BaseSSLError, OSError, SocketTimeout) as e:
+                    self._raise_timeout(
+                        err=e, url=self.proxy.url, timeout_value=conn.timeout
+                    )
+                    raise
+    
+            # If we're going to release the connection in ``finally:``, then
+            # the response doesn't need to know about the connection. Otherwise
+            # it will also try to release it and we'll have a double-release
+            # mess.
+            response_conn = conn if not release_conn else None
+    
+            # Make the request on the HTTPConnection object
+>           response = self._make_request(
+                conn,
+                method,
+                url,
+                timeout=timeout_obj,
+                body=body,
+                headers=headers,
+                chunked=chunked,
+                retries=retries,
+                response_conn=response_conn,
+                preload_content=preload_content,
+                decode_content=decode_content,
+                **response_kw,
+            )
+
+.venv\Lib\site-packages\urllib3\connectionpool.py:788: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\urllib3\connectionpool.py:488: in _make_request
+    raise new_e
+.venv\Lib\site-packages\urllib3\connectionpool.py:464: in _make_request
+    self._validate_conn(conn)
+.venv\Lib\site-packages\urllib3\connectionpool.py:1106: in _validate_conn
+    conn.connect()
+.venv\Lib\site-packages\urllib3\connection.py:759: in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <HTTPSConnection(host='www.okx.com', port=443) at 0x226ce3e0a50>
+
+    def _new_conn(self) -> socket.socket:
+        """Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        try:
+            sock = connection.create_connection(
+                (self._dns_host, self.port),
+                self.timeout,
+                source_address=self.source_address,
+                socket_options=self.socket_options,
+            )
+        except socket.gaierror as e:
+            raise NameResolutionError(self.host, self, e) from e
+        except SocketTimeout as e:
+>           raise ConnectTimeoutError(
+                self,
+                f"Connection to {self.host} timed out. (connect timeout={self.timeout})",
+            ) from e
+E           urllib3.exceptions.ConnectTimeoutError: (<HTTPSConnection(host='www.okx.com', port=443) at 0x226ce3e0a50>, 'Connection to www.okx.com timed out. (connect timeout=30.0)')
+
+.venv\Lib\site-packages\urllib3\connection.py:213: ConnectTimeoutError
+
+The above exception was the direct cause of the following exception:
+
+self = <requests.adapters.HTTPAdapter object at 0x00000226CA81DE10>
+request = <PreparedRequest [GET]>, stream = False, timeout = 30.0, verify = True
+cert = None, proxies = OrderedDict()
+
+    def send(
+        self,
+        request: PreparedRequest,
+        stream: bool = False,
+        timeout: _t.TimeoutType = None,
+        verify: _t.VerifyType = True,
+        cert: _t.CertType = None,
+        proxies: dict[str, str] | None = None,
+    ) -> Response:
+        """Sends PreparedRequest object. Returns Response object.
+    
+        :param request: The :class:`PreparedRequest <PreparedRequest>` being sent.
+        :param stream: (optional) Whether to stream the request content.
+        :param timeout: (optional) How long to wait for the server to send
+            data before giving up, as a float, or a :ref:`(connect timeout,
+            read timeout) <timeouts>` tuple.
+        :type timeout: float or tuple or urllib3 Timeout object
+        :param verify: (optional) Either a boolean, in which case it controls whether
+            we verify the server's TLS certificate, or a string, in which case it
+            must be a path to a CA bundle to use
+        :param cert: (optional) Any user-provided SSL certificate to be trusted.
+        :param proxies: (optional) The proxies dictionary to apply to the request.
+        :rtype: requests.Response
+        """
+    
+        assert _is_prepared(request)
+    
+        try:
+            conn = self.get_connection_with_tls_context(
+                request, verify, proxies=proxies, cert=cert
+            )
+        except LocationValueError as e:
+            raise InvalidURL(e, request=request)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(
+            request,
+            stream=stream,
+            timeout=timeout,
+            verify=verify,
+            cert=cert,
+            proxies=proxies,
+        )
+    
+        chunked = not (request.body is None or "Content-Length" in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                resolved_timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError:
+                raise ValueError(
+                    f"Invalid timeout {timeout}. Pass a (connect, read) timeout tuple, "
+                    f"or a single float to set both timeouts to the same value."
+                )
+        elif isinstance(timeout, TimeoutSauce):
+            resolved_timeout = timeout
+        else:
+            resolved_timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+>           resp = conn.urlopen(
+                method=request.method,
+                url=url,
+                body=request.body,  # type: ignore[arg-type]  # urllib3 stubs don't accept Iterable[bytes | str]
+                headers=request.headers,  # type: ignore[arg-type]  # urllib3#3072
+                redirect=False,
+                assert_same_host=False,
+                preload_content=False,
+                decode_content=False,
+                retries=self.max_retries,
+                timeout=resolved_timeout,
+                chunked=chunked,
+            )
+
+.venv\Lib\site-packages\requests\adapters.py:696: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\urllib3\connectionpool.py:842: in urlopen
+    retries = retries.increment(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Retry(total=0, connect=None, read=False, redirect=None, status=None)
+method = 'GET', url = '/api/v5/public/instruments?instType=SPOT'
+response = None
+error = ConnectTimeoutError(<HTTPSConnection(host='www.okx.com', port=443) at 0x226ce3e0a50>, 'Connection to www.okx.com timed out. (connect timeout=30.0)')
+_pool = <urllib3.connectionpool.HTTPSConnectionPool object at 0x00000226CA7768B0>
+_stacktrace = <traceback object at 0x00000226CD92EFC0>
+
+    def increment(
+        self,
+        method: str | None = None,
+        url: str | None = None,
+        response: BaseHTTPResponse | None = None,
+        error: Exception | None = None,
+        _pool: ConnectionPool | None = None,
+        _stacktrace: TracebackType | None = None,
+    ) -> Self:
+        """Return a new Retry object with incremented retry counters.
+    
+        :param response: A response object, or None, if the server did not
+            return a response.
+        :type response: :class:`~urllib3.response.BaseHTTPResponse`
+        :param Exception error: An error encountered during the request, or
+            None if the response was received successfully.
+    
+        :return: A new ``Retry`` object.
+        """
+        if self.total is False and error:
+            # Disabled, indicate to re-raise the error.
+            raise reraise(type(error), error, _stacktrace)
+    
+        total = self.total
+        if total is not None:
+            total -= 1
+    
+        connect = self.connect
+        read = self.read
+        redirect = self.redirect
+        status_count = self.status
+        other = self.other
+        cause = "unknown"
+        status = None
+        redirect_location = None
+    
+        if error and self._is_connection_error(error):
+            # Connect retry?
+            if connect is False:
+                raise reraise(type(error), error, _stacktrace)
+            elif connect is not None:
+                connect -= 1
+    
+        elif error and self._is_read_error(error):
+            # Read retry?
+            if read is False or method is None or not self._is_method_retryable(method):
+                raise reraise(type(error), error, _stacktrace)
+            elif read is not None:
+                read -= 1
+    
+        elif error:
+            # Other retry?
+            if other is not None:
+                other -= 1
+    
+        elif response and response.get_redirect_location():
+            # Redirect retry?
+            if redirect is not None:
+                redirect -= 1
+            cause = "too many redirects"
+            response_redirect_location = response.get_redirect_location()
+            if response_redirect_location:
+                redirect_location = response_redirect_location
+            status = response.status
+    
+        else:
+            # Incrementing because of a server error like a 500 in
+            # status_forcelist and the given method is in the allowed_methods
+            cause = ResponseError.GENERIC_ERROR
+            if response and response.status:
+                if status_count is not None:
+                    status_count -= 1
+                cause = ResponseError.SPECIFIC_ERROR.format(status_code=response.status)
+                status = response.status
+    
+        history = self.history + (
+            RequestHistory(method, url, error, status, redirect_location),
+        )
+    
+        new_retry = self.new(
+            total=total,
+            connect=connect,
+            read=read,
+            redirect=redirect,
+            status=status_count,
+            other=other,
+            history=history,
+        )
+    
+        if new_retry.is_exhausted():
+            reason = error or ResponseError(cause)
+>           raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SPOT (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.okx.com', port=443) at 0x226ce3e0a50>, 'Connection to www.okx.com timed out. (connect timeout=30.0)'))
+
+.venv\Lib\site-packages\urllib3\util\retry.py:543: MaxRetryError
+
+During handling of the above exception, another exception occurred:
+
+self = ccxt.okx()
+url = 'https://www.okx.com/api/v5/public/instruments?instType=SPOT'
+method = 'GET', headers = None, body = None
+
+    def fetch(self, url, method='GET', headers=None, body=None):
+        """Perform a HTTP request and return decoded JSON data"""
+    
+        # ##### PROXY & HEADERS #####
+        request_headers = self.prepare_request_headers(headers)
+        # proxy-url
+        proxyUrl = self.check_proxy_url_settings(url, method, headers, body)
+        if proxyUrl is not None:
+            request_headers.update({'Origin': self.origin})
+            url = proxyUrl + self.url_encoder_for_proxy_url(url)
+        # proxy agents
+        proxies = None  # set default
+        httpProxy, httpsProxy, socksProxy = self.check_proxy_settings(url, method, headers, body)
+        if httpProxy:
+            proxies = {}
+            proxies['http'] = httpProxy
+        elif httpsProxy:
+            proxies = {}
+            proxies['https'] = httpsProxy
+        elif socksProxy:
+            proxies = {}
+            # https://stackoverflow.com/a/15661226/2377343
+            proxies['http'] = socksProxy
+            proxies['https'] = socksProxy
+        proxyAgentSet = proxies is not None
+        self.check_conflicting_proxies(proxyAgentSet, proxyUrl)
+        # specifically for async-python, there is ".proxies" property maintained
+        if (self.proxies is not None):
+            if (proxyAgentSet or proxyUrl):
+                raise ExchangeError(self.id + ' you have conflicting proxy settings - use either .proxies or http(s)Proxy / socksProxy / proxyUrl')
+            proxies = self.proxies
+        # log
+        if self.verbose:
+            self.log("\nfetch Request:", self.id, method, url, "RequestHeaders:", request_headers, "RequestBody:", body)
+        self.logger.debug("%s %s, Request: %s %s", method, url, request_headers, body)
+        # end of proxies & headers
+    
+        request_body = body
+        content_type_key = None
+        files = None
+        for k, v in request_headers.items():
+            lk = k.lower()
+            if lk == 'content-type':
+                if v == 'multipart/form-data':
+                    content_type_key = k
+                    files = ()
+                    for k, v in body.items():
+                        files += ((k, (None, v)), )
+                    body = None
+                    break
+                else:
+                    break
+        if files is not None:
+            # requests would handle it for multipart/form-data
+            del request_headers[content_type_key]
+        if body:
+            body = body.encode()
+    
+        self.session.cookies.clear()
+    
+        http_response = None
+        http_status_code = None
+        http_status_text = None
+        json_response = None
+        try:
+>           response = self.session.request(
+                method,
+                url,
+                data=body,
+                headers=request_headers,
+                timeout=(self.timeout / 1000),
+                proxies=proxies,
+                verify=self.verify and self.validateServerSsl,
+                files=files
+            )
+
+.venv\Lib\site-packages\ccxt\base\exchange.py:600: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\requests\sessions.py:651: in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\requests\sessions.py:784: in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <requests.adapters.HTTPAdapter object at 0x00000226CA81DE10>
+request = <PreparedRequest [GET]>, stream = False, timeout = 30.0, verify = True
+cert = None, proxies = OrderedDict()
+
+    def send(
+        self,
+        request: PreparedRequest,
+        stream: bool = False,
+        timeout: _t.TimeoutType = None,
+        verify: _t.VerifyType = True,
+        cert: _t.CertType = None,
+        proxies: dict[str, str] | None = None,
+    ) -> Response:
+        """Sends PreparedRequest object. Returns Response object.
+    
+        :param request: The :class:`PreparedRequest <PreparedRequest>` being sent.
+        :param stream: (optional) Whether to stream the request content.
+        :param timeout: (optional) How long to wait for the server to send
+            data before giving up, as a float, or a :ref:`(connect timeout,
+            read timeout) <timeouts>` tuple.
+        :type timeout: float or tuple or urllib3 Timeout object
+        :param verify: (optional) Either a boolean, in which case it controls whether
+            we verify the server's TLS certificate, or a string, in which case it
+            must be a path to a CA bundle to use
+        :param cert: (optional) Any user-provided SSL certificate to be trusted.
+        :param proxies: (optional) The proxies dictionary to apply to the request.
+        :rtype: requests.Response
+        """
+    
+        assert _is_prepared(request)
+    
+        try:
+            conn = self.get_connection_with_tls_context(
+                request, verify, proxies=proxies, cert=cert
+            )
+        except LocationValueError as e:
+            raise InvalidURL(e, request=request)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(
+            request,
+            stream=stream,
+            timeout=timeout,
+            verify=verify,
+            cert=cert,
+            proxies=proxies,
+        )
+    
+        chunked = not (request.body is None or "Content-Length" in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                resolved_timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError:
+                raise ValueError(
+                    f"Invalid timeout {timeout}. Pass a (connect, read) timeout tuple, "
+                    f"or a single float to set both timeouts to the same value."
+                )
+        elif isinstance(timeout, TimeoutSauce):
+            resolved_timeout = timeout
+        else:
+            resolved_timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+            resp = conn.urlopen(
+                method=request.method,
+                url=url,
+                body=request.body,  # type: ignore[arg-type]  # urllib3 stubs don't accept Iterable[bytes | str]
+                headers=request.headers,  # type: ignore[arg-type]  # urllib3#3072
+                redirect=False,
+                assert_same_host=False,
+                preload_content=False,
+                decode_content=False,
+                retries=self.max_retries,
+                timeout=resolved_timeout,
+                chunked=chunked,
+            )
+    
+        except (ProtocolError, OSError) as err:
+            raise ConnectionError(err, request=request)
+    
+        except MaxRetryError as e:
+            if isinstance(e.reason, ConnectTimeoutError):
+                # TODO: Remove this in 3.0.0: see #2811
+                if not isinstance(e.reason, NewConnectionError):
+>                   raise ConnectTimeout(e, request=request)
+E                   requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/public/instruments?instType=SPOT (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.okx.com', port=443) at 0x226ce3e0a50>, 'Connection to www.okx.com timed out. (connect timeout=30.0)'))
+
+.venv\Lib\site-packages\requests\adapters.py:717: ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+fn = <function _load_ccxt_history.<locals>.<lambda> at 0x00000226CA8BFCC0>
+label = 'okx.load_markets', attempts = 4
+
+    def _with_retries(fn: Any, label: str, attempts: int = 4) -> Any:
+        last_exc: Exception | None = None
+        for attempt in range(attempts):
+            try:
+>               return fn()
+                       ^^^^
+
+core\data\history.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+core\data\history.py:82: in <lambda>
+    _with_retries(lambda: spot_ex.load_markets(), f"{venue_spot}.load_markets")
+                          ^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\ccxt\base\exchange.py:1909: in load_markets
+    markets = self.fetch_markets(params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\ccxt\okx.py:1774: in fetch_markets
+    promises.append(self.fetch_markets_by_type(types[i], params))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\ccxt\okx.py:1964: in fetch_markets_by_type
+    response = self.publicGetPublicInstruments(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\ccxt\base\types.py:43: in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\ccxt\base\exchange.py:5778: in request
+    return self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\ccxt\base\exchange.py:5772: in fetch2
+    raise e
+.venv\Lib\site-packages\ccxt\base\exchange.py:5755: in fetch2
+    response = self.fetch(request['url'], request['method'], request['headers'], request['body'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ccxt.okx()
+url = 'https://www.okx.com/api/v5/public/instruments?instType=SPOT'
+method = 'GET', headers = None, body = None
+
+    def fetch(self, url, method='GET', headers=None, body=None):
+        """Perform a HTTP request and return decoded JSON data"""
+    
+        # ##### PROXY & HEADERS #####
+        request_headers = self.prepare_request_headers(headers)
+        # proxy-url
+        proxyUrl = self.check_proxy_url_settings(url, method, headers, body)
+        if proxyUrl is not None:
+            request_headers.update({'Origin': self.origin})
+            url = proxyUrl + self.url_encoder_for_proxy_url(url)
+        # proxy agents
+        proxies = None  # set default
+        httpProxy, httpsProxy, socksProxy = self.check_proxy_settings(url, method, headers, body)
+        if httpProxy:
+            proxies = {}
+            proxies['http'] = httpProxy
+        elif httpsProxy:
+            proxies = {}
+            proxies['https'] = httpsProxy
+        elif socksProxy:
+            proxies = {}
+            # https://stackoverflow.com/a/15661226/2377343
+            proxies['http'] = socksProxy
+            proxies['https'] = socksProxy
+        proxyAgentSet = proxies is not None
+        self.check_conflicting_proxies(proxyAgentSet, proxyUrl)
+        # specifically for async-python, there is ".proxies" property maintained
+        if (self.proxies is not None):
+            if (proxyAgentSet or proxyUrl):
+                raise ExchangeError(self.id + ' you have conflicting proxy settings - use either .proxies or http(s)Proxy / socksProxy / proxyUrl')
+            proxies = self.proxies
+        # log
+        if self.verbose:
+            self.log("\nfetch Request:", self.id, method, url, "RequestHeaders:", request_headers, "RequestBody:", body)
+        self.logger.debug("%s %s, Request: %s %s", method, url, request_headers, body)
+        # end of proxies & headers
+    
+        request_body = body
+        content_type_key = None
+        files = None
+        for k, v in request_headers.items():
+            lk = k.lower()
+            if lk == 'content-type':
+                if v == 'multipart/form-data':
+                    content_type_key = k
+                    files = ()
+                    for k, v in body.items():
+                        files += ((k, (None, v)), )
+                    body = None
+                    break
+                else:
+                    break
+        if files is not None:
+            # requests would handle it for multipart/form-data
+            del request_headers[content_type_key]
+        if body:
+            body = body.encode()
+    
+        self.session.cookies.clear()
+    
+        http_response = None
+        http_status_code = None
+        http_status_text = None
+        json_response = None
+        try:
+            response = self.session.request(
+                method,
+                url,
+                data=body,
+                headers=request_headers,
+                timeout=(self.timeout / 1000),
+                proxies=proxies,
+                verify=self.verify and self.validateServerSsl,
+                files=files
+            )
+            # does not try to detect encoding
+            response.encoding = 'utf-8'
+            headers = response.headers
+            http_status_code = response.status_code
+            http_status_text = response.reason
+            http_response = self.on_rest_response(http_status_code, http_status_text, url, method, headers, response.text, request_headers, request_body)
+            json_response = self.parse_json(http_response)
+            # FIXME remove last_x_responses from subclasses
+            if self.enableLastHttpResponse:
+                self.last_http_response = http_response
+            if self.enableLastJsonResponse:
+                self.last_json_response = json_response
+            if self.enableLastResponseHeaders:
+                self.last_response_headers = headers
+            if self.verbose:
+                self.log("\nfetch Response:", self.id, method, url, http_status_code, "ResponseHeaders:", headers, "ResponseBody:", http_response)
+            self.logger.debug("%s %s, Response: %s %s %s", method, url, http_status_code, headers, http_response)
+            if json_response and not isinstance(json_response, list) and self.returnResponseHeaders:
+                json_response['responseHeaders'] = headers
+            response.raise_for_status()
+    
+        except Timeout as e:
+            details = ' '.join([self.id, method, url])
+>           raise RequestTimeout(details) from e
+E           ccxt.base.errors.RequestTimeout: okx GET https://www.okx.com/api/v5/public/instruments?instType=SPOT
+
+.venv\Lib\site-packages\ccxt\base\exchange.py:633: RequestTimeout
+
+The above exception was the direct cause of the following exception:
+
+    def test_btc_real_history_and_funnel_verdicts():
+        venue_perp = os.environ.get("HEIMDALL_HISTORY_VENUE_PERP")
+        venue_spot = os.environ.get("HEIMDALL_HISTORY_VENUE_SPOT")
+        if venue_perp or venue_spot:
+            df = load_history(
+                "BTC",
+                venue_perp=venue_perp or "okx",
+                venue_spot=venue_spot or "okx",
+            )
+        else:
+>           df = load_history("BTC")
+                 ^^^^^^^^^^^^^^^^^^^
+
+tests\test_history_real.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+core\data\history.py:54: in load_history
+    df = _load_ccxt_history(
+core\data\history.py:82: in _load_ccxt_history
+    _with_retries(lambda: spot_ex.load_markets(), f"{venue_spot}.load_markets")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function _load_ccxt_history.<locals>.<lambda> at 0x00000226CA8BFCC0>
+label = 'okx.load_markets', attempts = 4
+
+    def _with_retries(fn: Any, label: str, attempts: int = 4) -> Any:
+        last_exc: Exception | None = None
+        for attempt in range(attempts):
+            try:
+                return fn()
+            except Exception as exc:
+                last_exc = exc
+                if attempt == attempts - 1:
+                    break
+                sleep_s = min(2.0 ** attempt, 8.0)
+                log.warning("%s failed on attempt %d/%d: %s; retrying in %.1fs", label, attempt + 1, attempts, exc, sleep_s)
+                time.sleep(sleep_s)
+>       raise RuntimeError(f"{label} failed after {attempts} attempts: {last_exc}") from last_exc
+E       RuntimeError: okx.load_markets failed after 4 attempts: okx GET https://www.okx.com/api/v5/public/instruments?instType=SPOT
+
+core\data\history.py:389: RuntimeError
+------------------------------ Captured log call ------------------------------
+WARNING  core.data.history:history.py:387 okx.load_markets failed on attempt 1/4: okx GET https://www.okx.com/api/v5/public/instruments?instType=SPOT; retrying in 1.0s
+WARNING  core.data.history:history.py:387 okx.load_markets failed on attempt 2/4: okx GET https://www.okx.com/api/v5/public/instruments?instType=SPOT; retrying in 2.0s
+WARNING  core.data.history:history.py:387 okx.load_markets failed on attempt 3/4: okx GET https://www.okx.com/api/v5/public/instruments?instType=SPOT; retrying in 4.0s
+=========================== short test summary info ===========================
+FAILED tests/test_connectors_live.py::test_live_public_connectors - Assertion...
+FAILED tests/test_history_real.py::test_btc_real_history_and_funnel_verdicts
+2 failed, 197 passed, 1 skipped in 177.62s (0:02:57)
+exit=1

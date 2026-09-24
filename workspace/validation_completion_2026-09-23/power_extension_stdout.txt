@@ -1,0 +1,19 @@
+PROD coin_1to1 0.05 1000 0.14
+PROD coin_1to1 0.05 2000 0.275
+PROD coin_1to1 0.05 3500 0.555
+PROD coin_1to1 0.1 800 0.505
+PROD coin_1to1 0.1 1200 0.585
+PROD coin_1to1 0.1 2000 0.8
+PROD coin_1to1 0.2 300 0.69
+PROD coin_1to1 0.0 1000 0.015
+PROD coin_1to1 0.0 3500 0.005
+PROD neg_skew 0.05 1000 0.195
+PROD neg_skew 0.05 2000 0.365
+PROD neg_skew 0.05 3500 0.52
+PROD neg_skew 0.1 800 0.495
+PROD neg_skew 0.1 1200 0.61
+PROD neg_skew 0.1 2000 0.795
+PROD neg_skew 0.2 300 0.66
+PROD neg_skew 0.0 1000 0.01
+PROD neg_skew 0.0 3500 0.01
+exit=0

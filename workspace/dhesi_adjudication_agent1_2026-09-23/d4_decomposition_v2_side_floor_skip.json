@@ -1,0 +1,13 @@
+{
+  "v2+side_floor_skip": {
+    "n": 23,
+    "total": -11.88,
+    "mean": -0.52,
+    "win": 0.3913,
+    "long_n": 11,
+    "long_total": 279.75,
+    "short_n": 12,
+    "short_total": -291.62,
+    "rejections": 564
+  }
+}

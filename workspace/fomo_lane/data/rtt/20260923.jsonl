@@ -1,0 +1,63 @@
+{"t": 1790139482.276039, "start_head": 70245247, "prereg_sha256": "902263424c170fb7920c0a0880f056a8c7cc1b80e9a8dd5f2708a883c72fbc39"}
+{"t": 1790139482.2769732, "seq_rtt_ms_median": 283.212100000128, "rpc_rtt_ms_median": 239.42770000030578}
+{"t": 1790139605.6162207, "start_head": 70246473, "prereg_sha256": "902263424c170fb7920c0a0880f056a8c7cc1b80e9a8dd5f2708a883c72fbc39"}
+{"t": 1790139605.6168697, "seq_rtt_ms_median": 266.8837999999596, "rpc_rtt_ms_median": 234.79649999990215}
+{"t": 1790140207.574663, "seq_rtt_ms_median": 273.76379999986966, "rpc_rtt_ms_median": 235.90520000016113}
+{"t": 1790140830.996727, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790140833.9972897, "seq_rtt_ms_median": 265.7008999995014, "rpc_rtt_ms_median": 239.92459999954008}
+{"t": 1790140963.5826383, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141033.1873684, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141102.3705938, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141171.8150458, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141240.9989946, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141310.1968658, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141379.3886917, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141454.048084, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141457.0494835, "seq_rtt_ms_median": 274.70869999979186, "rpc_rtt_ms_median": 239.96790000001056}
+{"t": 1790141533.8701167, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141603.0849078, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141672.4185119, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141741.5871916, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141810.7421343, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141879.9792492, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790141949.2108219, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142021.3906758, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142090.582506, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142093.5831838, "seq_rtt_ms_median": 263.18069999979343, "rpc_rtt_ms_median": 237.17589999978372}
+{"t": 1790142200.1349232, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142269.3389237, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142338.4862068, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142407.6937623, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142476.9503717, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142546.2978466, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142615.4027455, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142684.6129684, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142759.109909, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142762.1109574, "seq_rtt_ms_median": 319.42700000035984, "rpc_rtt_ms_median": 245.45370000123512}
+{"t": 1790142833.4826763, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142902.6154656, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790142971.7832215, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143040.9572592, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143110.276182, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143179.491707, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143248.671643, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143353.8309333, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143382.6310565, "seq_rtt_ms_median": 271.6749000010168, "rpc_rtt_ms_median": 237.88600000079896}
+{"t": 1790143462.6943212, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143531.8517923, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143601.0080268, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143670.1107116, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143740.9991667, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143831.6941695, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790143958.3067043, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144006.4292393, "seq_rtt_ms_median": 259.84840000091936, "rpc_rtt_ms_median": 238.1070000010368}
+{"t": 1790144093.782212, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144162.89819, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144232.0042164, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144301.6481783, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144370.7996175, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144439.9611735, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144509.0669293, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144608.5793817, "loop_error": "rpc eth_getLogs gave up"}
+{"t": 1790144611.5802112, "seq_rtt_ms_median": 280.8869999989838, "rpc_rtt_ms_median": 238.6335000010149}
+{"t": 1790144682.9281995, "loop_error": "rpc eth_getLogs gave up"}

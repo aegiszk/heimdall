@@ -1,0 +1,20 @@
+{
+ "file": "data\\MNQ_1m.parquet",
+ "sha256": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774",
+ "rows": 707185,
+ "first_utc": "2024-07-01 00:00:00+00:00",
+ "last_utc": "2026-06-30 23:59:00+00:00",
+ "duplicates": 0,
+ "nan_ohlc_cells": 0,
+ "untouched_rth_sessions": 0,
+ "evaluated_sessions_after_burn_in": 0,
+ "first_evaluated_session": null,
+ "share_sessions_ge_370_rth_rows": 0.0,
+ "roll_dates_reported": [],
+ "equivalence_minutes": 90375,
+ "equivalence_share_le_2pts": 1.0,
+ "gate1_no_dup_no_nan": true,
+ "gate2_coverage": false,
+ "gate3_series_equivalence": true,
+ "all_gates_pass": false
+}

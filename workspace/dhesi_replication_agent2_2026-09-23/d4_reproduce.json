@@ -1,0 +1,107 @@
+{
+ "n": 30,
+ "total_pnl_v2": -446.38,
+ "counts": {
+  "VALID": 23,
+  "WRONG_SIDE": 5,
+  "TINY_<10pt": 2
+ },
+ "pnl_by_class": {
+  "TINY_<10pt": {
+   "sum": -400.0,
+   "count": 2,
+   "mean": -200.0
+  },
+  "VALID": {
+   "sum": -11.88,
+   "count": 23,
+   "mean": -0.52
+  },
+  "WRONG_SIDE": {
+   "sum": -34.5,
+   "count": 5,
+   "mean": -6.9
+  }
+ },
+ "total_if_wrong_side_removed": -411.88,
+ "total_if_wrong_and_tiny_removed": -11.88,
+ "flagged_trades": [
+  {
+   "entry_ts": "2024-08-07 13:25:00-04:00",
+   "side": 1,
+   "entry_price": 18234.0,
+   "stop_price": 18279.75,
+   "protective_pts": -45.75,
+   "contracts": 3,
+   "reason": "gap_stop",
+   "pnl": -7.5,
+   "class": "WRONG_SIDE"
+  },
+  {
+   "entry_ts": "2024-11-20 12:05:00-05:00",
+   "side": -1,
+   "entry_price": 20678.75,
+   "stop_price": 20644.75,
+   "protective_pts": -34.0,
+   "contracts": 4,
+   "reason": "gap_stop",
+   "pnl": -6.0,
+   "class": "WRONG_SIDE"
+  },
+  {
+   "entry_ts": "2025-01-31 14:15:00-05:00",
+   "side": 1,
+   "entry_price": 21743.5,
+   "stop_price": 21904.25,
+   "protective_pts": -160.75,
+   "contracts": 1,
+   "reason": "gap_stop",
+   "pnl": -2.0,
+   "class": "WRONG_SIDE"
+  },
+  {
+   "entry_ts": "2025-02-24 12:55:00-05:00",
+   "side": -1,
+   "entry_price": 21624.75,
+   "stop_price": 21625.0,
+   "protective_pts": 0.25,
+   "contracts": 40,
+   "reason": "gap_stop",
+   "pnl": -100.0,
+   "class": "TINY_<10pt"
+  },
+  {
+   "entry_ts": "2025-08-07 14:40:00-04:00",
+   "side": 1,
+   "entry_price": 23363.25,
+   "stop_price": 23381.0,
+   "protective_pts": -17.75,
+   "contracts": 9,
+   "reason": "gap_stop",
+   "pnl": -9.0,
+   "class": "WRONG_SIDE"
+  },
+  {
+   "entry_ts": "2025-12-11 13:55:00-05:00",
+   "side": -1,
+   "entry_price": 25644.5,
+   "stop_price": 25647.5,
+   "protective_pts": 3.0,
+   "contracts": 40,
+   "reason": "stop",
+   "pnl": -300.0,
+   "class": "TINY_<10pt"
+  },
+  {
+   "entry_ts": "2026-04-28 14:05:00-04:00",
+   "side": -1,
+   "entry_price": 27128.75,
+   "stop_price": 27099.5,
+   "protective_pts": -29.25,
+   "contracts": 5,
+   "reason": "gap_stop",
+   "pnl": -10.0,
+   "class": "WRONG_SIDE"
+  }
+ ]
+}

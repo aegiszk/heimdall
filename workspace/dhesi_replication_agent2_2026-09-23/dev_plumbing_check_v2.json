@@ -1,0 +1,14 @@
+{
+ "label": "DEV_PLUMBING_NOT_EVIDENCE",
+ "n": 20,
+ "mean": 34.79,
+ "total": 695.75,
+ "expected": {
+  "n": 20,
+  "mean": 34.79,
+  "total": 695.75
+ },
+ "verdict_field_present": true,
+ "prop_present": true,
+ "MATCH": true
+}

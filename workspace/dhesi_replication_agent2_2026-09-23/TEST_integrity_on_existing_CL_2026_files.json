@@ -1,0 +1,131 @@
+{
+ "generated_utc": "2026-09-23T15:24:30.646602+00:00",
+ "policy": "timestamps/metadata only; no prices read",
+ "files": [
+  {
+   "file": "CLM26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 5,
+   "bytes": 1748096,
+   "mtime_utc": "2026-09-21T20:45:29.323844+00:00",
+   "sha256": "2753958487dae8a8011d37e09850dcf0e97817dc3397062028a4ba2c0c266800",
+   "records": 43701,
+   "first_utc": "2026-04-02 00:00:00.140000",
+   "last_utc": "2026-05-19 18:29:01.724000",
+   "active_days": 40,
+   "records_per_active_day": 1092.5,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  },
+  {
+   "file": "CLN26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 6,
+   "bytes": 1894656,
+   "mtime_utc": "2026-09-21T20:45:34.608007+00:00",
+   "sha256": "eaacba817142575bc6f43c25b1cfa3823ff89d0734a7b0e91cb152eaa67c70f8",
+   "records": 47365,
+   "first_utc": "2026-05-01 00:00:00.120000",
+   "last_utc": "2026-06-22 18:29:02.437000",
+   "active_days": 45,
+   "records_per_active_day": 1052.6,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  },
+  {
+   "file": "CLQ26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 7,
+   "bytes": 1811016,
+   "mtime_utc": "2026-09-21T20:45:39.740462+00:00",
+   "sha256": "b7455eb062da9cefaf1d94ddfd088674966391bd89688575690cf76fe3fa9f59",
+   "records": 45274,
+   "first_utc": "2026-06-03 00:00:00.032000",
+   "last_utc": "2026-07-21 18:29:00.114000",
+   "active_days": 42,
+   "records_per_active_day": 1078.0,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  },
+  {
+   "file": "CLU26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 8,
+   "bytes": 1870016,
+   "mtime_utc": "2026-09-21T20:45:44.512394+00:00",
+   "sha256": "81af8742dbb997746d7873d56add328f165335e91a2846f773cf3882671a3fb6",
+   "records": 46749,
+   "first_utc": "2026-07-02 00:00:00.126000",
+   "last_utc": "2026-08-20 18:29:00.572000",
+   "active_days": 43,
+   "records_per_active_day": 1087.2,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  },
+  {
+   "file": "CLV26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 9,
+   "bytes": 1916816,
+   "mtime_utc": "2026-09-21T20:45:57.116529+00:00",
+   "sha256": "8594c98766866ea1c46fa4c0df7252c17b4f180a23860c97874617e877ecaed8",
+   "records": 47919,
+   "first_utc": "2026-08-03 00:00:00.002000",
+   "last_utc": "2026-09-21 20:33:18.268000",
+   "active_days": 43,
+   "records_per_active_day": 1114.4,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  },
+  {
+   "file": "CLX26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 10,
+   "bytes": 681496,
+   "mtime_utc": "2026-09-21T20:46:00.263988+00:00",
+   "sha256": "2a9656f7949808899f0715fcca286dfb8a3a222eea4256e827a68376d51c9c5c",
+   "records": 17036,
+   "first_utc": "2026-09-03 00:00:00.194000",
+   "last_utc": "2026-09-21 20:35:24.226000",
+   "active_days": 16,
+   "records_per_active_day": 1064.8,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  },
+  {
+   "file": "CLZ26-NYMEX.scid",
+   "root": "CL",
+   "contract_year": 2026,
+   "contract_month_index": 11,
+   "bytes": 6076176,
+   "mtime_utc": "2026-09-22T06:50:19.717605+00:00",
+   "sha256": "f4cdc14f4668d28a711264fe3dbb5ad2543c5a0b5b97e9cf9c268048cdcbb99c",
+   "records": 151903,
+   "first_utc": "2026-03-19 15:26:38.073000",
+   "last_utc": "2026-09-22 06:39:54",
+   "active_days": 160,
+   "records_per_active_day": 949.4,
+   "storage_inferred": "1-minute",
+   "timestamp_nonmonotonic": 0
+  }
+ ],
+ "coverage": {
+  "CL": {
+   "contracts": 7,
+   "first": [
+    2026,
+    5
+   ],
+   "last": [
+    2026,
+    11
+   ]
+  }
+ }
+}

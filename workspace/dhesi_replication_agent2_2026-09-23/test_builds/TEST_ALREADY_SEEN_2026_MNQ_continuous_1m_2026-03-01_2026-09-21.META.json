@@ -1,0 +1,57 @@
+{
+ "root": "MNQ",
+ "suffix": "CME",
+ "window": [
+  "2026-03-01",
+  "2026-09-21"
+ ],
+ "source_files": [
+  {
+   "file": "MNQM26-CME.scid",
+   "sha256": "5a10fa2bdbb4c7913d346c4198e5b0883499c0b51e3edefbc30894b2906319b1",
+   "rows_in_window": 100245,
+   "tick_stored_aggregated_to_1m": false
+  },
+  {
+   "file": "MNQU26-CME.scid",
+   "sha256": "e31f9ab086cc941122794c43dcd7f40bdd5b3bc14a34c449c0f9f561c41b93b7",
+   "rows_in_window": 102026,
+   "tick_stored_aggregated_to_1m": false
+  },
+  {
+   "file": "MNQZ26-CME.scid",
+   "sha256": "23253fbbe5ab882f744f21d5e505907b72bbbf5d2380258ace78c7ed6fb57921",
+   "rows_in_window": 13891,
+   "tick_stored_aggregated_to_1m": true
+  }
+ ],
+ "duplicates_dropped": 0,
+ "rows": 192436,
+ "first_utc": "2026-03-08 22:00:00+00:00",
+ "last_utc": "2026-09-21 20:59:00+00:00",
+ "trading_days": 141,
+ "roll_schedule": [
+  {
+   "trading_day": "2026-03-09",
+   "from": null,
+   "to": "MNQM26-CME.scid"
+  },
+  {
+   "trading_day": "2026-06-16",
+   "from": "MNQM26-CME.scid",
+   "to": "MNQU26-CME.scid"
+  },
+  {
+   "trading_day": "2026-09-16",
+   "from": "MNQU26-CME.scid",
+   "to": "MNQZ26-CME.scid"
+  }
+ ],
+ "intra_session_gaps_gt5min": 0,
+ "timestamp_monotonic": true,
+ "dataset_file": "test_builds\\TEST_ALREADY_SEEN_2026_MNQ_continuous_1m_2026-03-01_2026-09-21.parquet",
+ "dataset_sha256": "218736959267027d7f66786c0a940f0a74da819421c4a2a404838b09e71be0ff",
+ "status": "BUILT",
+ "generated_utc": "2026-09-23T15:33:50.374420+00:00",
+ "policy": "metadata only; no prices/returns/OHLC statistics emitted"
+}

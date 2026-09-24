@@ -1,0 +1,115 @@
+{
+ "summary": {
+  "active_markets": 2100,
+  "markets_with_rewards": 774,
+  "total_daily_rewards_usd": 11235.0,
+  "fees_enabled_share_rewarded": 0.913,
+  "median_gross_yield_ann_%": 5.6
+ },
+ "top_markets": [
+  {
+   "q": "NATO x Russia military clash by December 31, 2026?",
+   "daily_reward": 500.0,
+   "liq": 159004,
+   "vol24": 35234,
+   "turnover": 0.222,
+   "gross_subsidy_bps_per_day": 31.45,
+   "maker_total_markout_1h_bps_bounce_incl": 79.1,
+   "maker_total_markout_5m_bps_bounce_incl": 16.1,
+   "markout_bps_per_posted_dollar_day": 17.52,
+   "trades": 1000,
+   "trade_span_h": 283.9
+  },
+  {
+   "q": "Will the U.S. invade Iran before 2027?",
+   "daily_reward": 400.0,
+   "liq": 1395720,
+   "vol24": 579413,
+   "turnover": 0.415,
+   "gross_subsidy_bps_per_day": 2.87,
+   "maker_total_markout_1h_bps_bounce_incl": 111.2,
+   "maker_total_markout_5m_bps_bounce_incl": 57.2,
+   "markout_bps_per_posted_dollar_day": 46.17,
+   "trades": 1000,
+   "trade_span_h": 103.2
+  },
+  {
+   "q": "Will the Democratic Party control the Senate after the 2026 Midterm el",
+   "daily_reward": 400.0,
+   "liq": 577750,
+   "vol24": 40709,
+   "turnover": 0.07,
+   "gross_subsidy_bps_per_day": 6.92,
+   "maker_total_markout_1h_bps_bounce_incl": 42.9,
+   "maker_total_markout_5m_bps_bounce_incl": 19.1,
+   "markout_bps_per_posted_dollar_day": 3.03,
+   "trades": 1000,
+   "trade_span_h": 228.6
+  },
+  {
+   "q": "Will the Republican Party control the Senate after the 2026 Midterm el",
+   "daily_reward": 400.0,
+   "liq": 514421,
+   "vol24": 15915,
+   "turnover": 0.031,
+   "gross_subsidy_bps_per_day": 7.78,
+   "maker_total_markout_1h_bps_bounce_incl": 24.5,
+   "maker_total_markout_5m_bps_bounce_incl": 12.0,
+   "markout_bps_per_posted_dollar_day": 0.76,
+   "trades": 1000,
+   "trade_span_h": 743.4
+  },
+  {
+   "q": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential ele",
+   "daily_reward": 375.0,
+   "liq": 465116,
+   "vol24": 141793,
+   "turnover": 0.305,
+   "gross_subsidy_bps_per_day": 8.06,
+   "maker_total_markout_1h_bps_bounce_incl": 69.8,
+   "maker_total_markout_5m_bps_bounce_incl": 42.5,
+   "markout_bps_per_posted_dollar_day": 21.27,
+   "trades": 1000,
+   "trade_span_h": 94.4
+  },
+  {
+   "q": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
+   "daily_reward": 375.0,
+   "liq": 417490,
+   "vol24": 129893,
+   "turnover": 0.311,
+   "gross_subsidy_bps_per_day": 8.98,
+   "maker_total_markout_1h_bps_bounce_incl": 5.7,
+   "maker_total_markout_5m_bps_bounce_incl": 6.1,
+   "markout_bps_per_posted_dollar_day": 1.78,
+   "trades": 1000,
+   "trade_span_h": 72.2
+  },
+  {
+   "q": "Xi Jinping out before 2027?",
+   "daily_reward": 300.0,
+   "liq": 518243,
+   "vol24": 18100,
+   "turnover": 0.035,
+   "gross_subsidy_bps_per_day": 5.79,
+   "maker_total_markout_1h_bps_bounce_incl": 82.5,
+   "maker_total_markout_5m_bps_bounce_incl": 45.1,
+   "markout_bps_per_posted_dollar_day": 2.88,
+   "trades": 1000,
+   "trade_span_h": 79.2
+  },
+  {
+   "q": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
+   "daily_reward": 296.0,
+   "liq": 234810,
+   "vol24": 4210,
+   "turnover": 0.018,
+   "gross_subsidy_bps_per_day": 12.61,
+   "maker_total_markout_1h_bps_bounce_incl": 17.1,
+   "maker_total_markout_5m_bps_bounce_incl": 3.5,
+   "markout_bps_per_posted_dollar_day": 0.31,
+   "trades": 1000,
+   "trade_span_h": 338.0
+  }
+ ]
+}
