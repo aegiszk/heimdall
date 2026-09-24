@@ -58,10 +58,12 @@
    "spec_hash": "V2_PREREG_MANIFEST aggregate 37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
    "code_hash": "b765cae07a4e27236205aedfe9a4b891727ae6073bc29748b9c063296c2ee3c2",
    "dataset_hashes": {},
-   "trial_ids": [],
-   "state": "PREREGISTERED",
+   "trial_ids": [
+    "V2-TRIDENT_V2-DEV"
+   ],
+   "state": "FAILED",
    "last_state_transition": "2026-09-24",
-   "reason": "Re-frozen after Agent 2 audit (C7 unsourced gate removed); source audit PASS (64cc3fa) bound to manifest 37fcf7a3; DEV run pending; sealed FX/XAU 2025-01..2026-08 unread",
+   "reason": "DEV gate FAIL -> KILLED (frozen evaluator, manifest 37fcf7a3): n 91, median -1.23R, NW t 0.76, drop-top-5 -1.07R, 1/3 years positive; mean +1.97R is one XAU metric-defect trade (R=234 vs $0.11 doji range), -0.62R without it. One corrected cycle used; sealed FX/XAU 2025-01..2026-08 never read. Kill accepted by Agent 2 (checker).",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent1",
    "live_enabled": false
@@ -72,10 +74,12 @@
    "spec_hash": "V2_PREREG_MANIFEST aggregate 37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
    "code_hash": "4a899501e1f438a62e1c5a3838668026a05a2bcf8b64d5852bbbd1f17b870251",
    "dataset_hashes": {},
-   "trial_ids": [],
-   "state": "PREREGISTERED",
+   "trial_ids": [
+    "V2-MMXM_V2-DEV"
+   ],
+   "state": "FAILED",
    "last_state_transition": "2026-09-24",
-   "reason": "V2 source audit PASS (Agent 2, 64cc3fa) bound to manifest 37fcf7a3; DEV run pending; sealed FX/XAU 2025-01..2026-08 unread",
+   "reason": "DEV gate FAIL -> KILLED (frozen evaluator, manifest 37fcf7a3): n 438, mean -0.253R, gross -0.166R, NW t -3.39, CI [-0.39,-0.11]; every year, pair and direction negative. One corrected cycle used; sealed FX/XAU never read. Kill accepted by Agent 2 (checker), subject to trade spot-check.",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent1",
    "live_enabled": false
@@ -89,7 +93,7 @@
    "trial_ids": [],
    "state": "VALIDATING",
    "last_state_transition": "2026-09-24",
-   "reason": "Prospective recorder; evaluate once at >=3,500 eligible trades and >=14 days, or 45 days (FOMO_PROSPECTIVE_PREREGISTRATION.md 902263424c170fb7...). Recorder DOWN 24.1 h (last event 2026-09-23 10:25 local, not reboot-persistent); restarted unchanged code (sha db2f0f36...) as run 4 at epoch 1790231366 (Agent 1); outage = feed gap per run-1/2/3 precedent; eligible so far 2",
+   "reason": "Prospective recorder; evaluate once at >=3,500 eligible trades and >=14 days, or 45 days (FOMO_PROSPECTIVE_PREREGISTRATION.md 902263424c170fb7...). Run 4 (unchanged code sha db2f0f36..., pid 30560, start epoch 1790231366) UP. INTEGRITY DEFECT (2026-09-24, Agent 1): the 72 h universe warm-up has never completed in any run (warmup_complete=false on all 3,163 decision events); since ~10:50 local on 09-24 the public RPC returns HTTP 429 on eth_getLogs, so main-loop log ingestion lags head by ~48k blocks (backfills in order, no data loss, detection latency degraded). Eligible so far 2 (both 09-23). At this rate the >=3,500 stopping rule cannot be met before the 45-day cap; a fix needs a code change = prereg amendment (owner / Agent 2 decision). Code untouched.",
    "owner_approval_requirement": "owner approval for any transition beyond VALIDATED_ALPHA",
    "owner_agent": "agent1",
    "live_enabled": false

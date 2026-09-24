@@ -3255,6 +3255,48 @@
    "registered_at": "2026-09-24T06:36:50.983857+00:00",
    "prev_hash": "df14761eec6b83dd8a6646654c9d459adb0e9b1695e7e33b33a4caf5c9a4adaf",
    "entry_hash": "216ebfdc047eba5ef757366e0a802f115f1ad5a1681a4494e95d968ccae06c4c"
+  },
+  {
+   "sr_per_trade": 0.0788234497014869,
+   "n_trades": 91,
+   "is_null_control": false,
+   "source": "workspace/revenue_sprint_2026-09-24/DEV_RESULT_TRIDENT_V2.json; prereg aggregate 37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+   "notes": "V2 DEV look, pooled pairs, dev_gate FAIL -> KILLED (revenue sprint 2026-09-24); sealed FX/XAU 2025-01-01..2026-08-31 never read; verdict file trident_v2/TRIDENT_V2_DEV_VERDICT.md; METRIC DEFECT: one XAUUSD close-stop trade scored R=234.5 (risk_override = doji range $0.11); sr_per_trade with it 0.0788 (registered, frozen-evaluator output), without it -0.1570 (n=90); neither is a variance outlier",
+   "id": "V2-TRIDENT_V2-DEV",
+   "family": "ext8_trident",
+   "dataset": "data/fx_histdata/EURUSD_1m_bid.parquet,data/fx_histdata/GBPUSD_1m_bid.parquet,data/fx_histdata/USDJPY_1m_bid.parquet,data/fx_histdata/USDCAD_1m_bid.parquet,data/fx_histdata/NZDUSD_1m_bid.parquet,data/fx_histdata/XAUUSD_1m_bid.parquet",
+   "dataset_group": "FX_SPOT_HISTDATA",
+   "data_window": {
+    "start": "2022-01-01",
+    "end": "2024-12-31"
+   },
+   "window_status": "DEV",
+   "n_configs": 1,
+   "verdict": "FAIL / KILLED",
+   "registered_at": "2026-09-24T08:16:00.375588+00:00",
+   "prev_hash": "216ebfdc047eba5ef757366e0a802f115f1ad5a1681a4494e95d968ccae06c4c",
+   "entry_hash": "203eee86a14eaf758ea2aa7d30f7edeb98b9cb43d27c3519b1d57bdcfa7fdab9"
+  },
+  {
+   "sr_per_trade": -0.16702098908261204,
+   "n_trades": 438,
+   "is_null_control": false,
+   "source": "workspace/revenue_sprint_2026-09-24/DEV_RESULT_MMXM_V2.json; prereg aggregate 37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+   "notes": "V2 DEV look, pooled pairs, dev_gate FAIL -> KILLED (revenue sprint 2026-09-24); sealed FX/XAU 2025-01-01..2026-08-31 never read; verdict file mmxm_v2/MMXM_V2_DEV_VERDICT.md",
+   "id": "V2-MMXM_V2-DEV",
+   "family": "ext8_mmxm_ote",
+   "dataset": "data/fx_histdata/EURUSD_1m_bid.parquet,data/fx_histdata/GBPUSD_1m_bid.parquet,data/fx_histdata/USDJPY_1m_bid.parquet",
+   "dataset_group": "FX_SPOT_HISTDATA",
+   "data_window": {
+    "start": "2022-01-01",
+    "end": "2024-12-31"
+   },
+   "window_status": "DEV",
+   "n_configs": 1,
+   "verdict": "FAIL / KILLED",
+   "registered_at": "2026-09-24T08:16:00.392012+00:00",
+   "prev_hash": "203eee86a14eaf758ea2aa7d30f7edeb98b9cb43d27c3519b1d57bdcfa7fdab9",
+   "entry_hash": "c84922f66358f78636fbfbffa406c6a7422d6ae8f6c1731e95cd7c529f123779"
   }
  ]
 }
