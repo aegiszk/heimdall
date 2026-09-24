@@ -1,0 +1,98 @@
+{
+ "model": "MMXM_V2",
+ "window": "dev",
+ "prereg_aggregate": "37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+ "metrics": {
+  "n": 438,
+  "trades_per_year": 147.71883656509695,
+  "win_rate": 0.2694063926940639,
+  "mean_R": -0.25284618669932146,
+  "median_R": -1.0962360992300113,
+  "mean_gross_R": -0.16608799573167304,
+  "payoff": 1.8878922074043076,
+  "profit_factor": 0.6961602514803384,
+  "sharpe_per_trade": -0.16702098908261204,
+  "nw_t": -3.3941111257372247,
+  "p_one_sided": 0.9996557412615987,
+  "boot95_lo": -0.390144053931422,
+  "boot95_hi": -0.10920620958872193,
+  "mean_mfe_R": 1.379688286225643,
+  "mean_mae_R": -1.0857537083471545,
+  "max_dd_R": -110.74662977430276,
+  "worst_R": -4.467316816024786,
+  "best_R": 4.3684807256248375,
+  "top1_share": -0.03944572159466728,
+  "top5_share": -0.14728603169944246,
+  "top10_share": -0.24583783724012456,
+  "sum_R": -110.74662977430279,
+  "mean_net_usd_1lot": -10.619162861488043,
+  "median_net_usd_1lot": -50.94666666665821,
+  "long_n": 224,
+  "long_mean_R": -0.24749489612004785,
+  "short_n": 214,
+  "short_mean_R": -0.2584475375860377,
+  "pos_years": 0,
+  "n_years": 3,
+  "pos_months_frac": 0.2777777777777778,
+  "by_year": [
+   {
+    "year": 2022,
+    "count": 135,
+    "mean": -0.317,
+    "sum": -42.77
+   },
+   {
+    "year": 2023,
+    "count": 150,
+    "mean": -0.271,
+    "sum": -40.654
+   },
+   {
+    "year": 2024,
+    "count": 153,
+    "mean": -0.179,
+    "sum": -27.323
+   }
+  ],
+  "exit_reasons": {
+   "stop": 297,
+   "target": 118,
+   "be": 23
+  },
+  "trimmed_mean_10pct": -0.3904696211884014,
+  "boot_share_means_pos": 0.0,
+  "drop_top5_mean_R": -0.29343663140380405,
+  "max_single_trade_share": null,
+  "cost_x1.5_mean_R": -0.4396043909709925,
+  "cost_x2_mean_R": -0.5204883107076999,
+  "one_bar_delay_mean_R": -0.25588598552090647,
+  "stop_slip_x3_mean_R": -0.3131026893083739,
+  "by_pair": {
+   "EURUSD": {
+    "count": 145,
+    "mean": -0.2681
+   },
+   "GBPUSD": {
+    "count": 150,
+    "mean": -0.2997
+   },
+   "USDJPY": {
+    "count": 143,
+    "mean": -0.1882
+   }
+  }
+ },
+ "checks": {
+  "n_ge_30": true,
+  "mean_R_gt_0": false,
+  "median_not_catastrophic": false,
+  "drop_top5_gt_0": false,
+  "nw_t_gt_1_5": false,
+  "bootstrap_central_positive": false,
+  "cost_x1_5_gt_0": false,
+  "years_2_3_positive": false
+ },
+ "eligible_years": 3,
+ "year_pos_share": 0.0,
+ "dev_gate": "FAIL"
+}

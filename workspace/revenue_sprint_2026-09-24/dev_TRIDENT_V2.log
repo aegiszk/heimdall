@@ -1,0 +1,15 @@
+{
+ "model": "TRIDENT_V2",
+ "dev_gate": "FAIL",
+ "checks": {
+  "n_ge_30": true,
+  "mean_R_gt_0": true,
+  "median_not_catastrophic": false,
+  "drop_top5_gt_0": false,
+  "nw_t_gt_1_5": false,
+  "bootstrap_central_positive": false,
+  "cost_x1_5_gt_0": true,
+  "years_2_3_positive": false
+ }
+}
+EXIT=0

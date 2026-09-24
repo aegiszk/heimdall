@@ -1,0 +1,42 @@
+﻿[
+    {
+        "file":  "EURUSD.dly",
+        "sha256":  "D606A3D1E8984D5A2C53AF7D1A984DFA0A2BDCABBF758CD50D59D3D1F27DF459",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "XAUUSD.dly",
+        "sha256":  "55105D2D9A194788C36281B8AC7D4EA3AECD89E1B1B23BD3EFED74D9A576C8F8",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "GCM26-COMEX.dly",
+        "sha256":  "CDFFDDB475A71C4E5121DF56E6F8D39CE52AE3FB6AF6D76C4855F54FE6066F84",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "GCQ26-COMEX.dly",
+        "sha256":  "3B23E95A51BA0DD03498DAF6411459EADC01CD6FA0C69752E64A6CC5F477C38D",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "GCZ26-COMEX.dly",
+        "sha256":  "8387956C0DF38E30CDDED9F215019DC383500AD23706FD9C036A74845F6BCC6A",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "MGCM26-COMEX.dly",
+        "sha256":  "4F32D8EEC25843294028DBDB200CA060E9188FDDED3545BEDB73075EA8D6FFA1",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "MGCQ26-COMEX.dly",
+        "sha256":  "6E977E9786362BC4B3C49DD9A188619ECC81BB521BB54BFBE3DE67B8C1D86E3F",
+        "moved_hash_equal":  true
+    },
+    {
+        "file":  "MGCZ26-COMEX.dly",
+        "sha256":  "81B46ECBAE1E6B385A94D1FDE673E1E4F2F98EDB999F18854DCFEECD8D7E45C2",
+        "moved_hash_equal":  true
+    }
+]

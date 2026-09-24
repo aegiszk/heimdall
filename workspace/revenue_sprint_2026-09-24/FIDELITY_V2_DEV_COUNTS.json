@@ -1,0 +1,79 @@
+{
+ "TRIDENT_V2": {
+  "EURUSD": {
+   "setups": 14,
+   "per_year": 4.68,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 8,
+   "setups_with_C7_removed_draft": 7
+  },
+  "GBPUSD": {
+   "setups": 16,
+   "per_year": 5.35,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 9,
+   "setups_with_C7_removed_draft": 4
+  },
+  "USDJPY": {
+   "setups": 26,
+   "per_year": 8.69,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 21,
+   "setups_with_C7_removed_draft": 9
+  },
+  "USDCAD": {
+   "setups": 14,
+   "per_year": 4.68,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 11,
+   "setups_with_C7_removed_draft": 5
+  },
+  "NZDUSD": {
+   "setups": 12,
+   "per_year": 4.01,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 9,
+   "setups_with_C7_removed_draft": 6
+  },
+  "XAUUSD": {
+   "setups": 21,
+   "per_year": 7.02,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_above_ema200": 16,
+   "setups_with_C7_removed_draft": 5
+  }
+ },
+ "MMXM_V2": {
+  "EURUSD": {
+   "setups": 204,
+   "per_year": 68.17,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_disp_in_kz": 87,
+   "short": 111
+  },
+  "GBPUSD": {
+   "setups": 209,
+   "per_year": 69.84,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_disp_in_kz": 71,
+   "short": 102
+  },
+  "USDJPY": {
+   "setups": 209,
+   "per_year": 69.84,
+   "geometry_violations": 0,
+   "lookahead_mismatches": 0,
+   "ctx_disp_in_kz": 67,
+   "short": 87
+  }
+ },
+ "note": "TRIDENT_V2 counts are for the frozen spec (C7 removed per Agent 2 audit); setups_with_C7_removed_draft = superseded draft with the unsourced gap-failure abort. Signals only, no PnL."
+}

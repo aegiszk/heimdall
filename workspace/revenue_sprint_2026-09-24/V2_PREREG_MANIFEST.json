@@ -1,0 +1,36 @@
+{
+ "frozen_utc": "2026-09-24T06:34:07.540345+00:00",
+ "base_sha": "a1486c4738bb96babaed396fe9163a86a679506b",
+ "note": "frozen before any V2 PnL",
+ "files": {
+  "workspace/revenue_sprint_2026-09-24/trident_v2/strategy.py": "b765cae07a4e27236205aedfe9a4b891727ae6073bc29748b9c063296c2ee3c2",
+  "workspace/revenue_sprint_2026-09-24/trident_v2/TRIDENT_V2_SOURCE_SPEC.md": "8e9f8bdafd3470f3331e4f1c33babc8cbaac68bd2a0c6a701d5d47f2ce8b1086",
+  "workspace/revenue_sprint_2026-09-24/trident_v2/TRIDENT_V2_PREREGISTRATION.md": "e9735014a8d65cd4051551b591a872cbbb5beae516bbd56ea733b2d33a561fe5",
+  "workspace/revenue_sprint_2026-09-24/mmxm_v2/strategy.py": "4a899501e1f438a62e1c5a3838668026a05a2bcf8b64d5852bbbd1f17b870251",
+  "workspace/revenue_sprint_2026-09-24/mmxm_v2/MMXM_V2_SOURCE_SPEC.md": "7c7539283cafc568feda9d63a6f7106185d2cdc095375881af379b1bbd37ca36",
+  "workspace/revenue_sprint_2026-09-24/mmxm_v2/MMXM_V2_PREREGISTRATION.md": "6928ebdd19ff589fba885abc9c127f28b7e516a832ca5851cac4636e999e6e10",
+  "workspace/revenue_sprint_2026-09-24/evaluate_v2.py": "e5a8903151a12ede4da663f704016dafb3f4874f6b7018093ada273087777ea2",
+  "workspace/revenue_sprint_2026-09-24/fidelity_v2.py": "ee5c386c0428176998a4f58856c75cd3cbed7d6bcb6d1977ba5adade586d468b",
+  "workspace/revenue_sprint_2026-09-24/freeze_v2.py": "bc90a9a2401baaf5b97eaefdc3876904f11f067bac67aa5c45112b070850aa7b",
+  "workspace/external_strategies/common/harness.py": "b716f51b095bd9398009f2a2ca772a665bdfdc368e1d9c9476a63e8a31a8c291",
+  "workspace/external_strategies/common/stats.py": "15ba12cc975cf9f3c6eeaa27b4beeb5c6abbff3f1635a29f4df1539eed42daec",
+  "workspace/external_strategies/common/registry.py": "94dddbcdad4e46747c3505773dff48baee7e4ac6f0365ecc82e73630f4cb87d3"
+ },
+ "datasets": {
+  "data/fx_histdata/EURUSD_1m_bid.parquet": "f01e43f1d2cb4a277164c57fddfbb56fa1abbf5e779615aa9a7290824e8e0842",
+  "data/fx_histdata/GBPUSD_1m_bid.parquet": "3776736851407d2a4ea726d12be3a61c35bec47fba4aefa3f5e6e161942ec53e",
+  "data/fx_histdata/USDJPY_1m_bid.parquet": "7a8ae0e3ab5d4eedda5eefc3e17304dec3fc8ac3d2b42b9125a0244411d823b7",
+  "data/fx_histdata/USDCAD_1m_bid.parquet": "2822d47ce28daa21ce27315c8ab9d9c92a1d57838be6a3d0f2e0e95da6c48c88",
+  "data/fx_histdata/NZDUSD_1m_bid.parquet": "61d02c23f9fd01070f1411c806e5595c2a7af15d89db1b47abe361fc4302b1b6",
+  "data/fx_histdata/XAUUSD_1m_bid.parquet": "6c973debdd47ea069bddbf86687f730b0c2d5d67931864e44b2b63fa53d0f819"
+ },
+ "must_not_read_before_sealed": [
+  "data/sierra/GC_continuous_1m_latest_90d.parquet (2026-06-23..2026-09-21 overlaps sealed XAU window)",
+  "data/sierra/MGC_continuous_1m_latest_90d.parquet (same)",
+  "C:/SierraChart/QUARANTINE_sealed_fx_xau_dly_2026-09-24/* (EURUSD/XAUUSD spot + GC/MGC daily; see SEALED_FX_DLY_QUARANTINE.json)"
+ ],
+ "aggregate_sha256": "37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+ "supersedes": [
+  "00763a9620f98f8e191904311deba37a24661476a2c996de2e1d7ec1b5241a98"
+ ]
+}
