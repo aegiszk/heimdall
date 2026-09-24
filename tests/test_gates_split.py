@@ -232,18 +232,74 @@ def ledger_copy(tmp_path):
     return p
 
 
-def test_ledger_integrity_and_reference_numbers():
+# Historical snapshot = the ledger exactly as used by VALIDATION_COMPLETION_2026-09-23 section 7: the first 86
+# entries of the append-only hash chain. The prefix is pinned by the entry_hash of entry #86, which covers every
+# earlier entry through prev_hash, so later appends (or back-dated registered_at values) can never enter it.
+SNAPSHOT_LEN = 86
+SNAPSHOT_LAST_ID = "FOMO-F13"
+SNAPSHOT_LAST_HASH = "5a133b31fead6318a89a6fc1659f46682ca0ccfcdee1d5da568d87ea57bd9c60"
+SNAPSHOT_SR_VAR = 0.003449473183343993
+FOMO_W = {"start": "2026-09-05T07:38Z", "end": "2026-09-22T19:42Z"}
+
+
+def _snapshot(led):
+    prefix = {"schema_version": led["schema_version"], "entries": led["entries"][:SNAPSHOT_LEN]}
+    last = prefix["entries"][-1]
+    assert (last["id"], last["entry_hash"]) == (SNAPSHOT_LAST_ID, SNAPSHOT_LAST_HASH), "historical prefix changed"
+    assert tl.verify_ledger(prefix) == []
+    return prefix
+
+
+def test_ledger_historical_snapshot_reference_numbers():
+    """A. Frozen historical numbers, asserted ONLY on the hash-pinned VALIDATION_COMPLETION subset."""
+    snap = _snapshot(tl.load_ledger())
+    W = tl.HOLDOUT_6040
+    exact = [e for e in snap["entries"] if e["data_window"] == W and not e["is_null_control"]]
+    assert sum(e["n_configs"] for e in exact) == 65           # VALIDATION_COMPLETION section 7
+    assert tl.empirical_sr_trials_var(W, tl.IDX, snap) == pytest.approx(SNAPSHOT_SR_VAR, rel=1e-9)
+    assert tl.nb_trials(FOMO_W, "ROBINHOOD_CHAIN_FOMO", snap) == 153
+    assert tl.nb_trials(FOMO_W, "ROBINHOOD_CHAIN_FOMO", snap, "families") == 6
+    assert all(e["window_status"] == "DEV" for e in snap["entries"] if e["dataset_group"] == "ROBINHOOD_CHAIN_FOMO")
+
+
+REQUIRED_PROVENANCE = ("id", "family", "dataset", "dataset_group", "data_window", "window_status", "n_configs",
+                       "verdict", "registered_at", "prev_hash", "entry_hash")
+
+
+def test_ledger_current_invariants():
+    """B. The live append-only ledger: integrity and monotone lower bounds, never a frozen aggregate."""
     led = tl.load_ledger()
     assert tl.verify_ledger(led) == []
+    ids = [e["id"] for e in led["entries"]]
+    assert len(ids) == len(set(ids)) and len(ids) >= SNAPSHOT_LEN
+    assert led["entries"][SNAPSHOT_LEN - 1]["entry_hash"] == SNAPSHOT_LAST_HASH      # append-only: prefix intact
+    for e in led["entries"]:
+        assert all(k in e for k in REQUIRED_PROVENANCE), e.get("id")
     W = tl.HOLDOUT_6040
     exact = [e for e in led["entries"] if e["data_window"] == W and not e["is_null_control"]]
-    assert sum(e["n_configs"] for e in exact) == 65           # VALIDATION_COMPLETION section 7
-    assert tl.empirical_sr_trials_var(W, tl.IDX, led) == pytest.approx(0.003449473183343993, rel=1e-9)
-    assert tl.nb_trials(W, tl.IDX, led, "configs") >= 65
-    fomo_w = {"start": "2026-09-05T07:38Z", "end": "2026-09-22T19:42Z"}
-    assert tl.nb_trials(fomo_w, "ROBINHOOD_CHAIN_FOMO", led) == 153
-    assert tl.nb_trials(fomo_w, "ROBINHOOD_CHAIN_FOMO", led, "families") == 6
-    assert all(e["window_status"] == "DEV" for e in led["entries"] if e["dataset_group"] == "ROBINHOOD_CHAIN_FOMO")
+    assert sum(e["n_configs"] for e in exact) >= 65
+    snap = _snapshot(led)
+    assert tl.nb_trials(W, tl.IDX, led, "configs") >= tl.nb_trials(W, tl.IDX, snap, "configs")
+    var = tl.empirical_sr_trials_var(W, tl.IDX, led)
+    assert var is not None and np.isfinite(var) and var >= 0.0
+    assert tl.nb_trials(FOMO_W, "ROBINHOOD_CHAIN_FOMO", led) >= 153
+
+
+def test_ledger_append_changes_live_stats_but_not_snapshot(ledger_copy):
+    """Regression: a legitimate new trial on the MNQ holdout moves the live aggregate, not the snapshot."""
+    before = tl.load_ledger(ledger_copy)
+    W = tl.HOLDOUT_6040
+    nb0, var0 = tl.nb_trials(W, tl.IDX, before, "configs"), tl.empirical_sr_trials_var(W, tl.IDX, before)
+    tl.register_trial({"id": "TEST-regression-append", "family": "test", "dataset": "data/MNQ_1m.parquet",
+                       "dataset_group": tl.IDX, "data_window": dict(W), "window_status": "REUSED_HOLDOUT",
+                       "n_configs": 1, "verdict": "INCONCLUSIVE", "n_trades": 500, "sr_per_trade": 1.5},
+                      ledger_copy, registered_at="2026-09-23T00:00:00+00:00")   # back-dated on purpose
+    after = tl.load_ledger(ledger_copy)
+    assert tl.verify_ledger(after) == []
+    assert tl.nb_trials(W, tl.IDX, after, "configs") == nb0 + 1
+    assert tl.empirical_sr_trials_var(W, tl.IDX, after) != pytest.approx(var0, rel=1e-9)
+    snap = _snapshot(after)                     # still the same pinned prefix
+    assert tl.empirical_sr_trials_var(W, tl.IDX, snap) == pytest.approx(SNAPSHOT_SR_VAR, rel=1e-9)
 
 
 def test_ledger_append_only(ledger_copy):

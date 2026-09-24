@@ -1,0 +1,264 @@
+{
+ "decider": "Jev (TypeSafe System One)",
+ "model": "jev-1.13.0",
+ "thresholds": {
+  "choice_min_confidence": 0.8,
+  "junk_delete_min_noul": 0.9
+ },
+ "decisions": {
+  "file_classification": {
+   "EXTERNAL_8_PROGRAM_HANDOFF_TO_CHECKER.md": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.96
+   },
+   "PREVALIDATION_HARDENING_2026-09-24.md": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.93
+   },
+   "meta/jev_prevalidation_review.py": {
+    "class": "ESCALATED_TO_OWNER",
+    "jev_choice": "tests_or_tooling",
+    "confidence": 0.75
+   },
+   "meta/jev_release_decisions.py": {
+    "class": "ESCALATED_TO_OWNER",
+    "jev_choice": "tests_or_tooling",
+    "confidence": 0.53
+   },
+   "tests/test_dhesi_hardening.py": {
+    "class": "tests_or_tooling",
+    "jev_choice": "tests_or_tooling",
+    "confidence": 0.99
+   },
+   "tests/test_gates_split.py": {
+    "class": "tests_or_tooling",
+    "jev_choice": "tests_or_tooling",
+    "confidence": 0.99
+   },
+   "tools/secret_scan.py": {
+    "class": "tests_or_tooling",
+    "jev_choice": "tests_or_tooling",
+    "confidence": 1.0
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/AUTHORIZATION_REQUEST_DHESI_V3.md": {
+    "class": "validation_infrastructure_change",
+    "jev_choice": "validation_infrastructure_change",
+    "confidence": 0.97
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/JEV_ADVISORY_REVIEW_2026-09-24.json": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.97
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/PROTOCOL_AMENDMENT_1.md": {
+    "class": "validation_decision_rule_change",
+    "jev_choice": "validation_decision_rule_change",
+    "confidence": 0.88
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/SECRET_SCAN_2026-09-24.json": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.98
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_harvest_integrity.py": {
+    "class": "validation_infrastructure_change",
+    "jev_choice": "validation_infrastructure_change",
+    "confidence": 0.99
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_validator.py": {
+    "class": "validation_decision_rule_change",
+    "jev_choice": "validation_decision_rule_change",
+    "confidence": 0.92
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev.log": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 1.0
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev/*": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.99
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic.log": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.99
+   },
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic/*": {
+    "class": "evidence_or_documentation",
+    "jev_choice": "evidence_or_documentation",
+    "confidence": 0.99
+   },
+   "workspace/external_strategies/_program/make_checker_handoff.py": {
+    "class": "tests_or_tooling",
+    "jev_choice": "tests_or_tooling",
+    "confidence": 0.92
+   }
+  },
+  "junk": {
+   "$50k": {
+    "p_unambiguous_junk": 0.18,
+    "action": "KEEP_LIST_FOR_OWNER"
+   },
+   "HL": {
+    "p_unambiguous_junk": 0.17,
+    "action": "KEEP_LIST_FOR_OWNER"
+   },
+   "Stage": {
+    "p_unambiguous_junk": 0.15,
+    "action": "KEEP_LIST_FOR_OWNER"
+   },
+   "TAKER": {
+    "p_unambiguous_junk": 0.17,
+    "action": "KEEP_LIST_FOR_OWNER"
+   },
+   "tuple[float": {
+    "p_unambiguous_junk": 0.22,
+    "action": "KEEP_LIST_FOR_OWNER"
+   },
+   "tuple[int": {
+    "p_unambiguous_junk": 0.23,
+    "action": "KEEP_LIST_FOR_OWNER"
+   }
+  },
+  "escalations": [
+   "classification of meta/jev_prevalidation_review.py (confidence 0.75)",
+   "classification of meta/jev_release_decisions.py (confidence 0.53)"
+  ],
+  "secret_status": {
+   "decision": "SECRET_SCAN_FINDINGS",
+   "jev_choice": "SECRET_SCAN_FINDINGS",
+   "confidence": 0.92,
+   "probabilities": {
+    "SECRET_SCAN_PASS": 0.04,
+    "SECRET_SCAN_FINDINGS": 0.96
+   }
+  },
+  "release_status": {
+   "decision": "READY_FOR_CHECKER",
+   "jev_choice": "READY_FOR_CHECKER",
+   "confidence": 0.81,
+   "probabilities": {
+    "READY_FOR_CHECKER": 0.9,
+    "BLOCKED": 0.1
+   }
+  }
+ },
+ "state_facts": {
+  "work_order": "Pre-validation hardening: D3 dual-engine trade persistence + INVALID on disagreement; D4 volume/row integrity; spec/code consistency re-check; refreeze infrastructure hashes; split ledger test into historical snapshot vs live invariants; external-8 checker handoff; secret/junk scan; tests; PR.",
+  "verified_facts": {
+   "frozen_code_spec_protocol_ref_engine_hash_identical_to_base": true,
+   "validator_rule_and_statistics_functions_byte_identical_to_base": true,
+   "validator_functions_changed": [
+    "check_authorization",
+    "primary",
+    "secondary"
+   ],
+   "validator_primary_change": "persists both engines' trade ledgers and a comparison before statistics; if engines disagree the result is INVALID and no verdict is computed (was: verdict stands on frozen code). Declared in PROTOCOL_AMENDMENT_1.md which supersedes Protocol V1 \u00a74.5.",
+   "harvest_integrity_change": "adds volume/row-validity/geometry/monotonic/timezone/stamp-shift/roll-range checks; counts only",
+   "authorization_request_change": "only binding hashes updated (validator, integrity tool, amendment)",
+   "tests": "279 passed, 1 skipped, 2 failed; both failures are live-network tests (OKX API unreachable): test_connectors_live::test_live_public_connectors, test_history_real::test_btc_real_history_and_funnel_verdicts",
+   "d3_dev_end_to_end": "frozen vs reference 49/49 trades, 0 field mismatches, max numeric diff 0.0",
+   "d3_synthetic_comparator": "231/231 trades, all 16 fields identical",
+   "d4_synthetic_tests": "26 passed (NaN/inf/negative/zero volume, OHLC NaN, geometry, duplicate, missing row, non-monotonic, 1-minute shift, wrong timezone, naive index, roll range)",
+   "ledger_tests": "historical snapshot pinned by hash-chain prefix passes with 65 configs and variance 0.003449473183343993; live invariants pass; append regression passes",
+   "external8_handoff": "generated; 0 missing references; 0 hash drift; 4/4 core documents identical to base",
+   "secret_scan": "1 finding: an authorization sentinel phrase (TOKEN = <redacted>) in Agent 2's harness that its script requires as a line in the owner's authorization file; no API keys, AWS, GitHub, private keys, bearer tokens or committed .env files",
+   "dhesi_validation_run": "not run; no reserved data read",
+   "remaining_items_outside_this_PR": [
+    "owner Sierra harvest of NQ history",
+    "ledger registration of three Dhesi trials",
+    "owner authorization file",
+    "Agent 2 certification incl. acceptance of Protocol Amendment 1",
+    "D2 reporting gap",
+    "D5 converter freeze",
+    ".dly quarantine decision"
+   ]
+  },
+  "changed_files": [
+   "tests/test_gates_split.py",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/AUTHORIZATION_REQUEST_DHESI_V3.md",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_harvest_integrity.py",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_validator.py",
+   "EXTERNAL_8_PROGRAM_HANDOFF_TO_CHECKER.md",
+   "PREVALIDATION_HARDENING_2026-09-24.md",
+   "meta/jev_prevalidation_review.py",
+   "meta/jev_release_decisions.py",
+   "tests/test_dhesi_hardening.py",
+   "tools/secret_scan.py",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/JEV_ADVISORY_REVIEW_2026-09-24.json",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/PROTOCOL_AMENDMENT_1.md",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/SECRET_SCAN_2026-09-24.json",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev.log",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev/ENGINE_COMPARISON.json",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev/FROZEN_ENGINE_TRADES.csv",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev/FROZEN_ENGINE_TRADES.parquet",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev/REFERENCE_ENGINE_TRADES.csv",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_dev/REFERENCE_ENGINE_TRADES.parquet",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic.log",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic/ENGINE_COMPARISON.json",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic/FROZEN_ENGINE_TRADES.csv",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic/FROZEN_ENGINE_TRADES.parquet",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic/REFERENCE_ENGINE_TRADES.csv",
+   "workspace/dhesi_adjudication_agent1_2026-09-23/selftest_engines_synthetic/REFERENCE_ENGINE_TRADES.parquet",
+   "workspace/external_strategies/_program/make_checker_handoff.py"
+  ],
+  "junk_candidates": [
+   {
+    "name": "$50k",
+    "size_bytes": 0,
+    "tracked": true,
+    "added_by_commit": "a3367a3 Initial import of Heimdall prop-account survival machine",
+    "has_file_extension": false,
+    "location": "repository root"
+   },
+   {
+    "name": "HL",
+    "size_bytes": 0,
+    "tracked": true,
+    "added_by_commit": "a3367a3 Initial import of Heimdall prop-account survival machine",
+    "has_file_extension": false,
+    "location": "repository root"
+   },
+   {
+    "name": "Stage",
+    "size_bytes": 0,
+    "tracked": true,
+    "added_by_commit": "a3367a3 Initial import of Heimdall prop-account survival machine",
+    "has_file_extension": false,
+    "location": "repository root"
+   },
+   {
+    "name": "TAKER",
+    "size_bytes": 0,
+    "tracked": true,
+    "added_by_commit": "a3367a3 Initial import of Heimdall prop-account survival machine",
+    "has_file_extension": false,
+    "location": "repository root"
+   },
+   {
+    "name": "tuple[float",
+    "size_bytes": 0,
+    "tracked": true,
+    "added_by_commit": "a3367a3 Initial import of Heimdall prop-account survival machine",
+    "has_file_extension": false,
+    "location": "repository root"
+   },
+   {
+    "name": "tuple[int",
+    "size_bytes": 0,
+    "tracked": true,
+    "added_by_commit": "a3367a3 Initial import of Heimdall prop-account survival machine",
+    "has_file_extension": false,
+    "location": "repository root"
+   }
+  ]
+ },
+ "usage": {
+  "input_tokens": 6869,
+  "output_tokens": 1615
+ }
+}

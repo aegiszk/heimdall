@@ -1,0 +1,47 @@
+{
+ "frozen_trades": 1,
+ "reference_trades": 1,
+ "matched_trades": 1,
+ "missing_on_frozen": [],
+ "missing_on_reference": [],
+ "field_mismatches": [],
+ "field_mismatch_count": 0,
+ "max_abs_numeric_diff": {
+  "side": 0.0,
+  "entry_price": 0.0,
+  "exit_price": 0.0,
+  "stop_price": 0.0,
+  "tp1_price": 0.0,
+  "runner_target_price": 0.0,
+  "contracts": 0.0,
+  "risk_dollars": 0.0,
+  "gross_pnl": 0.0,
+  "pnl": 0.0
+ },
+ "numeric_tolerance": 1e-09,
+ "compared_fields": [
+  "entry_ts",
+  "exit_ts",
+  "session",
+  "side",
+  "entry_price",
+  "exit_price",
+  "stop_price",
+  "tp1_price",
+  "runner_target_price",
+  "contracts",
+  "risk_dollars",
+  "gross_pnl",
+  "pnl",
+  "tp1_hit",
+  "reason",
+  "sweep_pool"
+ ],
+ "result": "PASS",
+ "files": {
+  "FROZEN_ENGINE_TRADES.csv": "45887347212663f572d6866eaf838bb045e3a1116bd16fddb39d1d7de7051cfb",
+  "FROZEN_ENGINE_TRADES.parquet": "248ed2efdd482aeb1706bbd679eca08900001ae78e2fb5560faa7e51d4c5117b",
+  "REFERENCE_ENGINE_TRADES.csv": "88c3e5cc5e1986e90cc6cab8625cb58e683a727f01055e705ce8c9e300db06b8",
+  "REFERENCE_ENGINE_TRADES.parquet": "594737f61cd24c25366135a4b92413bab948cb3ec1ecc0fd52f64836e67d3b2a"
+ }
+}
