@@ -118,19 +118,28 @@ def get_logs(flt, a, b):
 BLOCK_T = {}                      # block -> arrival ns (in-memory recent)
 def feed_thread():
     async def run():
+        # Amendment 1b: exponential reconnect back-off (2 s .. 300 s, reset after a message) and Retry-After on 403/429.
+        # A fixed 2 s retry after a rejected handshake got this host "Blocked for 1 hour after sustained feed connection
+        # rejections" on 2026-09-24.
+        backoff = 2.0
         while True:
             try:
                 async with aiohttp.ClientSession() as s:
                     async with s.ws_connect(FEED, compress=15, headers={"Arbitrum-Feed-Client-Version": "2"},
                                             heartbeat=30, max_msg_size=0) as ws:
                         async for msg in ws:
-                            t = time.time_ns()
+                            t = time.time_ns(); backoff = 2.0
                             for m in json.loads(msg.data).get("messages", []):
                                 b = m["sequenceNumber"] - 2
                                 if b not in BLOCK_T:
                                     BLOCK_T[b] = t; write("blocks", {"b": b, "t_ns": t})
             except Exception as ex:
-                write("rtt", {"t": time.time(), "feed_error": str(ex)[:200]}); await asyncio.sleep(2)
+                wait = backoff
+                if getattr(ex, "status", None) in (403, 429):
+                    try: wait = max(wait, float((getattr(ex, "headers", None) or {}).get("Retry-After", 0)))
+                    except (TypeError, ValueError): pass
+                write("rtt", {"t": time.time(), "feed_error": str(ex)[:200], "retry_in_s": wait})
+                await asyncio.sleep(wait); backoff = min(backoff * 2, 300.0)
     asyncio.run(run())
 
 def rtt_probe():

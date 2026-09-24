@@ -74,4 +74,22 @@ blocked = th.is_alive()
 rec.MAIN_LAG[0] = 0; th.join(2.0)
 print("low blocked while lagging", blocked, "released", not th.is_alive())
 assert blocked and not th.is_alive()
+# Amendment 1b: feed reconnect backs off exponentially and honours Retry-After on 403
+import asyncio, aiohttp
+waits = []
+class _Blocked(Exception): pass
+async def fake_sleep(w):
+    waits.append(w)
+    if len(waits) >= 4: raise _Blocked()
+def fake_ws_connect(self, *a, **k):
+    raise aiohttp.WSServerHandshakeError(__import__("types").SimpleNamespace(real_url="wss://mock"), (), status=403 if len(waits) == 0 else 502, message="x",
+                                         headers={"Retry-After": "3576"} if len(waits) == 0 else {})
+rec.asyncio.sleep = fake_sleep
+aiohttp.ClientSession.ws_connect = fake_ws_connect
+try:
+    rec.feed_thread()
+except _Blocked:
+    pass
+print("feed reconnect waits", waits)
+assert waits == [3576.0, 4.0, 8.0, 16.0]
 print("ALL OK")
