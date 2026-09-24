@@ -62,3 +62,16 @@ human-emulation (GUI-clicking) executor, higher void risk. Same risk engine, dif
 - Run `tools/check_core_purity.py` + `pytest -q` before declaring done (ignore only the known OKX-timeout tests).
 - Paste real numbers. No tuning to force a pass. Report fail-reasons honestly.
 - If a result overturns a prior belief, SAY SO — that's the system working.
+
+## 8. REPOSITORY, SETUP & SYNC (GitHub: aegiszk/heimdall, PRIVATE)
+- New machine or new agent: follow **SETUP.md** exactly (clone with `--recurse-submodules`, venv from
+  `requirements.lock.txt`, then `python tools/fetch_bulk_data.py` for the ~9.2 GB bulk data).
+- Bulk data (`data/sierra`, `data/tardis_free`, `data/hl_tape`, `data/fx_histdata`, profit-discovery wallet
+  logs, NQ event-atlas parquets) is NOT in git. It lives in GitHub Release `bulk-data-v1` and is listed in
+  `tools/bulk_manifest.json`. Never `git add` it. Never commit a file > 50 MB. Publishing a new snapshot is in SETUP.md §3.
+- Byte-exact checkout is mandatory (`.gitattributes: * -text`). Frozen artifacts (Dhesi spec, validator, `core/alpha`,
+  `core/risk`) are verified by SHA-256 of their CRLF bytes. Never change their line endings or reformat them.
+- Never commit secrets: `.env` stays local (copy `.env.example`). `DHESI_V3_RUN_AUTHORIZATION.txt` is owner-only and never committed.
+- Several agents work in this tree at once. Before committing: `git pull --rebase`, commit only your own work,
+  and never delete or revert another agent's files. Deleting anything, including temp copies, needs owner approval.
+- Commit and push finished work so GitHub stays current. Run `tools/check_core_purity.py` and `pytest -q` first.

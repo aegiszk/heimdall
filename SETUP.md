@@ -69,6 +69,28 @@ pytest -q
 
 Only the known OKX-timeout tests are expected to fail.
 
+## 6. Access for other developers
+
+- The repo is **private**. The owner adds each developer under GitHub → aegiszk/heimdall → Settings → Collaborators.
+- Each developer then runs `gh auth login` with their own account. `fetch_bulk_data.py` needs that access too.
+
+## 7. Working rules for agents and developers (summary; the canon is CLAUDE.md / AGENTS.md §8)
+
+1. Setup is steps 1–5 above, in order. Do not start work until `check_core_purity.py` passes and pytest shows only the known OKX network failures.
+2. Several agents write to this tree at the same time. Sync before and after work:
+   `git pull --rebase` → commit only your own files → `git push`.
+3. Never delete, move or revert files you did not create, including temp/scratch copies, without the owner's approval.
+4. Never commit:
+   - bulk data (see the `.gitignore` BULK DATA block);
+   - any file > 50 MB;
+   - `.env`;
+   - `DHESI_V3_RUN_AUTHORIZATION.txt`;
+   - virtualenvs.
+5. New large data goes into a new bulk snapshot (§3: pack → `gh release create bulk-data-vN` → commit the manifest). It never goes into git.
+6. Never alter frozen artifacts or their line endings. Their SHA-256 hashes gate the Dhesi one-shot validation.
+7. The reserved data firewall still applies: no CME equity-index rows before 2024-07-01 may be read until the Dhesi run completes (see `HEIMDALL_MEMORY.md` and `workspace/agent2_external_strategy_audit_2026-09-24/`).
+8. Bulk snapshot `bulk-data-v1` was taken 2026-09-24 ~09:00 (UTC+4). The live HL tape recorder keeps appending locally after that.
+
 ## Data licensing note
 
 `data/` contains vendor data (Databento, Sierra Chart, FirstRate samples, Tardis free tier). Check that each developer's access complies with those vendors' terms before sharing further. Keep this repository **private**.
