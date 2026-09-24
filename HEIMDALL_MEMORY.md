@@ -656,3 +656,24 @@ candles were still downloading at session end (session scratchpad `logs/`, `ohlc
 - [V] AWS ap-northeast-1 prices (price list 2026-09-16/18): egress $0.114/GB, LIST $0.0047/1k, GET $0.0037/10k.
   Discovery (~978 LIST + footer GETs) ~ $0.01. Inferred pulls: H2 xyz $0.3-0.8 if coin-selectable, $6-15 full files;
   all four ~$1.3-7 selectable / ~$9-25 full. H2 causal pre-reg draft (M0 controls, cohorts, Holm 12 tests, >=+1 tick net) in report §5.
+
+## CYCLE UPDATE — 2026-09-24: External 8-strategy program (rule sheet + owner report zip) — COMPLETE, 0 SURVIVORS
+Report: `EXTERNAL_8_STRATEGIES_STATE.md`; source recovery `EXTERNAL_8_STRATEGIES_SOURCE_RECOVERY.md`; code/logs
+`workspace/external_strategies/`; prereg aggregate SHA-256 067f073c…2bcc (frozen before PnL); artefact hashes
+`workspace/external_strategies/_program/ARTEFACT_HASHES.json`.
+- [V] All 8 primary transcripts retrieved 2026-09-24 (youtube-transcript-api). coBMd1vk2Lo (Trader Mayne) IS fully
+  specified (rule sheet said inaccessible). SQEtBHOJW6I = Jay Ortani stock/options Level-2 + tape strategy; the rule
+  sheet's IPP / 2 PM Silver Bullet / ICT-FX reconstructions and five "examples" are NOT in the video — retired.
+- [V] New free data: HistData 1m BID FX/XAU (EURUSD GBPUSD USDJPY USDCAD NZDUSD XAUUSD) 2022-01..2026-08 in
+  `data/fx_histdata/` (EST-no-DST -> UTC). 2025-01..2026-08 is SEALED (unread) as a fresh window.
+- RESULTS (DEV only; futures windows REUSED): 62 valid trials + 4 invalid looks registered (`EXT8-*`). Holm/BH all
+  1.0; White RC CME p=0.43, FX/XAU p=0.97; max DSR (n>=30) 0.08. Liquidity-trap (Marco) ≈0R over ~1,000 MNQ
+  trades even before costs (NO_SIGNAL); Mayne H4 variants ROBUSTLY_REJECTED; PO3, Trident, MMXM TOO_SPARSE;
+  Rizzy uptrend-long MNQ +0.15R is FRAGILE (drop top-5 -> +0.014R; bear days -0.05R; negative on ES/XAU).
+  Trident's claimed ~90% win rate vs 3/22 mechanized. G (Ortani) and H (Dux) BLOCKED_DATA; neither tradable on Lucid.
+- BUG caught by diagnosis: Family A first run used sell-stop semantics (98.8% wrong-side fills) -> invalidated,
+  fixed, rerun as `_fix1` (`workspace/external_strategies/_program/BUGFIX_A_ENTRY.md`).
+- Databento quotes 2026-09-24 (get_cost, nothing bought): XNAS MBO NVDA/TSLA/AMD 1 month $26.72; XNAS ohlcv-1d all
+  symbols 2019..2026-09 $28.00; XNAS ohlcv-1m all $1,428.29; EQUS.MINI ohlcv-1m 2023-06..2026-09 $522.25.
+- OPEN (owner): `tests/test_gates_split.py::test_ledger_integrity_and_reference_numbers` now fails because the new
+  CME trials raised the MNQ-holdout empirical SR variance 0.00345 -> 0.0172 (ledger working as designed; test not edited).

@@ -1,0 +1,10 @@
+{
+ "utc": "2026-09-24T05:15:17.046406+00:00",
+ "type": "BUGFIX (no rule change)",
+ "reason": "Family A entry order type; see _program/BUGFIX_A_ENTRY.md",
+ "files": {
+  "liquidity_trap/strategy.py": "e873e546b5d6e47ae4ac1a4f194b38c7c772cb8ec650fca63d348211feb4b241",
+  "common/test_families.py": "02a65e0b9f5adadf1e2db2102685c75f2b85fee807035dc87f14f8c24f5074c0",
+  "_program/BUGFIX_A_ENTRY.md": "09adb9926131fae6ce9829a8b12af8d5bc349429df661eca0bc2c345bc8a1957"
+ }
+}

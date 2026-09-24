@@ -1,0 +1,22 @@
+{
+ "frozen_utc": "2026-09-24T04:58:46.762138+00:00",
+ "note": "frozen before any PnL",
+ "files": {
+  "common/harness.py": "b716f51b095bd9398009f2a2ca772a665bdfdc368e1d9c9476a63e8a31a8c291",
+  "common/registry.py": "94dddbcdad4e46747c3505773dff48baee7e4ac6f0365ecc82e73630f4cb87d3",
+  "common/stats.py": "15ba12cc975cf9f3c6eeaa27b4beeb5c6abbff3f1635a29f4df1539eed42daec",
+  "liquidity_trap\\PREREGISTRATION.md": "4be68f10a033d20b10201c60c04b7cbfa3171af6c3bf948716405861ddef4ee4",
+  "liquidity_trap\\strategy.py": "973fb9b2342c2199958c35bd19fe37a640b23d948265f03d25f449a78fff0452",
+  "little_rizzy\\PREREGISTRATION.md": "369d4f4e99dfc4c2c7ee4dabc9d3f635b433792e0f6ad4678b881aba6908b2fc",
+  "little_rizzy\\strategy.py": "f1c8965fcd0dc9e508d7d057eb1101ac74c9aa68a91fd0bc892a94257198c275",
+  "mmxm_ote\\PREREGISTRATION.md": "984689daf27b06cef179e2eda28e66d9f1a650f6ca0fba1ad61c05682c69220f",
+  "mmxm_ote\\strategy.py": "21923fcc187e963bd63a848e4494702a431860080500e0d19077e828908b99ad",
+  "po3_50\\PREREGISTRATION.md": "cfab26ee448cbc98a95669ff75bc4e02751301f1dddba27612e7db7dfc7a2887",
+  "po3_50\\strategy.py": "8c4bfbb0eb9cb4d47eff67c2a8eb08b3d5470d4df98441fdfeefe7930d102ef7",
+  "trader_mayne\\PREREGISTRATION.md": "1fc6a59a63d2a2f86ee33308a68d32fb16c2da9d199067af8a56fbbc3ac71b99",
+  "trader_mayne\\strategy.py": "ba5eb37fbf148df7404da7c5912314d9f93d0ffaf97a2aaaac1c21773fb8a0c5",
+  "trident\\PREREGISTRATION.md": "a9c04b8114fb7ea3f6601cb8b961b93877790621c7e636edc71e4f1da1d5273e",
+  "trident\\strategy.py": "3bfa468d1abd5e7206f458c731a8f4f1d00a8012b98616a64830af6936381cd6"
+ },
+ "aggregate_sha256": "067f073c3857420414139efa599b0efda53eff57b783a3d70829cec5d43c2bcc"
+}

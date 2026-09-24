@@ -28,7 +28,11 @@ from harness import ET, Order, pivots, resample  # noqa: E402
 class Cfg:
     name: str
     k: int = 1                 # pivot half-width
-    entry: str = "spike"       # 'spike' = stop order 1 tick beyond H ; 'close' = 5m bar spikes beyond H, closes back
+    entry: str = "spike"       # 'spike' = resting SELL limit 1 tick above H (BUY limit below L): fills when price
+    #                            trades through the level ("as soon as the high is spiked out"). BUGFIX 2026-09-24:
+    #                            first run used a harness 'stop' order, which for shorts triggers on price FALLING to
+    #                            the level -> 98.8% of fills were on the wrong side (see _program/BUGFIX_A_ENTRY.md)
+    # 'close' = 5m bar spikes beyond H and closes back
     targets: str = "nearest"   # 'nearest' | 'split' (50% nearest, 50% second-nearest, BE after first)
     tick: float = 0.25
     stop_ticks: int = 2
@@ -119,7 +123,7 @@ def generate(m1: pd.DataFrame, cfg: Cfg) -> list[Order]:
                     t_place = max(end[j], _utc(w_open))
                     meta = dict(anchor=a.price, internal=h.price, anchor_i=a.i, internal_i=h.i,
                                 tgt1=opp[0].price, day=str(pd.Timestamp(cur).date()))
-                    od = Order(side, t_place, "stop", stop=stop, entry_px=trig, targets=tg,
+                    od = Order(side, t_place, "limit", stop=stop, entry_px=trig, targets=tg,
                                expiry=_utc(w_close), flatten=_utc(flat),
                                be_after_first_target=(cfg.targets == "split"), tag=cfg.name, meta=meta)
                     if cfg.entry == "close":

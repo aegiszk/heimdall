@@ -46,7 +46,7 @@ def _geom(fam: str, od) -> str | None:
         if not (s * (st - m["n_ext"]) < 0):
             return "C: stop not beyond manipulation extreme"
     elif fam == "little_rizzy":
-        if not (s * (m["target"] - m["low"]) > 0 and s * (m["p1"] - m["p2"]) > 0):
+        if not (s * (m["target"] - m["low"]) > 0 and s * (m["p2"] - m["p1"]) > 0):
             return "D: projection/trendline orientation"
     elif fam == "trident":
         if s > 0 and not (m["doji_low"] < m["ce"] <= m["fvg_top"] and m["fvg_bot"] < m["fvg_top"]):
