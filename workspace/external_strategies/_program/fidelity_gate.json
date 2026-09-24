@@ -1,0 +1,815 @@
+{
+ "liquidity_trap|A1_k1_spike_nearest|MNQ": {
+  "family": "liquidity_trap",
+  "cfg": "A1_k1_spike_nearest",
+  "inst": "MNQ",
+  "n_orders": 48736,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 36.3,
+  "by_side": {
+   "1": 29989,
+   "-1": 18747
+  },
+  "lookahead_mismatches": 0
+ },
+ "liquidity_trap|A2_k2_spike_nearest|MNQ": {
+  "family": "liquidity_trap",
+  "cfg": "A2_k2_spike_nearest",
+  "inst": "MNQ",
+  "n_orders": 24823,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 23.4,
+  "by_side": {
+   "1": 15217,
+   "-1": 9606
+  },
+  "lookahead_mismatches": 0
+ },
+ "liquidity_trap|A3_k1_spike_split|MNQ": {
+  "family": "liquidity_trap",
+  "cfg": "A3_k1_spike_split",
+  "inst": "MNQ",
+  "n_orders": 48736,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 35.6,
+  "by_side": {
+   "1": 29989,
+   "-1": 18747
+  },
+  "lookahead_mismatches": 0
+ },
+ "liquidity_trap|A4_k1_close_nearest|MNQ": {
+  "family": "liquidity_trap",
+  "cfg": "A4_k1_close_nearest",
+  "inst": "MNQ",
+  "n_orders": 11836,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 42.0,
+  "by_side": {
+   "1": 7414,
+   "-1": 4422
+  },
+  "lookahead_mismatches": 0
+ },
+ "liquidity_trap|A1_k1_spike_nearest|YM_S": {
+  "family": "liquidity_trap",
+  "cfg": "A1_k1_spike_nearest",
+  "inst": "YM_S",
+  "n_orders": 5138,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 4.3,
+  "by_side": {
+   "1": 2840,
+   "-1": 2298
+  }
+ },
+ "trader_mayne|B1_H4_M15_breaker|MNQ": {
+  "family": "trader_mayne",
+  "cfg": "B1_H4_M15_breaker",
+  "inst": "MNQ",
+  "n_orders": 52,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.4,
+  "by_side": {
+   "-1": 36,
+   "1": 16
+  },
+  "lookahead_mismatches": 0
+ },
+ "trader_mayne|B2_H1_M5_breaker|MNQ": {
+  "family": "trader_mayne",
+  "cfg": "B2_H1_M5_breaker",
+  "inst": "MNQ",
+  "n_orders": 144,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 1.0,
+  "by_side": {
+   "-1": 99,
+   "1": 45
+  },
+  "lookahead_mismatches": 0
+ },
+ "trader_mayne|B3_D_H1_breaker|MNQ": {
+  "family": "trader_mayne",
+  "cfg": "B3_D_H1_breaker",
+  "inst": "MNQ",
+  "n_orders": 17,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.2,
+  "by_side": {
+   "-1": 11,
+   "1": 6
+  },
+  "lookahead_mismatches": 0
+ },
+ "trader_mayne|B4_H4_OB_limit|MNQ": {
+  "family": "trader_mayne",
+  "cfg": "B4_H4_OB_limit",
+  "inst": "MNQ",
+  "n_orders": 123,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.4,
+  "by_side": {
+   "-1": 70,
+   "1": 53
+  },
+  "lookahead_mismatches": 0
+ },
+ "po3_50|C1_3m_overnight|MNQ": {
+  "family": "po3_50",
+  "cfg": "C1_3m_overnight",
+  "inst": "MNQ",
+  "n_orders": 42,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 25.8,
+  "by_side": {
+   "1": 22,
+   "-1": 20
+  },
+  "lookahead_mismatches": 0
+ },
+ "po3_50|C2_3m_overnight_H4|MNQ": {
+  "family": "po3_50",
+  "cfg": "C2_3m_overnight_H4",
+  "inst": "MNQ",
+  "n_orders": 33,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 25.1,
+  "by_side": {
+   "-1": 18,
+   "1": 15
+  },
+  "lookahead_mismatches": 0
+ },
+ "po3_50|C3_5m_overnight|MNQ": {
+  "family": "po3_50",
+  "cfg": "C3_5m_overnight",
+  "inst": "MNQ",
+  "n_orders": 25,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 16.2,
+  "by_side": {
+   "1": 16,
+   "-1": 9
+  },
+  "lookahead_mismatches": 0
+ },
+ "po3_50|C4_3m_h4range|MNQ": {
+  "family": "po3_50",
+  "cfg": "C4_3m_h4range",
+  "inst": "MNQ",
+  "n_orders": 34,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 25.3,
+  "by_side": {
+   "1": 18,
+   "-1": 16
+  },
+  "lookahead_mismatches": 0
+ },
+ "little_rizzy|D1_F_short_1h_pivot|MNQ": {
+  "family": "little_rizzy",
+  "cfg": "D1_F_short_1h_pivot",
+  "inst": "MNQ",
+  "n_orders": 339,
+  "geometry_violations": 339,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "-1": 339
+  },
+  "lookahead_mismatches": 0
+ },
+ "little_rizzy|D1_F_short_1h_pivot|ES": {
+  "family": "little_rizzy",
+  "cfg": "D1_F_short_1h_pivot",
+  "inst": "ES",
+  "n_orders": 326,
+  "geometry_violations": 326,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "-1": 326
+  }
+ },
+ "little_rizzy|D1_F_short_1h_pivot|XAUUSD": {
+  "family": "little_rizzy",
+  "cfg": "D1_F_short_1h_pivot",
+  "inst": "XAUUSD",
+  "n_orders": 540,
+  "geometry_violations": 540,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 540
+  }
+ },
+ "little_rizzy|D2_F_short_4h_pivot|MNQ": {
+  "family": "little_rizzy",
+  "cfg": "D2_F_short_4h_pivot",
+  "inst": "MNQ",
+  "n_orders": 89,
+  "geometry_violations": 89,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "-1": 89
+  },
+  "lookahead_mismatches": 0
+ },
+ "little_rizzy|D2_F_short_4h_pivot|ES": {
+  "family": "little_rizzy",
+  "cfg": "D2_F_short_4h_pivot",
+  "inst": "ES",
+  "n_orders": 82,
+  "geometry_violations": 82,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "-1": 82
+  }
+ },
+ "little_rizzy|D2_F_short_4h_pivot|XAUUSD": {
+  "family": "little_rizzy",
+  "cfg": "D2_F_short_4h_pivot",
+  "inst": "XAUUSD",
+  "n_orders": 142,
+  "geometry_violations": 142,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.2,
+  "by_side": {
+   "-1": 142
+  }
+ },
+ "little_rizzy|D3_F_short_1h_bb|MNQ": {
+  "family": "little_rizzy",
+  "cfg": "D3_F_short_1h_bb",
+  "inst": "MNQ",
+  "n_orders": 219,
+  "geometry_violations": 219,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "-1": 219
+  },
+  "lookahead_mismatches": 0
+ },
+ "little_rizzy|D3_F_short_1h_bb|ES": {
+  "family": "little_rizzy",
+  "cfg": "D3_F_short_1h_bb",
+  "inst": "ES",
+  "n_orders": 228,
+  "geometry_violations": 228,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "-1": 228
+  }
+ },
+ "little_rizzy|D3_F_short_1h_bb|XAUUSD": {
+  "family": "little_rizzy",
+  "cfg": "D3_F_short_1h_bb",
+  "inst": "XAUUSD",
+  "n_orders": 356,
+  "geometry_violations": 356,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.2,
+  "by_side": {
+   "-1": 356
+  }
+ },
+ "little_rizzy|D4_G_long_1h_pivot|MNQ": {
+  "family": "little_rizzy",
+  "cfg": "D4_G_long_1h_pivot",
+  "inst": "MNQ",
+  "n_orders": 341,
+  "geometry_violations": 341,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "1": 341
+  },
+  "lookahead_mismatches": 0
+ },
+ "little_rizzy|D4_G_long_1h_pivot|ES": {
+  "family": "little_rizzy",
+  "cfg": "D4_G_long_1h_pivot",
+  "inst": "ES",
+  "n_orders": 322,
+  "geometry_violations": 322,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.1,
+  "by_side": {
+   "1": 322
+  }
+ },
+ "little_rizzy|D4_G_long_1h_pivot|XAUUSD": {
+  "family": "little_rizzy",
+  "cfg": "D4_G_long_1h_pivot",
+  "inst": "XAUUSD",
+  "n_orders": 503,
+  "geometry_violations": 503,
+  "violation_examples": [
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation",
+   "D: projection/trendline orientation"
+  ],
+  "secs": 0.2,
+  "by_side": {
+   "1": 503
+  }
+ },
+ "trident|E1_long_kz0300_20R|EURUSD": {
+  "family": "trident",
+  "cfg": "E1_long_kz0300_20R",
+  "inst": "EURUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.4,
+  "by_side": {
+   "1": 3
+  },
+  "lookahead_mismatches": 0
+ },
+ "trident|E1_long_kz0300_20R|GBPUSD": {
+  "family": "trident",
+  "cfg": "E1_long_kz0300_20R",
+  "inst": "GBPUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.4,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E1_long_kz0300_20R|USDJPY": {
+  "family": "trident",
+  "cfg": "E1_long_kz0300_20R",
+  "inst": "USDJPY",
+  "n_orders": 7,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.4,
+  "by_side": {
+   "1": 7
+  }
+ },
+ "trident|E1_long_kz0300_20R|USDCAD": {
+  "family": "trident",
+  "cfg": "E1_long_kz0300_20R",
+  "inst": "USDCAD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E1_long_kz0300_20R|NZDUSD": {
+  "family": "trident",
+  "cfg": "E1_long_kz0300_20R",
+  "inst": "NZDUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E1_long_kz0300_20R|XAUUSD": {
+  "family": "trident",
+  "cfg": "E1_long_kz0300_20R",
+  "inst": "XAUUSD",
+  "n_orders": 4,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 4
+  }
+ },
+ "trident|E2_long_kz0300_emacross|EURUSD": {
+  "family": "trident",
+  "cfg": "E2_long_kz0300_emacross",
+  "inst": "EURUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  },
+  "lookahead_mismatches": 0
+ },
+ "trident|E2_long_kz0300_emacross|GBPUSD": {
+  "family": "trident",
+  "cfg": "E2_long_kz0300_emacross",
+  "inst": "GBPUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E2_long_kz0300_emacross|USDJPY": {
+  "family": "trident",
+  "cfg": "E2_long_kz0300_emacross",
+  "inst": "USDJPY",
+  "n_orders": 7,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 7
+  }
+ },
+ "trident|E2_long_kz0300_emacross|USDCAD": {
+  "family": "trident",
+  "cfg": "E2_long_kz0300_emacross",
+  "inst": "USDCAD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E2_long_kz0300_emacross|NZDUSD": {
+  "family": "trident",
+  "cfg": "E2_long_kz0300_emacross",
+  "inst": "NZDUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E2_long_kz0300_emacross|XAUUSD": {
+  "family": "trident",
+  "cfg": "E2_long_kz0300_emacross",
+  "inst": "XAUUSD",
+  "n_orders": 4,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 4
+  }
+ },
+ "trident|E3_long_fvg0230_20R|EURUSD": {
+  "family": "trident",
+  "cfg": "E3_long_fvg0230_20R",
+  "inst": "EURUSD",
+  "n_orders": 4,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 4
+  },
+  "lookahead_mismatches": 0
+ },
+ "trident|E3_long_fvg0230_20R|GBPUSD": {
+  "family": "trident",
+  "cfg": "E3_long_fvg0230_20R",
+  "inst": "GBPUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E3_long_fvg0230_20R|USDJPY": {
+  "family": "trident",
+  "cfg": "E3_long_fvg0230_20R",
+  "inst": "USDJPY",
+  "n_orders": 8,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 8
+  }
+ },
+ "trident|E3_long_fvg0230_20R|USDCAD": {
+  "family": "trident",
+  "cfg": "E3_long_fvg0230_20R",
+  "inst": "USDCAD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 3
+  }
+ },
+ "trident|E3_long_fvg0230_20R|NZDUSD": {
+  "family": "trident",
+  "cfg": "E3_long_fvg0230_20R",
+  "inst": "NZDUSD",
+  "n_orders": 4,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 4
+  }
+ },
+ "trident|E3_long_fvg0230_20R|XAUUSD": {
+  "family": "trident",
+  "cfg": "E3_long_fvg0230_20R",
+  "inst": "XAUUSD",
+  "n_orders": 4,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "1": 4
+  }
+ },
+ "trident|E4_short_mirror_20R|EURUSD": {
+  "family": "trident",
+  "cfg": "E4_short_mirror_20R",
+  "inst": "EURUSD",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 3
+  },
+  "lookahead_mismatches": 0
+ },
+ "trident|E4_short_mirror_20R|GBPUSD": {
+  "family": "trident",
+  "cfg": "E4_short_mirror_20R",
+  "inst": "GBPUSD",
+  "n_orders": 5,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 5
+  }
+ },
+ "trident|E4_short_mirror_20R|USDJPY": {
+  "family": "trident",
+  "cfg": "E4_short_mirror_20R",
+  "inst": "USDJPY",
+  "n_orders": 3,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 3
+  }
+ },
+ "trident|E4_short_mirror_20R|USDCAD": {
+  "family": "trident",
+  "cfg": "E4_short_mirror_20R",
+  "inst": "USDCAD",
+  "n_orders": 4,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 4
+  }
+ },
+ "trident|E4_short_mirror_20R|NZDUSD": {
+  "family": "trident",
+  "cfg": "E4_short_mirror_20R",
+  "inst": "NZDUSD",
+  "n_orders": 2,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 2
+  }
+ },
+ "trident|E4_short_mirror_20R|XAUUSD": {
+  "family": "trident",
+  "cfg": "E4_short_mirror_20R",
+  "inst": "XAUUSD",
+  "n_orders": 2,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.3,
+  "by_side": {
+   "-1": 2
+  }
+ },
+ "mmxm_ote|F1_ote62_sl100_PD|EURUSD": {
+  "family": "mmxm_ote",
+  "cfg": "F1_ote62_sl100_PD",
+  "inst": "EURUSD",
+  "n_orders": 57,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "-1": 35,
+   "1": 22
+  },
+  "lookahead_mismatches": 0
+ },
+ "mmxm_ote|F1_ote62_sl100_PD|GBPUSD": {
+  "family": "mmxm_ote",
+  "cfg": "F1_ote62_sl100_PD",
+  "inst": "GBPUSD",
+  "n_orders": 56,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "-1": 38,
+   "1": 18
+  }
+ },
+ "mmxm_ote|F1_ote62_sl100_PD|USDJPY": {
+  "family": "mmxm_ote",
+  "cfg": "F1_ote62_sl100_PD",
+  "inst": "USDJPY",
+  "n_orders": 33,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "1": 19,
+   "-1": 14
+  }
+ },
+ "mmxm_ote|F2_ote705_sl90_PD|EURUSD": {
+  "family": "mmxm_ote",
+  "cfg": "F2_ote705_sl90_PD",
+  "inst": "EURUSD",
+  "n_orders": 57,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "-1": 35,
+   "1": 22
+  },
+  "lookahead_mismatches": 0
+ },
+ "mmxm_ote|F2_ote705_sl90_PD|GBPUSD": {
+  "family": "mmxm_ote",
+  "cfg": "F2_ote705_sl90_PD",
+  "inst": "GBPUSD",
+  "n_orders": 56,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.6,
+  "by_side": {
+   "-1": 38,
+   "1": 18
+  }
+ },
+ "mmxm_ote|F2_ote705_sl90_PD|USDJPY": {
+  "family": "mmxm_ote",
+  "cfg": "F2_ote705_sl90_PD",
+  "inst": "USDJPY",
+  "n_orders": 33,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "1": 19,
+   "-1": 14
+  }
+ },
+ "mmxm_ote|F3_ote62_sl90_PDPW|EURUSD": {
+  "family": "mmxm_ote",
+  "cfg": "F3_ote62_sl90_PDPW",
+  "inst": "EURUSD",
+  "n_orders": 56,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "-1": 32,
+   "1": 24
+  },
+  "lookahead_mismatches": 0
+ },
+ "mmxm_ote|F3_ote62_sl90_PDPW|GBPUSD": {
+  "family": "mmxm_ote",
+  "cfg": "F3_ote62_sl90_PDPW",
+  "inst": "GBPUSD",
+  "n_orders": 51,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.7,
+  "by_side": {
+   "-1": 34,
+   "1": 17
+  }
+ },
+ "mmxm_ote|F3_ote62_sl90_PDPW|USDJPY": {
+  "family": "mmxm_ote",
+  "cfg": "F3_ote62_sl90_PDPW",
+  "inst": "USDJPY",
+  "n_orders": 30,
+  "geometry_violations": 0,
+  "violation_examples": [],
+  "secs": 0.6,
+  "by_side": {
+   "1": 17,
+   "-1": 13
+  }
+ }
+}
