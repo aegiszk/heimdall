@@ -1,16 +1,21 @@
 {
  "auditor": "Agent 2 (checker)",
  "date": "2026-09-24",
- "audited": {"branch": "agent1/revenue-sprint-2026-09-24", "head_sha": "0a18349da725b87102672e58cd334c921587864d",
-             "base_sha": "a1486c4738bb96babaed396fe9163a86a679506b",
-             "V2_PREREG_MANIFEST_aggregate": "00763a9620f98f8e191904311deba37a24661476a2c996de2e1d7ec1b5241a98"},
+ "audited": {
+  "branch": "agent1/revenue-sprint-2026-09-24",
+  "head_sha": "b77dd6c1c486dbcb838fb5d37d30664943f8729c",
+  "base_sha": "a1486c4738bb96babaed396fe9163a86a679506b",
+  "V2_PREREG_MANIFEST_aggregate": "37fcf7a3b06b3c1e0f51432e423621104ce51e4a2ce0123498719ed18dfc0b91",
+  "trident_v2_strategy_sha256": "b765cae07a4e27236205aedfe9a4b891727ae6073bc29748b9c063296c2ee3c2",
+  "mmxm_v2_strategy_sha256": "4a899501e1f438a62e1c5a3838668026a05a2bcf8b64d5852bbbd1f17b870251"
+ },
  "scope": "SOURCE SPEC vs verbatim transcript (ADnslyKOwFE 1272f03b, IB-fyWI5j8w 0e56b949). Code-vs-spec is audited separately by independent DEV replication before any sealed run. A PASS binds ONLY the audited manifest aggregate; any re-freeze needs re-audit.",
- "TRIDENT_V2": "FAIL",
+ "TRIDENT_V2": "PASS",
  "MMXM_V2": "PASS",
  "notes": {
   "TRIDENT_V2": {
    "quotes_verified": "14/14 cited quotes verbatim at their timestamps (C1 0:02:47, C3 0:06:24/0:33:54, C4/C8/stop 0:07:19, C5 0:09:06, C9 0:05:31, entry 0:43:00, gold 0:13:34, exit 0:19:39, instruments 0:08:11, EMA200 context 0:33:54/0:41:08)",
-   "REQUIRED_FIX_C7": "C7 'abort if any candle after the gap trades below the FVG bottom before a valid doji' has NO verbatim basis (no fill/close-below-gap invalidation anywhere in the transcript). It is an imported generic ICT rule used as a hard gate and labelled INTERPRETED from 'wicks through [the 50%]', which does not support it. Remove C7 (preferred), or reclassify it as ASSUMPTION and report pre-PnL setup counts with and without it. Then re-freeze and re-request, still before any PnL.",
+   "REQUIRED_FIX_C7": "RESOLVED at b77dd6c: whitespace-insensitive diff vs 0a18349 shows the ONLY logic change is removal of `if L[d] < bot: break`; spec/prereg mark C7 removed; '02:30 third candle' and C7 declared as untested alternatives. Pre-PnL setups 36 -> 103 (unsourced gate removed; no stated rule loosened).",
    "C3_accepted": "Third candle inside [03:00,06:30) is an acceptable INTERPRETED reconciliation: 0:06:24 'doesn't have to be at 3:00 a.m. ... 3:00 a.m. or 2:30 or 3:30 ... highly probable'; 0:33:04 'FG printed at 2:30 ... extremely strong'; 0:33:54 'printed outside of our kill zone ... ignoring that'. Declare the alternative (a third candle at 02:30 allowed) as untested.",
    "C9_C_EMA200": "As agreed: the stack is REQUIRED (0:05:31 exclusion); EMA200 is context only (0:41:08).",
    "omissions": "Indicator omission, daily-TP discretion and 'large bearish candle' exit are acceptable as DECLARED omissions; owner acceptance is still required before sealed.",
@@ -22,8 +27,18 @@
    "M7": "'no first-leg trade' after a wicky/weak break is faithful to 0:16:35 / 0:17:27 (let a retracement go); the second leg is declared not implemented.",
    "M8_M9_M10": "Zero = extreme of the displacement leg (0:40:07 'from this high to this low'); 0.62 limit / 0.9 stop / TP 0 (0:55:52 verbatim); BE on a 15m CLOSE beyond 0.2 (0:45:20 'closing there. Not wicking there').",
    "kill_zones": "Correctly context-only: no verbatim basis for a gate.",
-   "assumptions_declared": "17:00 NY FX day, weekly-bias method, 50% body threshold, 17:00 expiry, 3-day max hold, one setup per side per day: acceptable as declared ASSUMPTIONS."
+   "assumptions_declared": "17:00 NY FX day, weekly-bias method, 50% body threshold, 17:00 expiry, 3-day max hold, one setup per side per day: acceptable as declared ASSUMPTIONS.",
+   "reaudit": "b77dd6c: only change = declared absolute-proximity M3 alternative; strategy.py hash unchanged (4a899501...)."
   },
   "authority": "Advisory source-fidelity audit per addendum sections C and G. It does not authorize any validation run; the sealed run still needs DEV PASS, ledger registration and owner acceptance of the declared omissions."
- }
+ },
+ "history": [
+  {
+   "audited_head": "0a18349da725b87102672e58cd334c921587864d",
+   "aggregate": "00763a9620f98f8e191904311deba37a24661476a2c996de2e1d7ec1b5241a98",
+   "TRIDENT_V2": "FAIL",
+   "MMXM_V2": "PASS",
+   "reason": "C7 unsupported gate"
+  }
+ ]
 }
