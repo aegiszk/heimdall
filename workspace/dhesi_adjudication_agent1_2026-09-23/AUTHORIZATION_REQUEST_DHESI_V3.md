@@ -29,11 +29,11 @@ One run of the unchanged Dhesi v3 hypothesis (`DHESI_V3_CANONICAL_SPEC_V1.md`) o
 Create `DHESI_V3_RUN_AUTHORIZATION.txt` in the repo root containing:
 ```
 AUTHORIZED_BY_OWNER
-validator  c3c14829e212641592cb01038ece62cf50e7d990e956a29576062776dd7f8000
+validator  940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985
 spec       8f330ae21a7537586cf769b20b4727fddc4f4eee7aea9d94e36bd29aeb9c6059
 protocol   49d8d8b98e139e4d7d88809e36bd8cb9376f7b0b40f5419bb41edd5c3d148793
-amendment  523bb00ba3ebd77beb97b091ca7d82bf9ced8f6e9a0ec730f304989362d6f083
-integrity_tool 0b75e1e0c847066dd7289a5464af5b3b39ca99b73728f7adec55a07bf3f0503f
+amendment  74f3340f24d8147f74b08d35eb8cf2a246fd798a9a59a28c998977ba8910400e
+integrity_tool 2c223a41ac4c029348f042d0e81e255b7d13be2a856651530a25c26e216d90fc
 integrity  <sha256 of DHESI_V3_HARVEST_INTEGRITY.json>
 date       <UTC>
 ```
@@ -45,9 +45,9 @@ Then: `python workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_validator.
 |---|---|
 | `DHESI_V3_CANONICAL_SPEC_V1.md` | `8f330ae21a7537586cf769b20b4727fddc4f4eee7aea9d94e36bd29aeb9c6059` |
 | `DHESI_V3_VALIDATION_PROTOCOL_V1.md` | `49d8d8b98e139e4d7d88809e36bd8cb9376f7b0b40f5419bb41edd5c3d148793` |
-| `dhesi_v3_validator.py` (executor, rev 2) | `c3c14829e212641592cb01038ece62cf50e7d990e956a29576062776dd7f8000` |
-| `dhesi_v3_harvest_integrity.py` (rev 2) | `0b75e1e0c847066dd7289a5464af5b3b39ca99b73728f7adec55a07bf3f0503f` |
-| `PROTOCOL_AMENDMENT_1.md` | `523bb00ba3ebd77beb97b091ca7d82bf9ced8f6e9a0ec730f304989362d6f083` |
+| `dhesi_v3_validator.py` (executor, rev 2) | `940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985` |
+| `dhesi_v3_harvest_integrity.py` (rev 2) | `2c223a41ac4c029348f042d0e81e255b7d13be2a856651530a25c26e216d90fc` |
+| `PROTOCOL_AMENDMENT_1.md` | `74f3340f24d8147f74b08d35eb8cf2a246fd798a9a59a28c998977ba8910400e` |
 | `selftest_dev_result.json` | `b837f37ec58c498b976fbf587b5765af4ad70520493571acb6a3f6f238999e66` |
 | `DHESI_REOPEN_ADJUDICATION_2026-09-23.md` | `7693a320dadb0acc238f747f0bd227e8421172b5dd53a846aa0f60d901ff7a1a` |
 

@@ -71,15 +71,15 @@ INVALID. Resolved by explicit, hash-bound `PROTOCOL_AMENDMENT_1.md` (owner/check
 ## 5. New infrastructure hashes (SHA-256)
 | Artifact | Old | New |
 |---|---|---|
-| `dhesi_v3_validator.py` | e52ba64722a70ac4d80df550809b8c37d7816c63872027d6c72d829cbd512710 | c3c14829e212641592cb01038ece62cf50e7d990e956a29576062776dd7f8000 |
-| `dhesi_v3_harvest_integrity.py` | 6be444f49dd2efd89d8357e48cebb50120daa03fec41c351a51fa1c3bb30cec6 | 0b75e1e0c847066dd7289a5464af5b3b39ca99b73728f7adec55a07bf3f0503f |
-| `PROTOCOL_AMENDMENT_1.md` | — | 523bb00ba3ebd77beb97b091ca7d82bf9ced8f6e9a0ec730f304989362d6f083 |
-| `AUTHORIZATION_REQUEST_DHESI_V3.md` | fcbc85d1f11dbd0b4ac7d2d263d5250ad0dde1e3641ee5ff1117790f234cc5bb | f75e9623dcee5b42359cbd6f33eebb155c658e6b01cc3a577e39d4c043698479 |
+| `dhesi_v3_validator.py` | e52ba64722a70ac4d80df550809b8c37d7816c63872027d6c72d829cbd512710 | 940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985 |
+| `dhesi_v3_harvest_integrity.py` | 6be444f49dd2efd89d8357e48cebb50120daa03fec41c351a51fa1c3bb30cec6 | 2c223a41ac4c029348f042d0e81e255b7d13be2a856651530a25c26e216d90fc |
+| `PROTOCOL_AMENDMENT_1.md` | — | 74f3340f24d8147f74b08d35eb8cf2a246fd798a9a59a28c998977ba8910400e |
+| `AUTHORIZATION_REQUEST_DHESI_V3.md` | fcbc85d1f11dbd0b4ac7d2d263d5250ad0dde1e3641ee5ff1117790f234cc5bb | e5b0d374fdfb7b48b3d3d373ee29d9ed3fb3ce41bf2ee44b422aa8bccbb4b804 |
 | `DHESI_V3_CANONICAL_SPEC_V1.md` | 8f330ae2…9c6059 | unchanged |
 | `DHESI_V3_VALIDATION_PROTOCOL_V1.md` | 49d8d8b9…148793 | unchanged |
 | `ref_dhesi.py` | e205afd6…79ed8f | unchanged |
 | `selftest_dev_result.json` | b837f37e…999e66 | unchanged |
-All files CRLF, byte-exact (`.gitattributes * -text`).
+All files LF, byte-exact, matching the committed convention of every frozen artifact (verified from git blobs). Note for checker: the `.gitattributes` comment says frozen artifacts are CRLF, but their committed blobs are LF; the comment is wrong, the hashes are of LF bytes (not edited in this PR).
 
 ## 6. Ledger test repair
 `test_ledger_integrity_and_reference_numbers` replaced by: (A) `test_ledger_historical_snapshot_reference_numbers`
