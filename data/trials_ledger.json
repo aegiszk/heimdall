@@ -3297,6 +3297,27 @@
    "registered_at": "2026-09-24T08:16:00.392012+00:00",
    "prev_hash": "203eee86a14eaf758ea2aa7d30f7edeb98b9cb43d27c3519b1d57bdcfa7fdab9",
    "entry_hash": "c84922f66358f78636fbfbffa406c6a7422d6ae8f6c1731e95cd7c529f123779"
+  },
+  {
+   "sr_per_trade": null,
+   "n_trades": null,
+   "is_null_control": false,
+   "source": "FOMO_PROSPECTIVE_PREREGISTRATION.md 902263424c17...; FOMO_PROSPECTIVE_PREREGISTRATION_AMENDMENT_1.md fd87cfb8...",
+   "notes": "re-registration of the identical hypothesis after runs 1-4 were VOID (feed_missing_frac 0.865 > 5%); no outcome of runs 1-4 was computed (not looks); stopping: >=3,500 eligible_counted and >=14 days, or 45 days, clocks from the amended restart; checker ruling Agent 2, owner acknowledged 2026-09-24",
+   "id": "FOMO-PROSPECTIVE-AMEND1",
+   "family": "copy_fixed_exit_safety",
+   "dataset": "workspace/fomo_lane/data_amend1 (prospective recorder, Robinhood Chain 4663)",
+   "dataset_group": "ROBINHOOD_CHAIN_FOMO",
+   "data_window": {
+    "start": "2026-09-24",
+    "end": "2026-11-08"
+   },
+   "window_status": "PROSPECTIVE",
+   "n_configs": 1,
+   "verdict": "PENDING",
+   "registered_at": "2026-09-24T09:06:42.954464+00:00",
+   "prev_hash": "c84922f66358f78636fbfbffa406c6a7422d6ae8f6c1731e95cd7c529f123779",
+   "entry_hash": "8f4d14a8342a686f4419c150264ffb5eb2b721cdbe426e1bd36534bd2b96c3a1"
   }
  ]
 }
