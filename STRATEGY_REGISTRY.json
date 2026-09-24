@@ -1,0 +1,849 @@
+{
+ "schema": "HEIMDALL_STRATEGY_REGISTRY_V1",
+ "built_utc": "2026-09-24T06:34:16.261409+00:00",
+ "base_sha": "0a18349da725b87102672e58cd334c921587864d",
+ "rules": "exactly one state per strategy; live_enabled=false unless an owner-approved OWNER_LIVE_PILOT_REQUEST exists; no jump DEVELOPMENT->LIVE or INCONCLUSIVE->LIVE",
+ "history": [
+  "aee525592e7058e6f7b50abca7265b80749ffa3c879e09d7607e751ab3051d3b"
+ ],
+ "strategies": [
+  {
+   "strategy_id": "DHESI_V3",
+   "family": "dhesi_inversion",
+   "state": "PREREGISTERED",
+   "spec_path": "workspace/dhesi_adjudication_agent1_2026-09-23/DHESI_V3_CANONICAL_SPEC_V1.md",
+   "spec_hash": "8f330ae21a7537586cf769b20b4727fddc4f4eee7aea9d94e36bd29aeb9c6059",
+   "code_path": "core/alpha/inversion_model_v3.py",
+   "code_hash": "0ab7a5156e506c629110efe5253a6b93315072cd3f544490d80c2a746922bf85",
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-dhesi-inversion-v1",
+    "MNQ-dhesi-inversion-v2",
+    "MES-dhesi-inversion-v1",
+    "ES-dhesi-inversion-v1",
+    "MES-dhesi-inversion-v2",
+    "ES-dhesi-inversion-v2"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Validator + integrity hardened (PR #1 merged a1486c4, Amendment 1 accepted). Untouched NQ harvest (owner GUI) and owner authorization pending. Agent 2 owns validation.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "TRIDENT_V2",
+   "family": "ext8_trident",
+   "state": "PREREGISTERED",
+   "spec_path": "workspace/revenue_sprint_2026-09-24/trident_v2/TRIDENT_V2_SOURCE_SPEC.md",
+   "spec_hash": "8e9f8bdafd3470f3331e4f1c33babc8cbaac68bd2a0c6a701d5d47f2ce8b1086",
+   "code_path": "workspace/revenue_sprint_2026-09-24/trident_v2/strategy.py",
+   "code_hash": "b765cae07a4e27236205aedfe9a4b891727ae6073bc29748b9c063296c2ee3c2",
+   "dataset_hashes": {
+    "data/fx_histdata/EURUSD_1m_bid.parquet": "f01e43f1d2cb4a277164c57fddfbb56fa1abbf5e779615aa9a7290824e8e0842",
+    "data/fx_histdata/GBPUSD_1m_bid.parquet": "3776736851407d2a4ea726d12be3a61c35bec47fba4aefa3f5e6e161942ec53e",
+    "data/fx_histdata/USDJPY_1m_bid.parquet": "7a8ae0e3ab5d4eedda5eefc3e17304dec3fc8ac3d2b42b9125a0244411d823b7",
+    "data/fx_histdata/USDCAD_1m_bid.parquet": "2822d47ce28daa21ce27315c8ab9d9c92a1d57838be6a3d0f2e0e95da6c48c88",
+    "data/fx_histdata/NZDUSD_1m_bid.parquet": "61d02c23f9fd01070f1411c806e5595c2a7af15d89db1b47abe361fc4302b1b6",
+    "data/fx_histdata/XAUUSD_1m_bid.parquet": "6c973debdd47ea069bddbf86687f730b0c2d5d67931864e44b2b63fa53d0f819"
+   },
+   "trial_ids": [],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Frozen 2026-09-24 (manifest 00763a96). Awaiting Agent 2 spec audit, then DEV gate. Fidelity PASS_WITH_DECLARED_OMISSION.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "MMXM_V2",
+   "family": "ext8_mmxm_ote",
+   "state": "PREREGISTERED",
+   "spec_path": "workspace/revenue_sprint_2026-09-24/mmxm_v2/MMXM_V2_SOURCE_SPEC.md",
+   "spec_hash": "7c7539283cafc568feda9d63a6f7106185d2cdc095375881af379b1bbd37ca36",
+   "code_path": "workspace/revenue_sprint_2026-09-24/mmxm_v2/strategy.py",
+   "code_hash": "4a899501e1f438a62e1c5a3838668026a05a2bcf8b64d5852bbbd1f17b870251",
+   "dataset_hashes": {
+    "data/fx_histdata/EURUSD_1m_bid.parquet": "f01e43f1d2cb4a277164c57fddfbb56fa1abbf5e779615aa9a7290824e8e0842",
+    "data/fx_histdata/GBPUSD_1m_bid.parquet": "3776736851407d2a4ea726d12be3a61c35bec47fba4aefa3f5e6e161942ec53e",
+    "data/fx_histdata/USDJPY_1m_bid.parquet": "7a8ae0e3ab5d4eedda5eefc3e17304dec3fc8ac3d2b42b9125a0244411d823b7"
+   },
+   "trial_ids": [],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Frozen 2026-09-24 (manifest 00763a96). Awaiting Agent 2 spec audit, then DEV gate.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FOMO_PROSPECTIVE",
+   "family": "fomo_prospective",
+   "state": "VALIDATING",
+   "spec_path": "FOMO_PROSPECTIVE_PREREGISTRATION.md",
+   "spec_hash": "902263424c170fb7920c0a0880f056a8c7cc1b80e9a8dd5f2708a883c72fbc39",
+   "code_path": "workspace/fomo_lane/fomo_recorder.py",
+   "code_hash": "db2f0f368ee32c6564958a148d755fd3a08bc07ab242c80477e5de7f3bef7793",
+   "dataset_hashes": {},
+   "trial_ids": [],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Prospective recording; outcomes sealed until stopping rule (>=3,500 eligible AND >=14 days, cap 45 days). Recorder outage 2026-09-23 10:25 -> 2026-09-24 10:29 local; restarted as run 4 (unchanged code db2f0f36).",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "CL_EIA_SUBMINUTE",
+   "family": "eia_cl",
+   "state": "BLOCKED_DATA",
+   "spec_path": "workspace/sierra_lab_2026-09-23/SIERRA_LIVE_EDGE_LAB.md",
+   "spec_hash": "35cd41d7163da312f1c5b53c5617d4255f2a013c820cde89dfadf12c2874073b",
+   "code_path": "workspace/sierra_lab_2026-09-23/eia_cl_response.py",
+   "code_hash": "dce64701236d0062eaac84f49e5e45a816b3d442edecb607120bbf90efbd5fc9",
+   "dataset_hashes": {},
+   "trial_ids": [],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "1-minute study: no information after minute 1; sub-minute windows need the CL tick harvest (Sierra, owner GUI). Fallback lane per addendum Q.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "TRIDENT_V1_E1_E4",
+   "family": "ext8_trident",
+   "state": "INCONCLUSIVE",
+   "spec_path": "workspace/external_strategies/trident/PREREGISTRATION.md",
+   "spec_hash": "a9c04b8114fb7ea3f6601cb8b961b93877790621c7e636edc71e4f1da1d5273e",
+   "code_path": "workspace/external_strategies/trident/strategy.py",
+   "code_hash": "3bfa468d1abd5e7206f458c731a8f4f1d00a8012b98616a64830af6936381cd6",
+   "dataset_hashes": {
+    "data/fx_histdata/EURUSD_1m_bid.parquet": "f01e43f1d2cb4a277164c57fddfbb56fa1abbf5e779615aa9a7290824e8e0842",
+    "data/fx_histdata/GBPUSD_1m_bid.parquet": "3776736851407d2a4ea726d12be3a61c35bec47fba4aefa3f5e6e161942ec53e",
+    "data/fx_histdata/USDJPY_1m_bid.parquet": "7a8ae0e3ab5d4eedda5eefc3e17304dec3fc8ac3d2b42b9125a0244411d823b7",
+    "data/fx_histdata/USDCAD_1m_bid.parquet": "2822d47ce28daa21ce27315c8ab9d9c92a1d57838be6a3d0f2e0e95da6c48c88",
+    "data/fx_histdata/NZDUSD_1m_bid.parquet": "61d02c23f9fd01070f1411c806e5595c2a7af15d89db1b47abe361fc4302b1b6",
+    "data/fx_histdata/XAUUSD_1m_bid.parquet": "6c973debdd47ea069bddbf86687f730b0c2d5d67931864e44b2b63fa53d0f819"
+   },
+   "trial_ids": [
+    "EXT8-E1_long_kz0300_20R-EURUSD",
+    "EXT8-E1_long_kz0300_20R-GBPUSD",
+    "EXT8-E1_long_kz0300_20R-USDJPY",
+    "EXT8-E1_long_kz0300_20R-USDCAD",
+    "EXT8-E1_long_kz0300_20R-NZDUSD",
+    "EXT8-E1_long_kz0300_20R-XAUUSD",
+    "EXT8-E2_long_kz0300_emacross-EURUSD",
+    "EXT8-E2_long_kz0300_emacross-GBPUSD",
+    "EXT8-E2_long_kz0300_emacross-USDJPY",
+    "EXT8-E2_long_kz0300_emacross-USDCAD",
+    "EXT8-E2_long_kz0300_emacross-NZDUSD",
+    "EXT8-E2_long_kz0300_emacross-XAUUSD",
+    "EXT8-E3_long_fvg0230_20R-EURUSD",
+    "EXT8-E3_long_fvg0230_20R-GBPUSD",
+    "EXT8-E3_long_fvg0230_20R-USDJPY",
+    "EXT8-E3_long_fvg0230_20R-USDCAD",
+    "EXT8-E3_long_fvg0230_20R-NZDUSD",
+    "EXT8-E3_long_fvg0230_20R-XAUUSD",
+    "EXT8-E4_short_mirror_20R-EURUSD",
+    "EXT8-E4_short_mirror_20R-GBPUSD",
+    "EXT8-E4_short_mirror_20R-USDJPY",
+    "EXT8-E4_short_mirror_20R-USDCAD",
+    "EXT8-E4_short_mirror_20R-NZDUSD",
+    "EXT8-E4_short_mirror_20R-XAUUSD"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "TOO_SPARSE + EXECUTION_SENSITIVE; EMA200 hard gate unfaithful -> superseded by TRIDENT_V2.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "MMXM_V1_F1_F3",
+   "family": "ext8_mmxm_ote",
+   "state": "INCONCLUSIVE",
+   "spec_path": "workspace/external_strategies/mmxm_ote/PREREGISTRATION.md",
+   "spec_hash": "984689daf27b06cef179e2eda28e66d9f1a650f6ca0fba1ad61c05682c69220f",
+   "code_path": "workspace/external_strategies/mmxm_ote/strategy.py",
+   "code_hash": "21923fcc187e963bd63a848e4494702a431860080500e0d19077e828908b99ad",
+   "dataset_hashes": {
+    "data/fx_histdata/EURUSD_1m_bid.parquet": "f01e43f1d2cb4a277164c57fddfbb56fa1abbf5e779615aa9a7290824e8e0842",
+    "data/fx_histdata/GBPUSD_1m_bid.parquet": "3776736851407d2a4ea726d12be3a61c35bec47fba4aefa3f5e6e161942ec53e",
+    "data/fx_histdata/USDJPY_1m_bid.parquet": "7a8ae0e3ab5d4eedda5eefc3e17304dec3fc8ac3d2b42b9125a0244411d823b7"
+   },
+   "trial_ids": [
+    "EXT8-F1_ote62_sl100_PD-EURUSD",
+    "EXT8-F1_ote62_sl100_PD-GBPUSD",
+    "EXT8-F1_ote62_sl100_PD-USDJPY",
+    "EXT8-F2_ote705_sl90_PD-EURUSD",
+    "EXT8-F2_ote705_sl90_PD-GBPUSD",
+    "EXT8-F2_ote705_sl90_PD-USDJPY",
+    "EXT8-F3_ote62_sl90_PDPW-EURUSD",
+    "EXT8-F3_ote62_sl90_PDPW-GBPUSD",
+    "EXT8-F3_ote62_sl90_PDPW-USDJPY"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Undisclosed outside-KZ day veto + 60-bar cap -> superseded by MMXM_V2.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "EXT8_A_LIQUIDITY_TRAP",
+   "family": "ext8_liquidity_trap",
+   "state": "INCONCLUSIVE",
+   "spec_path": "workspace/external_strategies/liquidity_trap/PREREGISTRATION.md",
+   "spec_hash": "4be68f10a033d20b10201c60c04b7cbfa3171af6c3bf948716405861ddef4ee4",
+   "code_path": "workspace/external_strategies/liquidity_trap/strategy.py",
+   "code_hash": "e873e546b5d6e47ae4ac1a4f194b38c7c772cb8ec650fca63d348211feb4b241",
+   "dataset_hashes": {
+    "data/MNQ_1m.parquet": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774"
+   },
+   "trial_ids": [
+    "EXT8-A1_k1_spike_nearest-MNQ",
+    "EXT8-A2_k2_spike_nearest-MNQ",
+    "EXT8-A3_k1_spike_split-MNQ",
+    "EXT8-A4_k1_close_nearest-MNQ",
+    "EXT8-A1_k1_spike_nearest-YM_S",
+    "EXT8-A1_k1_spike_nearest-MNQ-INVALIDATED",
+    "EXT8-A2_k2_spike_nearest-MNQ-INVALIDATED",
+    "EXT8-A3_k1_spike_split-MNQ-INVALIDATED",
+    "EXT8-A1_k1_spike_nearest-YM_S-INVALIDATED",
+    "EXT8-A1_k1_spike_nearest_fix1-MNQ",
+    "EXT8-A2_k2_spike_nearest_fix1-MNQ",
+    "EXT8-A3_k1_spike_split_fix1-MNQ",
+    "EXT8-A1_k1_spike_nearest_fix1-YM_S"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "NO_SIGNAL (~0R gross over ~1,000 trades; A2 ROBUSTLY_REJECTED). Not reopened this cycle.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "EXT8_B_TRADER_MAYNE",
+   "family": "ext8_trader_mayne",
+   "state": "FAILED",
+   "spec_path": "workspace/external_strategies/trader_mayne/PREREGISTRATION.md",
+   "spec_hash": "1fc6a59a63d2a2f86ee33308a68d32fb16c2da9d199067af8a56fbbc3ac71b99",
+   "code_path": "workspace/external_strategies/trader_mayne/strategy.py",
+   "code_hash": "ba5eb37fbf148df7404da7c5912314d9f93d0ffaf97a2aaaac1c21773fb8a0c5",
+   "dataset_hashes": {
+    "data/MNQ_1m.parquet": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774"
+   },
+   "trial_ids": [
+    "EXT8-B1_H4_M15_breaker-MNQ",
+    "EXT8-B2_H1_M5_breaker-MNQ",
+    "EXT8-B3_D_H1_breaker-MNQ",
+    "EXT8-B4_H4_OB_limit-MNQ"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "REJECTED_IMPLEMENTATION_NOT_FAMILY (H4 variants robustly negative; B4 worse than random placebo).",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "EXT8_C_PO3",
+   "family": "ext8_po3_50",
+   "state": "INCONCLUSIVE",
+   "spec_path": "workspace/external_strategies/po3_50/PREREGISTRATION.md",
+   "spec_hash": "cfab26ee448cbc98a95669ff75bc4e02751301f1dddba27612e7db7dfc7a2887",
+   "code_path": "workspace/external_strategies/po3_50/strategy.py",
+   "code_hash": "8c4bfbb0eb9cb4d47eff67c2a8eb08b3d5470d4df98441fdfeefe7930d102ef7",
+   "dataset_hashes": {
+    "data/MNQ_1m.parquet": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774",
+    "data/ES_1m.parquet": "149f3d417633a04fc00440dec5701eca922a78e8d73876ce0aabd084ce9e31f9"
+   },
+   "trial_ids": [
+    "EXT8-C1_3m_overnight-MNQ",
+    "EXT8-C2_3m_overnight_H4-MNQ",
+    "EXT8-C3_5m_overnight-MNQ",
+    "EXT8-C4_3m_h4range-MNQ"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "TOO_SPARSE; SMT rule caps frequency (creator frequency claim unsupported). Not reopened.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "EXT8_D_LITTLE_RIZZY",
+   "family": "ext8_little_rizzy",
+   "state": "INCONCLUSIVE",
+   "spec_path": "workspace/external_strategies/little_rizzy/PREREGISTRATION.md",
+   "spec_hash": "369d4f4e99dfc4c2c7ee4dabc9d3f635b433792e0f6ad4678b881aba6908b2fc",
+   "code_path": "workspace/external_strategies/little_rizzy/strategy.py",
+   "code_hash": "f1c8965fcd0dc9e508d7d057eb1101ac74c9aa68a91fd0bc892a94257198c275",
+   "dataset_hashes": {
+    "data/MNQ_1m.parquet": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774",
+    "data/ES_1m.parquet": "149f3d417633a04fc00440dec5701eca922a78e8d73876ce0aabd084ce9e31f9",
+    "data/fx_histdata/XAUUSD_1m_bid.parquet": "6c973debdd47ea069bddbf86687f730b0c2d5d67931864e44b2b63fa53d0f819"
+   },
+   "trial_ids": [
+    "EXT8-D1_F_short_1h_pivot-MNQ",
+    "EXT8-D1_F_short_1h_pivot-ES",
+    "EXT8-D1_F_short_1h_pivot-XAUUSD",
+    "EXT8-D2_F_short_4h_pivot-MNQ",
+    "EXT8-D2_F_short_4h_pivot-ES",
+    "EXT8-D2_F_short_4h_pivot-XAUUSD",
+    "EXT8-D3_F_short_1h_bb-MNQ",
+    "EXT8-D3_F_short_1h_bb-ES",
+    "EXT8-D3_F_short_1h_bb-XAUUSD",
+    "EXT8-D4_G_long_1h_pivot-MNQ",
+    "EXT8-D4_G_long_1h_pivot-ES",
+    "EXT8-D4_G_long_1h_pivot-XAUUSD"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "D4 MNQ FRAGILE/REGIME/TAIL dependent; XAU shorts rejected; crash-bottom BLOCKED_DATA. Not reopened.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "EXT8_G_ORTANI_TAPE",
+   "family": "ext8_conflicting_episode",
+   "state": "BLOCKED_DATA",
+   "spec_path": "workspace/external_strategies/conflicting_episode/SOURCE_MATRIX.md",
+   "spec_hash": "334c48f9c3b2f39a9591bd475957654ab75a4090c663e2ea036448213e08a11a",
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Needs historical full-depth US equity book; thresholds unstated (BLOCKED_SOURCE); DO_NOT_BUY.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "EXT8_H_SMALLCAP_SHORTS",
+   "family": "ext8_small_cap_shorts",
+   "state": "BLOCKED_DATA",
+   "spec_path": "workspace/external_strategies/small_cap_shorts/SOURCE_MATRIX.md",
+   "spec_hash": "5b4883b15593d2f6baacc5cd7fd805cc1bd1b6d5bcacaa3ce849a44a45f18d72",
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "Needs PIT float/cap/borrow; DO_NOT_BUY; equities not tradable on Lucid.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "DHESI_V2",
+   "family": "dhesi_inversion",
+   "state": "INCONCLUSIVE",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": "core/alpha/inversion_model.py",
+   "code_hash": "e32e88f1a309c8e259274fd181929c3aa19935e667bcf568ff31eb9fbbdd0037",
+   "dataset_hashes": {
+    "data/MNQ_1m.parquet": "91670f3f43d3a3e5eb99608d9c335fef2a0e215cb365543cb0126aac9e2b5774"
+   },
+   "trial_ids": [
+    "MNQ-dhesi-inversion-v2",
+    "MES-dhesi-inversion-v2",
+    "ES-dhesi-inversion-v2"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "13 holdout trades; superseded by DHESI_V3.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "ORDERFLOW_INITIATIVE_V3",
+   "family": "orderflow_initiative",
+   "state": "INCONCLUSIVE",
+   "spec_path": "ORDERFLOW_INITIATIVE_PREREGISTRATION.md",
+   "spec_hash": "3487645460510c3c770d2e9ce27156d7605d6135a60c8f41d71c4855c91d335e",
+   "code_path": "core/alpha/orderflow_initiative.py",
+   "code_hash": "a3c67fda88ca1721dfe39baf50847a3a67ec383a62a7948c1a6f93b38e2b5235",
+   "dataset_hashes": {},
+   "trial_ids": [
+    "NQ-orderflow-initiative-v3"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "28 holdout trades, CI contains dev estimate; do not tune.",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "OKALA_8020",
+   "family": "okala8020",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-okala-v1",
+    "MNQ-okala-v2"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "0 trades both revisions (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FABIO_ORB_DELTA",
+   "family": "fabio_orb",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-fabio-orb-delta",
+    "MNQ-fabio-orb-nodelta-baseline"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "dead (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "LUXALGO_POC_RECLAIM",
+   "family": "luxalgo_poc",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-luxalgo-poc"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "holdout negative; proxy POC invalid (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "CASPER_OPENING_FVG",
+   "family": "casper_fvg",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-casper-fvg"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "holdout ~0 (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "INTRADAY_MOMENTUM",
+   "family": "intraday_momentum",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-imom-primary",
+    "MNQ-imom-diag-long-last-half-hour",
+    "MNQ-imom-diag-onfh",
+    "MES-imom-primary",
+    "ES-imom-primary",
+    "MES-imom-diagnostics",
+    "ES-imom-diagnostics",
+    "MNQ-imom-fresh",
+    "MES-imom-fresh",
+    "ES-imom-fresh",
+    "NQ-imom-fresh",
+    "M2K-imom-fresh",
+    "MYM-imom-fresh"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "holdout negative (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "TARGET_SWEEP_GRID",
+   "family": "target_sweep",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MES-tsweep-vwap_reversion-t10s8",
+    "MES-tsweep-vwap_reversion-t15s12",
+    "MES-tsweep-vwap_reversion-t20s16",
+    "MES-tsweep-vwap_reversion-t25s20",
+    "MES-tsweep-vwap_reversion-t30s24",
+    "MES-tsweep-trend_pullback-t10s8",
+    "MES-tsweep-trend_pullback-t15s12",
+    "MES-tsweep-trend_pullback-t20s16",
+    "MES-tsweep-trend_pullback-t25s20",
+    "MES-tsweep-trend_pullback-t30s24",
+    "MES-tsweep-time_scalp-t10s8",
+    "MES-tsweep-time_scalp-t15s12",
+    "MES-tsweep-time_scalp-t20s16",
+    "MES-tsweep-time_scalp-t25s20",
+    "MES-tsweep-time_scalp-t30s24",
+    "ES-tsweep-vwap_reversion-t10s8",
+    "ES-tsweep-vwap_reversion-t15s12",
+    "ES-tsweep-vwap_reversion-t20s16",
+    "ES-tsweep-vwap_reversion-t25s20",
+    "ES-tsweep-vwap_reversion-t30s24",
+    "ES-tsweep-trend_pullback-t10s8",
+    "ES-tsweep-trend_pullback-t15s12",
+    "ES-tsweep-trend_pullback-t20s16",
+    "ES-tsweep-trend_pullback-t25s20",
+    "ES-tsweep-trend_pullback-t30s24",
+    "ES-tsweep-time_scalp-t10s8",
+    "ES-tsweep-time_scalp-t15s12",
+    "ES-tsweep-time_scalp-t20s16",
+    "ES-tsweep-time_scalp-t25s20",
+    "ES-tsweep-time_scalp-t30s24"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "all cells dead (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "QUALITY_FILTERS",
+   "family": "quality_filter",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "ES-qfilter-trend-pullback-baseline",
+    "ES-qfilter-trend-pullback-time-of-day",
+    "ES-qfilter-trend-pullback-volatility",
+    "ES-qfilter-trend-pullback-volatility+time-of-day",
+    "ES-qfilter-vwap-reversion-baseline",
+    "ES-qfilter-vwap-reversion-time-of-day",
+    "ES-qfilter-vwap-reversion-trend-alignment",
+    "ES-qfilter-vwap-reversion-volatility",
+    "ES-qfilter-vwap-reversion-volatility+trend-alignment"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "dead (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "ES_SWING_TREND",
+   "family": "swing_trend",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "ES-swing-trend"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "16 holdout trades (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "VWAP_REVERSION",
+   "family": "vwap_reversion",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MES-vwap-rev-MES-full"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "~0 gross (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "TIME_SCALP",
+   "family": "time_scalp",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MES-time-scalp-MES-full"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "~0 gross (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "TREND_PULLBACK",
+   "family": "trend_pullback",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MES-trend-pullback-MES-full"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "~0 gross (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "ORDERFLOW_ABSORPTION_V1",
+   "family": "orderflow_absorption",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "MNQ-orderflow-absorption-v1"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "0 trades (frequency) (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "ORDERFLOW_FOOTPRINT_V2",
+   "family": "orderflow_footprint",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "NQ-orderflow-footprint-v2"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "0 trades (frequency) (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FOMO_WALLET_PERSISTENCE",
+   "family": "wallet_persistence",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "FOMO-F01"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "alpha fail (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FOMO_CROWDING",
+   "family": "crowding",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "FOMO-F02"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "no signal (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FOMO_MIRROR_COPY",
+   "family": "mirror_copy",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "FOMO-F03"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "<=0 realizable (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FOMO_CLUSTER_CONSENSUS",
+   "family": "cluster_consensus",
+   "state": "FAILED",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "FOMO-F08",
+    "FOMO-F09"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "fail realizable (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  },
+  {
+   "strategy_id": "FOMO_COPY_FIXED_EXIT",
+   "family": "copy_fixed_exit",
+   "state": "INCONCLUSIVE",
+   "spec_path": null,
+   "spec_hash": null,
+   "code_path": null,
+   "code_hash": null,
+   "dataset_hashes": {},
+   "trial_ids": [
+    "FOMO-F04",
+    "FOMO-F05",
+    "FOMO-F06",
+    "FOMO-F07"
+   ],
+   "last_state_transition_utc": "2026-09-24T06:34:16.261409+00:00",
+   "reason": "historical discovery only; tested prospectively by FOMO_PROSPECTIVE (HEIMDALL_MEMORY.md / trials ledger)",
+   "owner_approval_required_for": [
+    "LIVE_PILOT",
+    "SCALED",
+    "any real order"
+   ],
+   "live_enabled": false
+  }
+ ]
+}
