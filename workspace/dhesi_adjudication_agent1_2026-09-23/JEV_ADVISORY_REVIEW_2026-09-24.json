@@ -1,0 +1,38 @@
+{
+ "advisory_only": true,
+ "model": "jev-1.13.0",
+ "answers": {
+  "logic_change__check_authorization": {
+   "type": "noul",
+   "noul": 0.08
+  },
+  "logic_change__primary": {
+   "type": "noul",
+   "noul": 0.53
+  },
+  "logic_change__secondary": {
+   "type": "noul",
+   "noul": 0.16
+  },
+  "invalid_blocks_verdict": {
+   "type": "noul",
+   "noul": 0.95
+  },
+  "secret_kind": {
+   "type": "choice",
+   "choice": "authorization_sentinel",
+   "confidence": 0.99,
+   "probabilities": {
+    "placeholder": 0.0,
+    "authorization_sentinel": 0.99,
+    "external_credential": 0.01
+   }
+  }
+ },
+ "usage": {
+  "input_tokens": 3357,
+  "output_tokens": 129
+ },
+ "payload_contains_secret_value": false,
+ "base_commit": "8f70789801a2fc02b94f3159ebf3bf1b583d347c"
+}

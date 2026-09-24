@@ -1,0 +1,2 @@
+trade_id,engine,signal_ts,entry_ts,exit_ts,session,side,entry_price,exit_price,stop_price,tp1_price,runner_target_price,contracts,risk_dollars,pnl,gross_pnl,tp1_hit,reason,sweep_pool,position_size_contracts,costs
+2022-10-31|-1|2022-10-31 15:15:00-04:00,reference,2022-10-31 15:15:00-04:00,2022-10-31 15:15:00-04:00,2022-10-31 16:00:00-04:00,2022-10-31,-1,2301.0,2298.25,2311.0,2286.0,2284.0,16,320.0,72.0,88.0,False,session_flatten,equal_high,16,16.0

@@ -1,6 +1,8 @@
 # AUTHORIZATION REQUEST — Dhesi v3 untouched-history validation
 
-**Status: READY_FOR_OWNER_AUTHORIZATION**
+**Status: READY_FOR_OWNER_AUTHORIZATION — infrastructure re-frozen 2026-09-24 (pre-validation hardening, D3/D4); pending Agent 2 certification of the new hashes**
+
+Revision 2026-09-24: validator and harvest-integrity tool changed (validation infrastructure only; STRATEGY_LOGIC_CHANGE = NO). New binding input `PROTOCOL_AMENDMENT_1.md` (supersedes Protocol V1 §4.5; extends §2.4 gate 1; see that file). Spec, Protocol V1 and all frozen code are byte-identical to the previous request.
 
 Prepared 2026-09-23 by Agent 1 (canonical spec owner). **No untouched data has been read and the validation has not been run.** This file is a request, not an authorization. Agent 1 does not create `REOPEN_APPROVED` or `DHESI_V3_RUN_AUTHORIZATION.txt`.
 
@@ -16,7 +18,7 @@ One run of the unchanged Dhesi v3 hypothesis (`DHESI_V3_CANONICAL_SPEC_V1.md`) o
 | 2 | Validator refuses without authorization and with any changed frozen code | VERIFIED: "NOT AUTHORIZED: DHESI_V3_RUN_AUTHORIZATION.txt missing"; code-hash gate passes on the current tree |
 | 3 | Reference engine ≡ frozen code on development data | VERIFIED: 49/49 identical (`selftest_dev_result.json`) |
 | 4 | NQ history harvested from Sierra (metadata-only handling) | **PENDING, owner GUI step.** Chart: NQ continuous, Volume Based Rollover, back-adjust None, 1-minute, UTC, maximum days to load. Export through 2024-09-30 (for the equivalence gate). |
-| 5 | `dhesi_v3_harvest_integrity.py <file>` → `DHESI_V3_HARVEST_INTEGRITY.json` with `all_gates_pass: true` | **PENDING** (script mechanics-tested on dev data only) |
+| 5 | `dhesi_v3_harvest_integrity.py <file>` → `DHESI_V3_HARVEST_INTEGRITY.json` with `all_gates_pass: true` (rev 2: gates 1–4 incl. volume, geometry, stamp shift) | **PENDING** (rev 2 tested on synthetic data: `tests/test_dhesi_hardening.py`) |
 | 6 | Ledger owner adds the missing `MNQ-dhesi-inversion-v3` (dev), `MNQ-dhesi-inversion-v3-fresh` (REUSED_HOLDOUT) and this cycle's forensic read, then registers `NQ-dhesi-inversion-v3-untouched` (FRESH) | **PENDING, ledger owner** |
 | 7 | Secondary only: live confirmation of the M2K/MYM commission | PENDING (does not block the primary) |
 
@@ -27,9 +29,11 @@ One run of the unchanged Dhesi v3 hypothesis (`DHESI_V3_CANONICAL_SPEC_V1.md`) o
 Create `DHESI_V3_RUN_AUTHORIZATION.txt` in the repo root containing:
 ```
 AUTHORIZED_BY_OWNER
-validator  e52ba64722a70ac4d80df550809b8c37d7816c63872027d6c72d829cbd512710
+validator  940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985
 spec       8f330ae21a7537586cf769b20b4727fddc4f4eee7aea9d94e36bd29aeb9c6059
 protocol   49d8d8b98e139e4d7d88809e36bd8cb9376f7b0b40f5419bb41edd5c3d148793
+amendment  74f3340f24d8147f74b08d35eb8cf2a246fd798a9a59a28c998977ba8910400e
+integrity_tool 2c223a41ac4c029348f042d0e81e255b7d13be2a856651530a25c26e216d90fc
 integrity  <sha256 of DHESI_V3_HARVEST_INTEGRITY.json>
 date       <UTC>
 ```
@@ -41,8 +45,9 @@ Then: `python workspace/dhesi_adjudication_agent1_2026-09-23/dhesi_v3_validator.
 |---|---|
 | `DHESI_V3_CANONICAL_SPEC_V1.md` | `8f330ae21a7537586cf769b20b4727fddc4f4eee7aea9d94e36bd29aeb9c6059` |
 | `DHESI_V3_VALIDATION_PROTOCOL_V1.md` | `49d8d8b98e139e4d7d88809e36bd8cb9376f7b0b40f5419bb41edd5c3d148793` |
-| `dhesi_v3_validator.py` (executor) | `e52ba64722a70ac4d80df550809b8c37d7816c63872027d6c72d829cbd512710` |
-| `dhesi_v3_harvest_integrity.py` | `6be444f49dd2efd89d8357e48cebb50120daa03fec41c351a51fa1c3bb30cec6` |
+| `dhesi_v3_validator.py` (executor, rev 2) | `940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985` |
+| `dhesi_v3_harvest_integrity.py` (rev 2) | `2c223a41ac4c029348f042d0e81e255b7d13be2a856651530a25c26e216d90fc` |
+| `PROTOCOL_AMENDMENT_1.md` | `74f3340f24d8147f74b08d35eb8cf2a246fd798a9a59a28c998977ba8910400e` |
 | `selftest_dev_result.json` | `b837f37ec58c498b976fbf587b5765af4ad70520493571acb6a3f6f238999e66` |
 | `DHESI_REOPEN_ADJUDICATION_2026-09-23.md` | `7693a320dadb0acc238f747f0bd227e8421172b5dd53a846aa0f60d901ff7a1a` |
 

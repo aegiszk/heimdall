@@ -5,6 +5,17 @@ Modes
                  reproduces the frozen v3 development trades (49/49) on MNQ. No new data.
   primary        NQ canonical series, untouched window. REQUIRES owner authorization file.
   secondary      ES / RTY / YM replication. REQUIRES authorization AND a primary verdict != FAIL.
+  selftest-engines-dev        DEVELOPMENT data only: runs BOTH engines, persists both ledgers + comparison.
+  selftest-engines-synthetic  internally generated synthetic walk only (no file input): same as above.
+
+Revision 2 (2026-09-24, pre-validation hardening; strategy logic unchanged):
+  D3  primary persists FROZEN_ENGINE_TRADES / REFERENCE_ENGINE_TRADES (.csv + .parquet) and ENGINE_COMPARISON.json
+      BEFORE any statistic is computed. If the engines disagree on any strategy-defining field the result is
+      INVALID and no strategy statistic or verdict is computed (PROTOCOL_AMENDMENT_1.md, supersedes protocol §4.5).
+  D4  primary/secondary refuse to start the engines when the consumed rows fail row integrity (non-finite
+      OHLCV, negative volume, OHLC geometry, duplicate / non-monotonic / invalid stamps), via the same checks as
+      dhesi_v3_harvest_integrity.py (hash-bound below). Nothing is imputed.
+  AUTH the authorization file must also name the spec, protocol, amendment and integrity-tool hashes.
 
 Never tunes anything. All numbers used below are frozen in DHESI_V3_CANONICAL_SPEC_V1.md.
 """
@@ -37,6 +48,10 @@ FROZEN_CODE = {
     "tools/validate_inversion_model.py": "5dffdb7c4a7f7166d8e28c0d8df13bcc2ab2314f7e5fd720a828e27f79c59165",
 }
 AUTH_FILE = ROOT / "DHESI_V3_RUN_AUTHORIZATION.txt"
+SPEC_FILE = HERE / "DHESI_V3_CANONICAL_SPEC_V1.md"
+PROTOCOL_FILE = HERE / "DHESI_V3_VALIDATION_PROTOCOL_V1.md"
+AMENDMENT_FILE = HERE / "PROTOCOL_AMENDMENT_1.md"
+INTEGRITY_TOOL = HERE / "dhesi_v3_harvest_integrity.py"
 
 # ---------------------------------------------------------------- frozen protocol constants
 UNTOUCHED_END_ET = pd.Timestamp("2024-06-29 00:00", tz=ET)   # rows at/after this are dropped before any computation
@@ -53,7 +68,7 @@ WORST_YEAR_FLOOR = -2000.0
 STRESS_EXTRA_TICKS = 2           # one extra adverse tick on entry and on final exit
 STRESS_EXTRA_COMM = 0.50         # $/contract round trip
 
-# instrument economics (spec §2.20, §7). tick_value = tick * point_value
+# instrument economics (spec §12, protocol §3/§8). tick_value = tick * point_value
 INSTR = {
     "MNQ": dict(tick=0.25, pv=2.0, comm=1.0, maxc=40),
     "MES": dict(tick=0.25, pv=5.0, comm=1.0, maxc=40),
@@ -88,9 +103,21 @@ def check_authorization() -> str:
     if not AUTH_FILE.exists():
         raise SystemExit(f"NOT AUTHORIZED: {AUTH_FILE.name} missing (owner must create it)")
     text = AUTH_FILE.read_text(encoding="utf-8")
-    if "AUTHORIZED_BY_OWNER" not in text or me not in text:
-        raise SystemExit("NOT AUTHORIZED: file must contain AUTHORIZED_BY_OWNER and this validator's SHA-256 " + me)
+    need = {"validator": me, "spec": sha(SPEC_FILE), "protocol": sha(PROTOCOL_FILE),
+            "amendment": sha(AMENDMENT_FILE), "integrity_tool": sha(INTEGRITY_TOOL)}
+    missing = [k for k, v in need.items() if v not in text]
+    if "AUTHORIZED_BY_OWNER" not in text or missing:
+        raise SystemExit(f"NOT AUTHORIZED: file must contain AUTHORIZED_BY_OWNER and the current SHA-256 of {missing}: "
+                         + json.dumps(need))
     return me
+
+
+def _integrity_module():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("dhesi_v3_harvest_integrity", INTEGRITY_TOOL)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 
 # ================================================================ reference engine (parameterized copy of ref_dhesi.py)
@@ -402,6 +429,84 @@ def reference_run(raw: pd.DataFrame, spec: dict, floor_pts: float, disp_min) -> 
     return pd.DataFrame(trades)
 
 
+# ================================================================ D3: dual-ledger persistence + comparison
+# Strategy-defining fields common to both engines (verified identical on 231/231 synthetic and 49/49 dev trades).
+COMPARE_FIELDS = ["entry_ts", "exit_ts", "session", "side", "entry_price", "exit_price", "stop_price", "tp1_price",
+                  "runner_target_price", "contracts", "risk_dollars", "gross_pnl", "pnl", "tp1_hit", "reason", "sweep_pool"]
+TEXT_FIELDS = {"entry_ts", "exit_ts", "session", "tp1_hit", "reason", "sweep_pool"}
+NUM_TOL = 1e-9   # numbers are tick-grid prices, integer contracts and cent PnL: agreement must be exact to float noise
+
+
+def ledger(trades: pd.DataFrame, engine: str) -> pd.DataFrame:
+    """Deterministic, reconcilable ledger. Both engines decide and enter on the close of the 5m LTF inversion bar
+    (spec §6), so signal_ts == entry_ts. trade_id = session|side|entry_ts (unique: one open position at a time)."""
+    cols = COMPARE_FIELDS
+    t = trades.copy() if len(trades) else pd.DataFrame(columns=cols)
+    for c in cols:
+        if c not in t.columns:
+            t[c] = np.nan
+    t = t.sort_values(["entry_ts", "side"], kind="mergesort").reset_index(drop=True)
+    t.insert(0, "trade_id", [f"{s}|{int(d)}|{e}" for s, d, e in zip(t["session"].astype(str), t["side"], t["entry_ts"].astype(str))])
+    t.insert(1, "engine", engine)
+    t.insert(2, "signal_ts", t["entry_ts"])
+    t["position_size_contracts"] = t["contracts"]
+    t["costs"] = t["gross_pnl"].astype(float) - t["pnl"].astype(float)
+    return t
+
+
+def compare_ledgers(fz: pd.DataFrame, rf: pd.DataFrame) -> dict:
+    fi, ri = fz.set_index("trade_id"), rf.set_index("trade_id")
+    miss_f = sorted(set(ri.index) - set(fi.index))
+    miss_r = sorted(set(fi.index) - set(ri.index))
+    both = [i for i in fi.index if i in ri.index]
+    mism, maxdiff = [], {}
+    for c in COMPARE_FIELDS:
+        a, b = fi.loc[both, c], ri.loc[both, c]
+        if c in TEXT_FIELDS:
+            bad = [i for i in both if str(a[i]) != str(b[i])]
+        else:
+            av, bv = a.astype(float).to_numpy(), b.astype(float).to_numpy()
+            both_nan = np.isnan(av) & np.isnan(bv)
+            diff = np.where(both_nan, 0.0, np.abs(av - bv))
+            diff = np.where(np.isnan(diff), np.inf, diff)
+            maxdiff[c] = float(diff.max()) if len(diff) else 0.0
+            bad = [both[k] for k in np.flatnonzero(diff > NUM_TOL)]
+        mism.extend({"trade_id": i, "field": c, "frozen": str(fi.loc[i, c]), "reference": str(ri.loc[i, c])} for i in bad)
+    ok = not miss_f and not miss_r and not mism and len(fz) == len(rf)
+    return {"frozen_trades": int(len(fz)), "reference_trades": int(len(rf)), "matched_trades": int(len(both)),
+            "missing_on_frozen": miss_f, "missing_on_reference": miss_r, "field_mismatches": mism,
+            "field_mismatch_count": len(mism), "max_abs_numeric_diff": maxdiff, "numeric_tolerance": NUM_TOL,
+            "compared_fields": COMPARE_FIELDS, "result": "PASS" if ok else "FAIL"}
+
+
+def run_both_engines_and_persist(raw: pd.DataFrame, keep: set, outdir: Path) -> tuple[pd.DataFrame, dict]:
+    """Runs frozen (normative) and reference engines on the SAME rows, writes both ledgers and the comparison to
+    disk BEFORE anything else is computed, and returns (frozen ledger, comparison)."""
+    from core.alpha.inversion_model_v3 import InversionModelV3
+    outdir.mkdir(parents=True, exist_ok=True)
+    model = InversionModelV3(contract="MNQ")
+    frozen = model.trades_frame(model._run_backtest(raw).trades)
+    frozen = frozen[frozen["session"].isin(keep)].reset_index(drop=True) if len(frozen) else frozen
+    fz = ledger(frozen, "frozen")
+    fz.to_csv(outdir / "FROZEN_ENGINE_TRADES.csv", index=False)
+    fz.astype({c: str for c in ("entry_ts", "exit_ts", "signal_ts", "session")}).to_parquet(outdir / "FROZEN_ENGINE_TRADES.parquet")
+    ref = reference_run(raw, INSTR["MNQ"], floor_points(INSTR["MNQ"]), NQ_DISP_POINTS)
+    ref = ref[ref["session"].isin(keep)].reset_index(drop=True) if len(ref) else ref
+    rf = ledger(ref, "reference")
+    rf.to_csv(outdir / "REFERENCE_ENGINE_TRADES.csv", index=False)
+    rf.astype({c: str for c in ("entry_ts", "exit_ts", "signal_ts", "session")}).to_parquet(outdir / "REFERENCE_ENGINE_TRADES.parquet")
+    cmp_ = compare_ledgers(fz, rf)
+    cmp_["files"] = {p.name: sha(p) for p in sorted(outdir.glob("*_ENGINE_TRADES.*"))}
+    (outdir / "ENGINE_COMPARISON.json").write_text(json.dumps(cmp_, indent=1, default=str) + "\n", encoding="utf-8")
+    return frozen, cmp_
+
+
+def require_row_integrity(raw: pd.DataFrame) -> dict:
+    """D4: refuse before any engine runs if a consumed row is not valid. Counts only; nothing imputed."""
+    res = _integrity_module().row_integrity(raw)
+    return res
+
+
 # ================================================================ statistics / verdict
 def stationary_bootstrap(trades: pd.DataFrame) -> tuple[float, float]:
     by = trades.groupby("session", sort=True)["pnl"].agg(["sum", "count"])
@@ -506,25 +611,28 @@ def selftest_dev() -> int:
 def primary(nq_path: Path) -> int:
     code = check_frozen_code()
     me = check_authorization()
-    from core.alpha.inversion_model_v3 import InversionModelV3
     raw = truncate_untouched(pd.read_parquet(nq_path)[OHLCV])
     report = {"mode": "primary", "validator_sha256": me, "frozen_code": code, "integrity": integrity(raw, nq_path)}
+    rows = require_row_integrity(raw)
+    report["row_integrity"] = rows
+    out_json = HERE / "dhesi_v3_untouched_primary.json"
+    if not rows.get("gate1_rows_valid"):
+        report["result"] = {"verdict": "INVALID", "reason": "D4 row integrity failed on consumed rows; engines not run"}
+        out_json.write_text(json.dumps(report, indent=1, default=str) + "\n", encoding="utf-8")
+        print(json.dumps(report["result"]))
+        return 2
     keep = set(sessions_after_burn_in(raw))
-    model = InversionModelV3(contract="MNQ")
-    frozen = model.trades_frame(model._run_backtest(raw).trades)
-    frozen = frozen[frozen["session"].isin(keep)].reset_index(drop=True)
-    ref = reference_run(raw, INSTR["MNQ"], floor_points(INSTR["MNQ"]), NQ_DISP_POINTS)
-    ref = ref[ref["session"].isin(keep)].reset_index(drop=True) if len(ref) else ref
-    agree = len(ref) == len(frozen) and (len(frozen) == 0 or (
-        (ref["entry_ts"].astype(str).values == frozen["entry_ts"].astype(str).values).all()
-        and np.allclose(ref["pnl"].to_numpy(float), frozen["pnl"].to_numpy(float))))
-    report["reference_crosscheck_identical"] = bool(agree)
-    report["result"] = evaluate(frozen, INSTR["MNQ"])
-    report["prop_report_only"] = prop_report(frozen, sorted(keep))
-    if not agree:
-        report["result"]["verdict_note"] = "frozen/reference disagreement: verdict stands on FROZEN code; disagreement must be itemised"
+    frozen, cmp_ = run_both_engines_and_persist(raw, keep, HERE / "primary_run")
+    report["engine_comparison"] = {k: cmp_[k] for k in ("result", "frozen_trades", "reference_trades", "matched_trades",
+                                                        "field_mismatch_count", "files")}
+    if cmp_["result"] != "PASS":
+        report["result"] = {"verdict": "INVALID", "reason": "frozen/reference engines disagree (PROTOCOL_AMENDMENT_1): "
+                            "no strategy conclusion; see primary_run/ENGINE_COMPARISON.json"}
+    else:
+        report["result"] = evaluate(frozen, INSTR["MNQ"])
+        report["prop_report_only"] = prop_report(frozen, sorted(keep))
     frozen.to_csv(HERE / "dhesi_v3_untouched_primary_trades.csv", index=False)
-    (HERE / "dhesi_v3_untouched_primary.json").write_text(json.dumps(report, indent=1, default=str) + "\n", encoding="utf-8")
+    out_json.write_text(json.dumps(report, indent=1, default=str) + "\n", encoding="utf-8")
     print(json.dumps({k: report["result"][k] for k in ("n", "mean", "boot_lo95", "boot_hi95", "verdict") if k in report["result"]}, default=str))
     return 0
 
@@ -538,6 +646,13 @@ def secondary(market: str, path: Path, nq_path: Path) -> int:
     spec = INSTR[SECONDARY[market]]
     raw = truncate_untouched(pd.read_parquet(path)[OHLCV])
     nq = truncate_untouched(pd.read_parquet(nq_path)[OHLCV])
+    rows = require_row_integrity(raw)
+    if not rows.get("gate1_rows_valid"):
+        (HERE / f"dhesi_v3_untouched_secondary_{market}.json").write_text(json.dumps(
+            {"mode": "secondary", "market": market, "row_integrity": rows,
+             "result": {"verdict": "INVALID", "reason": "D4 row integrity failed; engine not run"}}, indent=1, default=str) + "\n",
+            encoding="utf-8")
+        return 2
 
     def prev_rth_close(r):
         f = _rth(r)
@@ -557,15 +672,53 @@ def secondary(market: str, path: Path, nq_path: Path) -> int:
     return 0
 
 
+def synthetic_walk(seed: int = 7, start: str = "2022-01-03", end: str = "2024-01-01") -> pd.DataFrame:
+    """Seeded synthetic random walk (Agent 2 dry-run generator, shortened). NOT market data."""
+    rng = np.random.default_rng(seed)
+    idx = pd.date_range(start, end, freq="1min", tz=ET, inclusive="left")
+    wd, h = idx.weekday, idx.hour
+    idx = idx[~((wd == 5) | ((wd == 4) & (h >= 17)) | ((wd == 6) & (h < 18)) | (h == 17))]
+    n, sig, p0 = len(idx), 0.013 / np.sqrt(1380), 2300.0
+    rth = (idx.time >= T0930) & (idx.time <= T1600)
+    s = np.where(rth, sig * 1.6, sig * 0.6)
+    path = p0 * np.exp(np.cumsum((rng.standard_normal((n, 4)) * (s[:, None] / 2)).reshape(-1))).reshape(n, 4)
+    q = lambda x: np.round(x / 0.25) * 0.25  # noqa: E731
+    o, c = q(np.r_[p0, path[:-1, 3]]), q(path[:, 3])
+    hi, lo = q(np.maximum(path.max(1), np.maximum(o, c))), q(np.minimum(path.min(1), np.minimum(o, c)))
+    return pd.DataFrame({"open": o, "high": hi, "low": lo, "close": c,
+                         "volume": rng.integers(50, 2000, n).astype(float)}, index=idx.tz_convert("UTC"))
+
+
+def selftest_engines(mode: str) -> int:
+    """D3 self-test WITHOUT reserved data: dev MNQ (consumed) or an internal synthetic walk. Never authorization."""
+    if mode == "dev":
+        raw = pd.read_parquet(ROOT / "data" / "MNQ_1m.parquet")[OHLCV]
+        idx = pd.DatetimeIndex(raw.index)
+        raw = raw.set_axis(idx.tz_localize("UTC") if idx.tz is None else idx.tz_convert("UTC"))
+        if raw.index.min() < pd.Timestamp("2024-07-01", tz="UTC"):
+            raise SystemExit("firewall: dev file contains pre-2024-07-01 rows")
+    else:
+        raw = synthetic_walk()
+    rows = require_row_integrity(raw)
+    if not rows.get("gate1_rows_valid"):
+        raise SystemExit(f"row integrity failed: {rows}")
+    keep = set(sessions_after_burn_in(raw)) if mode == "synthetic" else set(pd.DatetimeIndex(raw.index).tz_convert(ET).date)
+    _, cmp_ = run_both_engines_and_persist(raw, keep, HERE / f"selftest_engines_{mode}")
+    print(json.dumps({k: cmp_[k] for k in ("result", "frozen_trades", "reference_trades", "matched_trades", "field_mismatch_count", "max_abs_numeric_diff")}, indent=1))
+    return 0 if cmp_["result"] == "PASS" else 1
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("mode", choices=["selftest-dev", "primary", "secondary"])
+    ap.add_argument("mode", choices=["selftest-dev", "primary", "secondary", "selftest-engines-dev", "selftest-engines-synthetic"])
     ap.add_argument("--nq", type=Path)
     ap.add_argument("--market", choices=sorted(SECONDARY))
     ap.add_argument("--data", type=Path)
     a = ap.parse_args()
     if a.mode == "selftest-dev":
         raise SystemExit(selftest_dev())
+    if a.mode.startswith("selftest-engines-"):
+        raise SystemExit(selftest_engines(a.mode.split("-")[-1]))
     if a.mode == "primary":
         raise SystemExit(primary(a.nq))
     raise SystemExit(secondary(a.market, a.data, a.nq))

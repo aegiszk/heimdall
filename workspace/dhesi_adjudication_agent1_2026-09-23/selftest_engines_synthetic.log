@@ -1,0 +1,20 @@
+{
+ "result": "PASS",
+ "frozen_trades": 1,
+ "reference_trades": 1,
+ "matched_trades": 1,
+ "field_mismatch_count": 0,
+ "max_abs_numeric_diff": {
+  "side": 0.0,
+  "entry_price": 0.0,
+  "exit_price": 0.0,
+  "stop_price": 0.0,
+  "tp1_price": 0.0,
+  "runner_target_price": 0.0,
+  "contracts": 0.0,
+  "risk_dollars": 0.0,
+  "gross_pnl": 0.0,
+  "pnl": 0.0
+ }
+}
+EXIT=0 validator_sha256=940aa3ac57a9e0baac09471f31221b424e382069e0b1dc056c9421617b629985
