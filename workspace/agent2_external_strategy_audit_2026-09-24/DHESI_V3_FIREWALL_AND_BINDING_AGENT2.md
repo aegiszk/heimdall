@@ -114,4 +114,10 @@ MNQ was listed 2019-05-06. For 2011-09 → 2019-05 the MNQ economics applied to 
 
 ## 6. Synthetic pipeline dry run (no market data)
 
-See `dhesi_synthetic_dryrun/dryrun_result.json`. The purpose, method and result are summarised in `AGENT2_EXTERNAL_STRATEGY_AUDIT.md` §1.
+See `dhesi_synthetic_dryrun/dryrun_result.json` (summary in `AGENT2_EXTERNAL_STRATEGY_AUDIT.md` §1a).
+- 13 synthetic years (4.6M rows, 3,315 sessions).
+- Frozen code and reference agree on **231/231 trades, 0 field mismatches**.
+- The zero-edge walk gives verdict **FAIL** (hi95 $20.46 < $30).
+- Runtime 53 min.
+
+This is independent confirmation, beyond Agent 1's 49/49 dev self-test, that the frozen code and the reference engine implement the same rules.

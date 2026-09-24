@@ -30,7 +30,16 @@ Companion artifacts in this folder:
 
 `dhesi_synthetic_dryrun/dryrun.py` generates a zero-drift random walk on the untouched-window calendar (2011-09-18 → 2024-10-01, CME hours, NQ-like start 2300, ≈1.3% daily vol, 0.25 tick). It then applies the validator's own `truncate_untouched` and burn-in, runs the **frozen** `InversionModelV3` and the validator's `reference_run`, and scores the result with the validator's `evaluate`.
 
-Result: RESULT_PENDING (filled in from `dryrun_result.json`).
+Result (seed 1, `dryrun_result.json`; VERIFIED):
+
+| Check | Result |
+|---|---|
+| Scale | 4,602,300 1-minute rows, 3,315 evaluated sessions, last row 2024-06-28 20:59 UTC (hard cut works) |
+| Runtime | frozen code 1,912 s + reference 1,275 s = **53 min total**. The one-shot run is feasible on this machine. |
+| Frozen vs reference | 231 vs 231 trades; **0 mismatches** on entry_ts, exit_ts, side, entry, stop, TP1, exit price, contracts, PnL (13 synthetic years of never-seen structure, incl. DST transitions, low price levels, gap stops) |
+| Null control (zero-drift walk) | mean −$11.36/trade, win 41.6%, one-sided bounds lo95 −$43.67 / hi95 +$20.46 → **FAIL** (hi95 < μ_min $30). The pipeline does not manufacture a PASS from noise. |
+
+A single seed is one null draw. It shows the machinery works; it is not a false-positive-rate estimate (that would need many seeds at about 53 min each).
 
 ## 2. Reserved-data integrity
 
